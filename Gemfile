@@ -8,7 +8,6 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
-gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -17,6 +16,8 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+
+gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
 
@@ -32,3 +33,4 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
