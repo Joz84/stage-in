@@ -1,1 +1,89 @@
 // Specific CSS for your home-page
+.home {
+  color: $medium-gray;
+  background-color: white;
+}
+.home h1 {
+  font-family: $body-font;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+.menu {
+  font-size: 20px;
+  font-weight: regular;
+}
+.invert {
+  color: white;
+}
+.banner {
+  display: flex;
+  justify-content: center;
+  min-height: 600px;
+  min-width: 900px;
+  position: relative;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.background-bottom {
+  background-size: 2200px 286px;
+}
+#page1 {
+  background-image:url("http://res.cloudinary.com/doodlid/image/upload/v1506109710/stagein_home1_lilt15.jpg");
+  height: calc(100vh - 70px);
+}
+#page2 {
+  height: 100vh;
+  width: 100%;
+}
+#page3 {
+  height: 100vh;
+  width: 100%;
+}
+.page-content, .page-content {
+  margin: auto;
+  width: 60%;
+  margin-top: 110px;
+}
+.page-text-information {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 180px;
+  height: 300px;
+  color: white;
+  background-color: $blue;
+  h3 {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -64px;
+    top: 140px;
+  }
+}
+.banner-call {
+  width: 900px;
+  height: 330px;
+  margin-top: 110px;
+}
+.text-on-image {
+  position: absolute;
+  bottom: 5px;
+}
+.icon1 {
+  color: $pink;
+}
+.icon2 {
+  color: $blue;
+}
+.icon3 {
+  color: $darkgray;
+}
+
+
