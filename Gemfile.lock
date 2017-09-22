@@ -64,6 +64,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.2.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -198,6 +199,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails
   devise
+  devise-i18n
   figaro
   font-awesome-sass
   geocoder
@@ -223,4 +225,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.2

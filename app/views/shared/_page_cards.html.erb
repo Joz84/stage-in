@@ -1,0 +1,29 @@
+<div class="banner background-bottom" id=<%= page_id %> style="background-image: url(<%= image %> );" >
+    <div class="page-content container text-center">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3><%= title %></h3>
+        </div>
+        <div class="col-xs-4">
+          <div class="card-info ">
+            <i class="fa icon1 fa-<%= icon1 %>" aria-hidden="true"></i>
+            <h6><%= card1 %></h6>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="card-info">
+            <i class="fa icon2 fa-<%= icon2 %>" aria-hidden="true"></i>
+            <h6><%= card2 %></h6>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="card-info icon3">
+            <i class="fa icon3 fa-<%= icon3 %>" aria-hidden="true"></i>
+            <h6><%= card3 %></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render 'shared/next_page', target_page: target_page, icon: "fa-arrow-circle-up" %>
+  </div>
+</div>

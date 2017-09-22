@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'devise-i18n'
 
 gem 'geocoder'
 gem "coffee-rails"
