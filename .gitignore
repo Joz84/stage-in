@@ -8,6 +8,3 @@ public/assets
 
 # Ignore application configuration
 /config/application.yml
-
-# Ignore Gemfile updates
-Gemfile.lock
