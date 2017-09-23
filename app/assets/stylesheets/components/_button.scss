@@ -54,3 +54,25 @@ input.btn-submit, .btn-submit {
     color: white;
   }
 }
+.btn-placehold {
+  color: $dark-gray;
+  border-radius: 13px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 50px;
+  border: none;
+  padding: 25px 40px 25px 40px;
+  border: none;
+  margin-bottom: 0px;
+  margin-right: 40px;
+  p {
+    font-size: 16px;
+    text-transform: downcase;
+    margin-bottom: 0px;
+  }
+  &:hover {
+    background-color: $yellow;
+    color: white;
+  }
+}
