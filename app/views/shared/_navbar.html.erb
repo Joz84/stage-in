@@ -40,8 +40,8 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path, class: "navbar-wagon-item navbar-wagon-link scroll" %>
-      <%= link_to t(".sign_in", default: "Première connexion"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Première connexion", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
