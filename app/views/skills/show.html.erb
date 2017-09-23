@@ -1,2 +1,4 @@
-<%= link_to "Create", skill_student_skills_path(@skill, weight: 1),
+<%= link_to image_tag(@skill.photo1), skill_student_skills_path(@skill, weight: 1),
+      method: :post %>
+<%= link_to image_tag(@skill.photo2), skill_student_skills_path(@skill, weight: 1),
       method: :post %>
