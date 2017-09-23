@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170923180454) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,9 +89,6 @@ ActiveRecord::Schema.define(version: 20170923180454) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "photo1"
-    t.string   "photo2"
-    t.string   "photo"
   end
 
   create_table "student_hirings", force: :cascade do |t|
