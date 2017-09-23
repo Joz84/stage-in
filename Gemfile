@@ -31,6 +31,7 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
+  gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'
