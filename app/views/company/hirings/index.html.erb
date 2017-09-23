@@ -7,7 +7,7 @@
       <%= f.input :internship_id, label: "Type de stage", collection: Internship.all, class: "input-medium" %>
       <%= f.input :job_id, label: "Type de métier", collection: Job.all, class: "input-medium" %>
       <%= f.input :number, label: "Nombre de place", collection: 1..40, class: "input-medium" %>
-      <%= f.button :submit, "Rechercher", class: "btn-inline btn-medium btn-blue fix-btn-simpleform" %>
+      <%= f.button :submit, "Créer", class: "btn-inline btn-medium btn-blue fix-btn-simpleform" %>
     </div>
   <% end %>
 
@@ -42,7 +42,7 @@
               </div>
             <% end %>
           <% else %>
-            Stage non demandé :,(
+            Pas de candidat pour ce stage
           <% end %>
           </h6>
         </div>
@@ -50,10 +50,7 @@
       <div class="line">
         <div>
           <p class="user-data address"></p>
-        </div>
-        <div class="min-width text-right">
-          <span class="status declined"></span>
-          <i class="fa fa-pencil"></i>
+          <h6>Ribérac</h6>
         </div>
       </div>
     </div>
