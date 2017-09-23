@@ -14,7 +14,7 @@ $shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 0 0 rgba(0,0,0,0.03);
   padding-bottom: 20px;
 }
 .padding-content {
-  padding: 0 20px 0 20px;
+  padding: 0 40px 0 40px;
 }
 .padding-box {
   padding: 20px;
@@ -48,9 +48,6 @@ $shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 0 0 rgba(0,0,0,0.03);
   width: 100%;
   z-index: 10;
 }
-.min-width {
-  min-width: 200px;
-}
 a:hover {
   text-decoration: none !important;
 }
@@ -60,3 +57,4 @@ a:hover {
 .relative {
   position: relative;
 }
+

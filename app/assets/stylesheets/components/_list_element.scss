@@ -1,0 +1,78 @@
+.user {
+  padding: 20px 50px 20px 50px;
+  width: 100%;
+  border: 1px solid $dark-gray;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: $shadow;
+  h5 {
+    margin-top: 0px;
+    font-weight: bold;
+  }
+  .fa {
+    margin-left: 10px;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+.line {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-data {
+  margin-right: 10px;
+}
+.email {
+  min-width: 15%;
+}
+.address, .phone {
+  flex-grow: 1;
+}
+.user-body {
+  flex-grow: 1;
+}
+.user-name {
+  min-width: 100px;
+}
+.user-name p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.user-body {
+  font-size: 13px;
+  color: rgba(0,0,0,0.5);
+}
+.user-body {
+  color: rgba(0,0,0,0.4);
+}
+.user-body strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.user-body p {
+  margin: 6px 0;
+}
+.user-status {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.status.accepted {
+  color: $blue;
+  i {
+    margin-left: 10px;
+    margin-left: 10px;
+  }
+}
+.status.declined {
+  color: $yellow;
+}
+.status.pending {
+  color: lightgrey;
+}
