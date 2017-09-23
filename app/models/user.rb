@@ -12,5 +12,5 @@ class User < ApplicationRecord
   validates :level, presence: true, if: :student?
   validates :first_name, presence: true, if: :student?
   validates :last_name, presence: true, if: :student?
-  validates :phone, presence: true, format: { with: /0\{9}/ }
+  validates :phone, presence: true
 end
