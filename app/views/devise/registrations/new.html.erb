@@ -1,17 +1,111 @@
-<h2><%= t(".sign_up") %></h2>
+<div class="inscription-wrapper flexbox" id="step0">
+  <div class="inscription-form">
+  <h2>S'inscrire en tant qu'élève</h2>
+  <p class="relative"><i class="fa fa-star fontawesome"></i>Tu es sur le point de t’inscrire sur stage-in.
+  Pour trouver un stage facilement dans le pays ribéracois, pose-toi,  fait l’inscription sérieusement, et suit le guide.
+  Les champs avec une étoile * sont indispensable.
+  </p>
+  <%= link_to "#step1", class: "scroll" do %>
+    <div class="margin-big-top btn-medium btn-blue flexbox">ok</div>
+  <% end %>
+  </div>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true %>
-    <%= f.input :password_confirmation, required: true %>
+  <div class="inscription-wrapper flexbox" id="step1">
+    <div class="inscription-form">
+    <h2>Inscription 1/4</h2>
+    <p class="relative margin-bottom-small"><i class="fa fa-angle-double-right fontawesome"></i>Inscris tes vrais noms et prénoms, ce seront ceux qui
+  seront envoyés aux entreprises quand tu postuleras à ton stage.
+    </p>
+    <%= f.input :first_name, label: "Prénom", required: true, autofocus: true, class: "input-medium" %>
+    <%= f.input :last_name, label: "Nom", required: true, class: "input-medium"%>
+    <div class="flex-left">
+      <%= link_to "#step0", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+      <% end %>
+      <%= link_to "#step2", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-blue flexbox">Suivant</div>
+      <% end %>
+    </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, t(".sign_up") %>
+  <div class="inscription-wrapper flexbox" id="step2">
+    <div class="inscription-form">
+    <h2>Inscription 2/4</h2>
+    <p class="relative margin-bottom-small"><i class="fa fa-map-marker fontawesome"></i>Inscris ton adresse postale. Elle permettra de trouver les stages les plus proches de chez toi automatiquement.
+    </p>
+    <%= f.input :address, label: "Adresse complète", required: true, autofocus: true, class: "input-medium" %>
+    <%= f.input :phone, label: "Numéro de téléphone", required: true, class: "input-medium"%>
+    <div class="flex-left">
+      <%= link_to "#step0", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+      <% end %>
+      <%= link_to "#step3", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-blue flexbox">Suivant</div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+
+  <div class="inscription-wrapper flexbox" id="step3">
+    <div class="inscription-form">
+    <h2>Inscription 3/4</h2>
+    <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>3ème, 2ème, Bac Pro… choisis ta classe. Les périodes de stage en dépendent, les besoins des entreprises aussi.
+    </p>
+    <%= f.input :level, label: "Choisis ta classe", placeholder: "clique ici", collection: [ "3ème", "2ème", "Bac Pro"], class: "input-medium" %>
+    <div class="flex-left">
+      <%= link_to "#step2", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+      <% end %>
+      <%= link_to "#step4", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-blue flexbox">Suivant</div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+
+  <div class="inscription-wrapper flexbox" id="step4">
+    <div class="inscription-form">
+    <h2>Inscription 4/4</h2>
+    <p class="relative margin-bottom-small"><i class="fa fa-email fontawesome"></i>Inscris tes données de contact et de connexion. L’email et le téléphone doivent être valides, elles permettront de te connnecter et l’entreprise de te contacter facilement.
+    </p>
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, label: "Mot de passe", required: true %>
+    <%= f.input :password_confirmation, label: "Confirmer le mot de passe", required: true %>
+    <div class="flex-left">
+      <%= link_to "#step3", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+      <% end %>
+      <%= link_to "#step5", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-blue flexbox" id="trigger-recapitulatif">Suivant</div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+
+  <div class="inscription-wrapper flexbox" id="step5">
+    <div class="inscription-form">
+    <h2>Récapitulatif</h2>
+    <p class="relative margin-bottom-small"><i class="fa fa-hand-o-right fontawesome"></i>Check tes infos et valide si tout est bon.
+Sinon reviens en arrière.
+    </p>
+    <p>Prénom: <span class="recap-data" id="prenom">---</span></p>
+    <p>Nom: <span class="recap-data" id="nom">---</span></p>
+    <p>Adresse: <span class="recap-data" id="adresse">---</span></p>
+    <p>Téléphone: <span class="recap-data" id="telephone">---</span></p>
+    <p>Email: <span class="recap-data" id="email">---</span></p>
+    <p>Classe: <span class="recap-data" id="classe">---</span></p>
+    <div class="flex-left">
+      <%= link_to "#step4", class: "scroll" do %>
+        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+      <% end %>
+      <%= f.input :role, input_html: { value: :student }, required: true, as: :hidden, autofocus: true %>
+
+      <%= f.button :submit, "Valider", class: "margin-big-top btn-medium btn-blue fix-btn-simpleform" %>
+    </div>
+    </div>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

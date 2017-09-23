@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170923180454) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,20 +50,19 @@ ActiveRecord::Schema.define(version: 20170923180454) do
   end
 
   create_table "hirings", force: :cascade do |t|
-    t.integer  "student_id"
     t.integer  "company_id"
     t.integer  "internship_id"
     t.integer  "job_id"
-    t.integer  "state"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["company_id"], name: "index_hirings_on_company_id", using: :btree
     t.index ["internship_id"], name: "index_hirings_on_internship_id", using: :btree
     t.index ["job_id"], name: "index_hirings_on_job_id", using: :btree
-    t.index ["student_id"], name: "index_hirings_on_student_id", using: :btree
   end
 
   create_table "internships", force: :cascade do |t|
+    t.string   "name"
+    t.string   "level"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.text     "comment"
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 20170923180454) do
     t.integer  "job_id"
     t.integer  "skill_id"
     t.float    "weight"
+    t.float    "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_job_skills_on_job_id", using: :btree
@@ -94,10 +96,21 @@ ActiveRecord::Schema.define(version: 20170923180454) do
     t.string   "photo"
   end
 
+  create_table "student_hirings", force: :cascade do |t|
+    t.integer  "hiring_id"
+    t.integer  "student_id"
+    t.integer  "state",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["hiring_id"], name: "index_student_hirings_on_hiring_id", using: :btree
+    t.index ["student_id"], name: "index_student_hirings_on_student_id", using: :btree
+  end
+
   create_table "student_skills", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "skill_id"
     t.float    "weight"
+    t.float    "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["skill_id"], name: "index_student_skills_on_skill_id", using: :btree
@@ -136,5 +149,6 @@ ActiveRecord::Schema.define(version: 20170923180454) do
   add_foreign_key "hirings", "jobs"
   add_foreign_key "job_skills", "jobs"
   add_foreign_key "job_skills", "skills"
+  add_foreign_key "student_hirings", "hirings"
   add_foreign_key "student_skills", "skills"
 end

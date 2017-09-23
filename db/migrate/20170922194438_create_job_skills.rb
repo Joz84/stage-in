@@ -4,7 +4,7 @@ class CreateJobSkills < ActiveRecord::Migration[5.0]
       t.references :job, foreign_key: true
       t.references :skill, foreign_key: true
       t.float :weight
-
+      t.float :score
       t.timestamps
     end
   end

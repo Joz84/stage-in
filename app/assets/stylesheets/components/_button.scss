@@ -1,14 +1,23 @@
-.btn-stagein {
+input.btn-stagein, .btn-stagein {
   color: white;
   border-radius: 13px;
   height: 50px;
   border: none;
   padding: 40px 50px 40px 50px;
   max-width: 500px;
+  border: none;
+  margin-bottom: 0px;
   &:hover {
     background-color: $yellow;
     color: white;
   }
+}
+input.btn.btn-default.margin-big-top.btn-medium.btn-blue.fix-btn-simpleform {
+  padding: 9px;
+}
+input.btn-submit, .btn-submit {
+  padding: 10px 50px 10px 50px;
+  margin-bottom: 0px;
 }
 .btn-blue {
   background-color: $blue;
@@ -16,7 +25,9 @@
 .btn-pink {
   background-color: $pink;
 }
-
+.btn-gray {
+  background-color: $dark-gray;
+}
 .btn-slim {
   color: white;
   background-color: $blue;
@@ -24,4 +35,22 @@
   height: 40px;
   border: none;
   padding: 0px 30px 0px 30px;
+}
+.btn-medium {
+  color: white;
+  border-radius: 13px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 50px;
+  border: none;
+  padding: 25px 40px 25px 40px;
+  max-width: 250px;
+  border: none;
+  margin-bottom: 0px;
+  margin-right: 40px;
+  &:hover {
+    background-color: $yellow;
+    color: white;
+  }
 }
