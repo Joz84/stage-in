@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Skill.create(name: "TimideSociable")
+puts "Création de la Skill #{Skill.last.name}"
+Skill.create(name: "CerebralPhysique")
+puts "Création de la Skill #{Skill.last.name}"
+Skill.create(name: "CommercialCulturel")
+puts "Création de la Skill #{Skill.last.name}"
+Skill.create(name: "PrivePublic")
+puts "Création de la Skill #{Skill.last.name}"
+Skill.create(name: "ManuelInformatique")
+puts "Création de la Skill #{Skill.last.name}"
