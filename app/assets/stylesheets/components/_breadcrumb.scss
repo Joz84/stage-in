@@ -1,0 +1,52 @@
+.breadcrumb {
+  margin: 40px 0 20px 0;
+  ul {
+    padding-left: 0px;
+    width: 750px;
+    li {
+      &.green {
+      p, div {
+        color: $anis;
+        border-color: $anis;
+      }
+      }
+      display: inline-block;
+      min-width: 240px;
+      text-align: center;
+    }
+  }
+}
+.number-in-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-size: 3px;
+  border-style: solid;
+  margin: 0px;
+  float: left;
+  p {
+    margin: 0px;
+  }
+}
+.text-over-line {
+  margin-bottom: 0px;
+  border-bottom-width: 15px;
+  bottom: 20px;
+  position: relative;
+  text-align: left;
+  left: 10px;
+}
+.line-under-text {
+  height: 3px;
+  width: calc(100% - 24px);
+  margin-left: 28px;
+  position: relative;
+  bottom: 8px;
+  border-bottom-size: 3px;
+  border-bottom-style: solid;
+}
+// .green {
+//   color: $anis;
+//   border-color: $anis;
+// }
+

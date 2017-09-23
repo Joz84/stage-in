@@ -5,6 +5,7 @@
 
 
 $(document).ready(function() {
+
   $(window).scroll(function() {
     $('#animatedElement').each(function(){
     var imagePos = $(this).offset().top;
@@ -23,4 +24,17 @@ $(document).ready(function() {
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
   });
+
+  $('#trigger-recapitulatif').on('click', function(event){
+    $('#prenom').html($('#user_first_name').val());
+    $('#nom').html($('#user_last_name').val());
+    $('#adresse').html($('#user_address').val());
+    $('#telephone').html($('#user_phone').val());
+    $('#email').html($('#user_email').val());
+    $('#classe').html($('#user_level').val());
+    // ($('#user_last_name').val());
+  })
 });
+
+
+
