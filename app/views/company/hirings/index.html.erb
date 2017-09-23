@@ -1,0 +1,32 @@
+
+<div class="container">
+  <% @hirings.each do |hiring| %>
+    <div class="row">
+      <h1><%= hiring.internship.name %></h1>
+    </div>
+    <div class="row">
+      <% if hiring.accepted? %>
+        <% hiring.accepted_student_hirings.each do |request| %>
+          <div class="col-xs-6">
+            <%= request.student.full_name %>
+          </div>
+          <div class="col-xs-6">
+            Accepter
+          </div>
+        <% end %>
+      <% elsif hiring.required? %>
+        <% hiring.required_student_hirings.each do |request| %>
+          <div class="col-xs-6">
+            <%= request.student.full_name %>
+          </div>
+          <div class="col-xs-6">
+            <%= link_to "accepter", company_student_hiring_path(hiring, state: 2), method: :put %>
+            <%= link_to "refuser", company_student_hiring_path(hiring, state: 3), method: :put %>
+          </div>
+        <% end %>
+      <% else %>
+        Stage non demandé :,(
+      <% end %>
+    </div>
+  <% end %>
+</div>

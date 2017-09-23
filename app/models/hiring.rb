@@ -1,12 +1,31 @@
 class Hiring < ApplicationRecord
-  belongs_to :student, class_name: "User"
   belongs_to :company, class_name: "User"
   belongs_to :internship
   belongs_to :job
+  has_many :student_hirings
   has_many :hiring_checkpoints
-  validates :student, presence: true
   validates :internship, presence: true
   validates :company, presence: true
   validates :job, presence: true
-  validates :status, presence: true
+
+  def accepted?
+    accepted_student_hirings
+    .any?
+  end
+
+  def required?
+    required_student_hirings
+    .any?
+  end
+
+  def required_student_hirings
+    student_hirings
+    .where(state: :required)
+  end
+
+
+  def accepted_student_hirings
+    student_hirings
+    .where(state: :accepted)
+  end
 end
