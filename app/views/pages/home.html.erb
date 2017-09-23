@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home">
+  <div class="banner flexbox" id="page1" >
+    <div class="banner-call text-center">
+      <h1>Trouve un stage prés de chez toi.</h1>
+      <div class="banner-buttons">
+        <div class="btn-stagein btn-blue flexbox">Je cherche un stage</div>
+        <div class="btn-stagein btn-pink flexbox">Je propose un stage</div>
+      </div>
+      <!-- <p class="invert text-on-image"><%= t('landing.subtitle') %></p> -->
+    </div>
+    <%= render 'shared/next_page', target_page: "#page2", icon: "fa-arrow-circle-down" %>
+  </div>
+
+  <%= render 'shared/page_text', page_id: "page2",  signal: "informations", title: "Responsabilités liées au stage en entreprise", column1: "Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber. Esse molestie consequat vel illum dolore eu feugiat nulla. Placerat facer possim assum typi non habent claritatem.Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber.", column2: "Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber. Esse molestie consequat vel illum dolore eu feugiat nulla. Placerat facer possim assum typi non habent claritatem.Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber.", target_page: "#page3", image: "http://res.cloudinary.com/doodlid/image/upload/v1506113861/stagein_home2_mijxvs.jpg" %>
+
+  <%= render 'shared/page_cards', page_id: "page3", title: "Les atouts de Stage-In pour votre entreprise", icon1: "flag", icon2: "calendar",  icon3: "map-marker", card1: "Placerat facer possim assum typi non habent claritatem.", card2: "Placerat facer possim assum typi non habent claritatem.", card3: "Placerat facer possim assum typi non habent claritatem.", target_page: "#page1", image: "http://res.cloudinary.com/doodlid/image/upload/v1506113863/stagein_home3_qbl8ki.jpg" %>
+</div>

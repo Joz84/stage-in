@@ -1,0 +1,21 @@
+<div class="banner background-bottom" id= <%= page_id %> style="background-image: url(<%= image %> );" >
+  <div class="page-text-information">
+    <h3><%= signal %></h3>
+  </div>
+  <div claas="container">
+    <div class="page-content">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3><%= title %></h3>
+        </div>
+        <div class="col-xs-6">
+          <p><%= column1 %></p>
+        </div>
+        <div class="col-xs-6">
+          <p><%= column2 %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <%= render 'shared/next_page', target_page: target_page, icon: "fa-arrow-circle-down" %>
+</div>
