@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   namespace :company do
     resources :hirings, only: [:index, :update]
   end
-  resources :student_skills, only: [:new, :create]
+  resources :skills, only: [ :show ] do
+    resources :student_skills, only: [ :create]
+  end
   resources :hirings, only: [:index, :show, :update]
 end
