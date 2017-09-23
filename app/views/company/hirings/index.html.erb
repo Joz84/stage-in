@@ -30,3 +30,10 @@
     </div>
   <% end %>
 </div>
+
+<%= simple_form_for :hiring, url: company_hirings_path, method: :post do |f| %>
+  <%= f.input :internship_id, collection: Internship.all %>
+  <%= f.input :job_id, collection: Job.all %>
+  <%= f.input :number, as: :integer %>
+  <%= f.button :submit %>
+<% end %>

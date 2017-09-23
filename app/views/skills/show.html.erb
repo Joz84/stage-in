@@ -1,0 +1,7 @@
+<%= link_to skill_student_skills_path(@skill, weight: 1), method: :post, class: 'skill-pic' do %>
+  <%= image_tag(cl_image_path @skill.photos[0].path) %>
+<% end %>
+<%= link_to skill_student_skills_path(@skill, weight: 1), method: :post, class: 'skill-pic' do %>
+  <%= image_tag(cl_image_path @skill.photos[1].path) %>
+<% end %>
+

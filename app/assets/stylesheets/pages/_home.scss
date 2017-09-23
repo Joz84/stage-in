@@ -47,10 +47,10 @@
   height: 100vh;
   width: 100%;
 }
-.page-content, .page-content {
+.page-content{
   margin: auto;
-  width: 60%;
-  margin-top: 110px;
+  width: 70%;
+  margin-top: 80px;
 }
 .page-text-information {
   position: absolute;
@@ -63,8 +63,8 @@
   h3 {
     transform: rotate(-90deg);
     position: absolute;
-    left: -64px;
-    top: 140px;
+    left: -87px;
+    top: 125px;
   }
 }
 .banner-call {
@@ -83,7 +83,7 @@
   color: $blue;
 }
 .icon3 {
-  color: $darkgray;
+  color: $dark-gray;
 }
 
 
