@@ -8,6 +8,10 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
+gem 'cloudinary'
+gem 'attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -27,6 +31,7 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
+  gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'
