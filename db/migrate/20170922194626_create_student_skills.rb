@@ -4,7 +4,7 @@ class CreateStudentSkills < ActiveRecord::Migration[5.0]
       t.references :student, references: :users
       t.references :skill, foreign_key: true
       t.float :weight
-
+      t.float :score
       t.timestamps
     end
   end
