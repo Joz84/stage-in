@@ -2,8 +2,8 @@
   <div class="inscription-form">
     <h2>S'inscrire en tant qu'élève</h2>
     <p class="relative"><i class="fa fa-star fontawesome"></i>Tu es sur le point de t’inscrire sur stage-in.
-    Pour trouver un stage facilement dans le pays ribéracois, pose-toi,  fait l’inscription sérieusement, et suit le guide.
-    Les champs avec une étoile * sont indispensable.
+    Pour trouver un stage facilement dans le pays ribéracois, pose-toi, fais l’inscription sérieusement, et suis le guide.
+    Les champs avec une étoile * sont indispensables.
     </p>
     <div class="flex-left">
       <%= link_to "#step1", class: "scroll" do %>
@@ -40,7 +40,7 @@
   <div class="inscription-wrapper flexbox" id="step2">
     <div class="inscription-form">
     <h2>Inscription 2/4</h2>
-    <p class="relative margin-bottom-small"><i class="fa fa-map-marker fontawesome"></i>Inscris ton adresse postale. Elle permettra de trouver les stages les plus proches de chez toi automatiquement.
+    <p class="relative margin-bottom-small"><i class="fa fa-map-marker fontawesome"></i>Inscris ton adresse postale. Elle te permettra de trouver les stages les plus proches de chez toi automatiquement.
     </p>
     <%= f.input :address, label: "Adresse complète", required: true, class: "input-medium" %>
     <%= f.input :phone, label: "Numéro de téléphone", required: true, class: "input-medium"%>
@@ -94,8 +94,7 @@
   <div class="inscription-wrapper flexbox" id="step5">
     <div class="inscription-form">
     <h2>Récapitulatif</h2>
-    <p class="relative margin-bottom-small"><i class="fa fa-hand-o-right fontawesome"></i>Check tes infos et valide si tout est bon.
-Sinon reviens en arrière.
+    <p class="relative margin-bottom-small"><i class="fa fa-hand-o-right fontawesome"></i>Vérifie et valide les informations que tu as saisies. Sinon reviens en arrière.
     </p>
     <p>Prénom: <span class="recap-data" id="prenom">---</span></p>
     <p>Nom: <span class="recap-data" id="nom">---</span></p>
