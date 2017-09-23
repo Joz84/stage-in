@@ -15,7 +15,6 @@ class User < ApplicationRecord
 
   has_many :company_hirings, foreign_key: :company_id, class_name: "Hiring"
   has_many :student_hirings, foreign_key: :student_id, class_name: "Student_Hiring"
-  has_many :student_hirings, foreign_key: :student_id, class_name: "Student_Hiring"
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
