@@ -14,7 +14,7 @@ urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202395/danka-peter
 Skill.create(name: "TimideSociable")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
-urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202395/danka-peter-148724_ywiman.jpg","http://res.cloudinary.com/zanzibar/image/upload/v1506202400/climate-kic-350836_lefhcp.jpg"]
+urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202341/gez-xavier-mansfield-284653_f6k4hy.jpg","http://res.cloudinary.com/zanzibar/image/upload/v1506205266/jon-tyson-228521_otgd6f.jpg"]
 Skill.create(name: "OrganiseCreatif")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"

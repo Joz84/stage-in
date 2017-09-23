@@ -1,7 +1,13 @@
-<%= link_to skill_student_skills_path(@skill, weight: 1), method: :post, class: 'skill-pic' do %>
-  <%= image_tag(cl_image_path @skill.photos[0].path) %>
-<% end %>
-<%= link_to skill_student_skills_path(@skill, weight: 1), method: :post, class: 'skill-pic' do %>
-  <%= image_tag(cl_image_path @skill.photos[1].path) %>
-<% end %>
-
+<div class="container">
+  <div class="row text-center">
+    <div class="col-xs-12 col-md-12">
+      <h3 id="skill-titre"> Es-tu plutôt...</h3>
+      <%= link_to skill_student_skills_path(@skill, weight: 1), method: :post, class: 'skill-pic' do %>
+        <%= image_tag(cl_image_path @skill.photos[0].path, width: 400, height: 400, crop: :fill) %>
+      <% end %>
+      <%= link_to skill_student_skills_path(@skill, weight: -1), method: :post, class: 'skill-pic' do %>
+        <%= image_tag(cl_image_path @skill.photos[1].path, width: 400, height: 400, crop: :fill) %>
+      <% end %>
+    </div>
+  </div>
+</div>
