@@ -1,0 +1,29 @@
+.inscription-wrapper {
+  height: 100vh;
+  input, textarea, select {
+    border: none;
+    border-radius: 8px;
+    width: 75%;
+    height: 50px;
+  }
+  textarea {
+    padding: 10px;
+  }
+}
+#step0 {
+  height: calc(100vh - 70px);
+}
+.inscription-form {
+  width: 700px;
+  background-color: $light-blue;
+}
+.fontawesome {
+  font-size: 56px;
+  position: absolute;
+  left: -75px;
+}
+.recap-data {
+  font-style: italic;
+}
+
+
