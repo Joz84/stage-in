@@ -1,7 +1,7 @@
 <div class="home">
   <div class="banner flexbox" id="page1" >
     <div class="banner-call text-center">
-      <h1>Trouve un stage prés de chez toi.</h1>
+      <h1 class="home-title">Trouve un stage près de chez toi.</h1>
       <div class="banner-buttons">
         <%= link_to company_hirings_path, class: "btn-stagein btn-blue flexbox" do %>
           <p>Je cherche un stage</p>
@@ -17,5 +17,5 @@
 
   <%= render 'shared/page_text', page_id: "page2",  signal: t('page_text1.informations'), title: t('page_text1.title'), column1: t('page_text1.column1'), column2: t('page_text1.column2'), target_page: "#page3", image: "http://res.cloudinary.com/doodlid/image/upload/v1506113861/stagein_home2_mijxvs.jpg" %>
 
-  <%= render 'shared/page_cards', page_id: "page3", title: t('page_card2.title'), icon1: "flag", icon2: "calendar",  icon3: "map-marker", card1: "Placerat facer possim assum typi non habent claritatem.", card2: "Placerat facer possim assum typi non habent claritatem.", card3: "Placerat facer possim assum typi non habent claritatem.", target_page: "#navbar", image: "http://res.cloudinary.com/doodlid/image/upload/v1506113863/stagein_home3_qbl8ki.jpg" %>
+  <%= render 'shared/page_cards', page_id: "page3", title: t('page_card2.title'), icon1: "flag", icon2: "calendar",  icon3: "map-marker", card1: t('page_card2.card1'), card2: t('page_card2.card2'), card3: t('page_card2.card3'), target_page: "#navbar", image: "http://res.cloudinary.com/doodlid/image/upload/v1506113863/stagein_home3_qbl8ki.jpg" %>
 </div>

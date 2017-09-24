@@ -1,13 +1,13 @@
 <div class="skill-wrapper">
   <h3 id="skill-title"> Es-tu plutôt...</h3>
-  <%= link_to skill_student_skills_path(@skill, weight: 1), method: :post do %>
-    <div class="skill-column flexbox" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/v1506109710/stagein_home1_lilt15.jpg');">
-      <h5 class="skill-name">Caractère 1<%= @skill.name.split(/(?<!^)(?=[A-Z])/)[0] %></h5>
+  <%= link_to skill_student_skills_path(@skill, score: 1), method: :post do %>
+    <div class="skill-column flexbox" style="background-image: url('<%= cl_image_path @skill.photos[1].path %>');">
+      <h5 class="skill-name"><%= @skill.name.split(/(?<!^)(?=[A-Z])/)[0] %></h5>
     </div>
   <% end %>
-  <%= link_to skill_student_skills_path(@skill, weight: -1), method: :post do %>
-    <div class="skill-column flexbox" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/v1506109710/stagein_home1_lilt15.jpg');">
-      <h5 class="skill-name">Caractère 2<%= @skill.name.split(/(?<!^)(?=[A-Z])/)[0] %></h5>
+  <%= link_to skill_student_skills_path(@skill, score: -1), method: :post do %>
+    <div class="skill-column flexbox" style="background-image: url('<%= cl_image_path @skill.photos[0].path %>');">
+      <h5 class="skill-name"><%= @skill.name.split(/(?<!^)(?=[A-Z])/)[1] %></h5>
     </div>
   <% end %>
 </div>
@@ -19,6 +19,7 @@
   </div>
   <div class="row text-center">
     <div class="col-xs-12 col-md-6 text-center">
+<<<<<<< HEAD
       <%#= link_to skill_student_skills_path(@skill, weight: 1), method: :post, class: 'skill-pic' do %>
         <%#= image_tag(cl_image_path @skill.photos[1].path, width: 400, height: 400, crop: :fill) %>
 
@@ -29,7 +30,7 @@
         <%#= image_tag(cl_image_path @skill.photos[0].path, width: 400, height: 400, crop: :fill) %>
       <%# end %>
       <h5 id="skill-name"><%#= @skill.name.split(/(?<!^)(?=[A-Z])/)[1] %></h5 id="skill-name">
-    </div>
+
   </div>
 </div>
 
