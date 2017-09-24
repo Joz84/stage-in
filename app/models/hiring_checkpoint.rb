@@ -1,7 +1,6 @@
 class HiringCheckpoint < ApplicationRecord
   belongs_to :checkpoint
-  belongs_to :hiring
+  belongs_to :student_hiring
   validates :checkpoint, presence: true
-  validates :order, presence: true
-  validates :checked, presence: true
+  # delegate :order, to: :checkpoint, allow_nil: true
 end

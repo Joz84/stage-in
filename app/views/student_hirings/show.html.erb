@@ -1,0 +1,14 @@
+
+<div id="checks-list">
+  <% unless @student_hiring.checked? %>
+      <% @hiring_checkpoints.each do |hiring_checkpoint| %>
+        <div>
+          <%= hiring_checkpoint.checkpoint.title %>
+          <%= link_to "check #{hiring_checkpoint.checked}", hiring_checkpoint, method: :put , remote: true, id: "checked-#{hiring_checkpoint.id}"%>
+        </div>
+      <% end %>
+
+  <% else %>
+      Postulé!!!
+  <% end %>
+</div>

@@ -8,4 +8,8 @@ class HiringsController < ApplicationController
       # marker.json({ address: user.address })
     end
   end
+
+  def show
+    @hiring = Hiring.find(params[:id])
+  end
 end

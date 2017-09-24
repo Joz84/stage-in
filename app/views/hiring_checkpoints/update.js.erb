@@ -1,0 +1,5 @@
+<% unless @student_hiring.checked? %>
+  $("#checked-<%= @hiring_checkpoint.id %>").html("check-<%= @check %>");
+<% else %>
+  $("#checks-list").html("Postulé !!!");
+<% end %>
