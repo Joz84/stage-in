@@ -6,6 +6,29 @@ Internship.destroy_all
 Job.destroy_all
 User.destroy_all
 
+User.create(email: "jules.maregiano@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3eme', phone: '0123456789')
+
+urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202395/danka-peter-148724_ywiman.jpg","http://res.cloudinary.com/zanzibar/image/upload/v1506202400/climate-kic-350836_lefhcp.jpg"]
+Skill.create(name: "TimideSociable")
+Skill.last.photo_urls = urls
+puts "Création de la Skill #{Skill.last.name}"
+urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202395/danka-peter-148724_ywiman.jpg","http://res.cloudinary.com/zanzibar/image/upload/v1506202400/climate-kic-350836_lefhcp.jpg"]
+Skill.create(name: "OrganiseCreatif")
+Skill.last.photo_urls = urls
+puts "Création de la Skill #{Skill.last.name}"
+urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202395/danka-peter-148724_ywiman.jpg","http://res.cloudinary.com/zanzibar/image/upload/v1506202400/climate-kic-350836_lefhcp.jpg"]
+Skill.create(name: "CommercialCulturel")
+Skill.last.photo_urls = urls
+puts "Création de la Skill #{Skill.last.name}"
+urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202395/danka-peter-148724_ywiman.jpg","http://res.cloudinary.com/zanzibar/image/upload/v1506202400/climate-kic-350836_lefhcp.jpg"]
+Skill.create(name: "PrivePublic")
+Skill.last.photo_urls = urls
+puts "Création de la Skill #{Skill.last.name}"
+urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202395/danka-peter-148724_ywiman.jpg","http://res.cloudinary.com/zanzibar/image/upload/v1506202400/climate-kic-350836_lefhcp.jpg"]
+Skill.create(name: "ManuelInformatique")
+Skill.last.photo_urls = urls
+puts "Création de la Skill #{Skill.last.name}"
+
 towns = [
   '24600 Allemans',
   '24600 Celles',
