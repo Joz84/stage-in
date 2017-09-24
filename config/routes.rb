@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     resources :student_hirings, only: [:update]
   end
 
-  resources :skills, only: [:show]
-  resources :student_skills, only: [:new, :create]
+  resources :skills, only: [:show] do
+    resources :student_skills, only: [:new, :create]
+  end
   resources :hirings, only: [:index, :show], shallow: true do
     resources :student_hirings, only: [:show, :create]
   end
