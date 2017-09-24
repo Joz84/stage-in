@@ -38,18 +38,19 @@ fr:
     button_text2: "Je propose un stage"
   page_text1:
     signal: "Informations"
-    title: "Objectifs du stage de 3ème en entreprise"
-    column1: "Gagner en autonomie, prendre confiance dans un nouvel environnement"
-    column2: "Construire ou confirmer un projet d'orientation"
+    title: "Objectifs du stage de 3ème en entreprise."
+    column1: "Gagner en autonomie, prendre confiance dans un nouvel environnement. Legere me lius quod ii legunt saepius claritas est etiam processus dynamicus. Facit eorum claritatem Investigationes demonstraverunt lectores qui."
+    column2: "Construire ou confirmer un projet d'orientation. Legere me lius quod ii legunt saepius claritas est etiam processus dynamicus. Facit eorum claritatem Investigationes demonstraverunt lectores qui.
+"
     image: "https://cloudinary.com/console/media_library#/dialog/image/upload/stagein_home3_afgnee"
   page_card2:
     title: "Les atouts de Stage-In pour votre entreprise"
     icon1: "tint"
     icon2: "binoculars"
     icon3: "map-marker"
-    card1: "Faciliter la communication entre votre entreprise, les élèves et leurs familles"
-    card2: "Initier les jeunes aux codes et au fonctionnement de l'entreprise"
-    card3: "Agir en faveur de l'égalité des chances lors du premier contact avec l'univers professionnel"
+    card1: "Communication entre votre entreprise et l'élève et sa famille."
+    card2: "Initier les jeunes au fonctionnement de l'entreprise"
+    card3: "Agir en faveur de l'égalité des chances"
     image: "http://res.cloudinary.com/doodlid/image/upload/v1506112268/stagein_home2_noabjv.jpg"
   buttons:
     button1:

@@ -12,7 +12,7 @@ StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
 
-User.create(email: "jules.maregiano@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3eme', phone: '0123456789')
+User.create(email: "jules.maregiano@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3eme', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
 
 urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506205262/zachary-staines-198292_ocdotq.jpg",
         "http://res.cloudinary.com/zanzibar/image/upload/v1506246682/climate-kic-350836_c6mpwb.jpg"]

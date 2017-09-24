@@ -11,3 +11,22 @@
   min-height: 300px;
   margin: auto;
 }
+.checkpoint-list {
+  background-color: none;
+  border-radius: 13px;
+  width: 75%;
+  min-height: 300px;
+  margin: auto;
+}
+.checkpoint {
+  background-color: white;
+  border-radius: 13px;
+  border: none;
+  padding: 20px 30px 20px 30px;
+  margin-bottom: 10px;
+}
+.checked {
+  background-color: $anis;
+  color: white;
+}
+
