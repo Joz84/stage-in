@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923123144) do
+ActiveRecord::Schema.define(version: 20170923213129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,17 +19,17 @@ ActiveRecord::Schema.define(version: 20170923123144) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "order"
   end
 
   create_table "hiring_checkpoints", force: :cascade do |t|
     t.integer  "checkpoint_id"
-    t.integer  "hiring_id"
-    t.integer  "order"
     t.boolean  "checked"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "student_hiring_id"
     t.index ["checkpoint_id"], name: "index_hiring_checkpoints_on_checkpoint_id", using: :btree
-    t.index ["hiring_id"], name: "index_hiring_checkpoints_on_hiring_id", using: :btree
+    t.index ["student_hiring_id"], name: "index_hiring_checkpoints_on_student_hiring_id", using: :btree
   end
 
   create_table "hirings", force: :cascade do |t|
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20170923123144) do
   end
 
   add_foreign_key "hiring_checkpoints", "checkpoints"
-  add_foreign_key "hiring_checkpoints", "hirings"
+  add_foreign_key "hiring_checkpoints", "student_hirings"
   add_foreign_key "hirings", "internships"
   add_foreign_key "hirings", "jobs"
   add_foreign_key "job_skills", "jobs"

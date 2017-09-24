@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'hiring_checkpoints/update'
+
   devise_for :users
   root to: 'pages#home'
   namespace :company do
@@ -8,5 +10,8 @@ Rails.application.routes.draw do
   end
   resources :skills, only: [:show]
   resources :student_skills, only: [:new, :create]
-  resources :hirings, only: [:index, :show, :update]
+  resources :hirings, only: [:index, :show], shallow: true do
+    resources :student_hirings, only: [:show, :create]
+  end
+  resources :hiring_checkpoints, only: [:update]
 end

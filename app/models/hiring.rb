@@ -3,7 +3,6 @@ class Hiring < ApplicationRecord
   belongs_to :internship
   belongs_to :job
   has_many :student_hirings
-  has_many :hiring_checkpoints
   validates :internship, presence: true
   validates :company, presence: true
   validates :job, presence: true
