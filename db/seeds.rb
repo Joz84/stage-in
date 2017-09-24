@@ -84,11 +84,11 @@ is.save
 
 puts "Seeding companies and hirings"
 60.times do
-  company_name = Faker::Company.name
-  email = company_name.parameterize + "@gmail.com"
+  company = Faker::Company.name
+  email = company.parameterize + "@gmail.com"
   c = User.new
   c.role = 0
-  c.company = company_name
+  c.company = company
   c.email = email
   c.password = "toto33"
   c.address = towns.sample

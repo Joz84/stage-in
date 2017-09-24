@@ -54,6 +54,10 @@ input.btn-submit, .btn-submit {
     color: white;
   }
 }
+.btn-inline {
+  padding: 0px;
+  margin: 35px 0 0 0 !important;
+}
 .btn-placehold {
   color: $dark-gray;
   border-radius: 13px;
@@ -75,4 +79,11 @@ input.btn-submit, .btn-submit {
     background-color: $yellow;
     color: white;
   }
+}
+input.btn-simpleform {
+    padding: 25px 35px 25px 35px;
+    border-radius: 13px;
+    color: white;
+    font-size: 24px;
+    border: none;
 }
