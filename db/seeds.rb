@@ -7,6 +7,7 @@ Job.destroy_all
 User.destroy_all
 Skill.destroy_all
 StudentSkill.destroy_all
+Checkpoint.destroy_all
 
 User.create(email: "jules.maregiano@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3eme', phone: '0123456789')
 
