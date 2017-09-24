@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20170923213129) do
 
   create_table "hiring_checkpoints", force: :cascade do |t|
     t.integer  "checkpoint_id"
-    t.boolean  "checked"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.boolean  "checked",           default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "student_hiring_id"
     t.index ["checkpoint_id"], name: "index_hiring_checkpoints_on_checkpoint_id", using: :btree
     t.index ["student_hiring_id"], name: "index_hiring_checkpoints_on_student_hiring_id", using: :btree
