@@ -18,6 +18,10 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 body {
   color: $dark-gray;
 }
+h1 {
+  font-size: 56px;
+  font-weight: 700;
+}
 h2 {
   font-size: 48px;
   font-weight: 700;
@@ -30,8 +34,11 @@ h3 {
 h4 {
   font-size: 24px;
   font-weight: bold;
-  font-size: 24px;
   text-transform: uppercase;
+}
+h5 {
+  font-size: 24px;
+  font-weight: bold;
 }
 h6 {
   font-size: 16px;
