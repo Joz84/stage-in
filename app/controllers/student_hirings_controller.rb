@@ -10,6 +10,7 @@ class StudentHiringsController < ApplicationController
 
   def show
     @student_hiring = StudentHiring.find(params[:id])
+    @hiring = @student_hiring.hiring
     @hiring_checkpoints = @student_hiring.hiring_checkpoints
                                          .includes(:checkpoint)
                                          .order("checkpoints.order")
