@@ -1,12 +1,13 @@
 require "faker"
 
 puts "Cleaning DB..."
+StudentHiring.destroy_all
 Hiring.destroy_all
 Internship.destroy_all
 Job.destroy_all
 User.destroy_all
-Skill.destroy_all
 StudentSkill.destroy_all
+Skill.destroy_all
 Checkpoint.destroy_all
 
 User.create(email: "jules.maregiano@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3eme', phone: '0123456789')
@@ -118,3 +119,17 @@ puts "Seeding companies and hirings"
     )
   h.save
 end
+
+puts "Seeding companies and hirings"
+checkpoints = [ "Tu t'es renseigné sur l'entreprise.",
+                "Tu as postulé par le site.",
+                "Tu as obtenu un rendez-vous téléphonique ou sur place.",
+                "Tu as une confirmation de l’éntreprise au téléphone par mail."
+              ]
+checkpoints.each_with_index do |title, i|
+  Checkpoint.create(title: title, order: i)
+end
+
+
+
+
