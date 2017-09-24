@@ -7,6 +7,14 @@ class Hiring < ApplicationRecord
   validates :company, presence: true
   validates :job, presence: true
 
+  def self.pending
+    pendings = []
+    all.each do |h|
+      pendings << h unless h.accepted?
+    end
+    pendings
+  end
+
   def accepted?
     accepted_student_hirings
     .any?
