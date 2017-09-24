@@ -1,6 +1,8 @@
 require "faker"
 
+
 puts "Cleaning DB..."
+HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
 Hiring.destroy_all
 Internship.destroy_all
@@ -115,7 +117,7 @@ puts "Seeding companies and hirings"
   h = Hiring.new(
     internship: Internship.all.first,
     company: c,
-    job: Job.select('RANDOM()').first
+    job: Job.all.sample
     )
   h.save
 end

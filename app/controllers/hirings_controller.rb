@@ -1,5 +1,6 @@
 class HiringsController < ApplicationController
   def index
+    @hirings = Hiring.all
     @companies = Hiring.pending.map(&:company)
     @hash = Gmaps4rails.build_markers(@companies) do |user, marker|
       marker.lat user.latitude
