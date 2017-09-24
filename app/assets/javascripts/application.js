@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require social-share-button
 //= require_tree .
 
 
@@ -35,6 +36,3 @@ $(document).ready(function() {
     // ($('#user_last_name').val());
   })
 });
-
-
-
