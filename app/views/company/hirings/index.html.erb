@@ -16,35 +16,34 @@
 
   <% @hirings.each do |hiring| %>
     <div class="user row">
-      <div class="col-xs-6">
-        <h6>Nom de l'élève:</h6>
-        <h4>Josie Dalembert - <%= hiring.internship.name %></h4>
-        <h6><%= current_user.address %></h4>
+      <div class="col-xs-12">
+        <h4>- <%= hiring.internship.name %> - <%= hiring.job.name %></h4>
       </div>
       <% if hiring.accepted? %>
         <% hiring.accepted_student_hirings.each do |request| %>
           <div class="col-xs-6">
-            <div class="flexbox btn-slim btn-inverse">
-              <%= request.student.full_name %>
-              Denied
-            </div>
-            <div class="flexbox btn-slim btn-inverse">
-              Accepté
+            <h4>Nom de l'élève: <%= request.student.full_name %></h4>
+            <h6><%= request.student.address %></h6>
+          </div>
+          <div class="col-xs-6">
+            <div class="flexbox btn-slim btn-pink">
+                Accepté
             </div>
           </div>
         <% end %>
       <% elsif hiring.required? %>
         <% hiring.required_student_hirings.each do |request| %>
           <div class="col-xs-6">
-            <%= request.student.full_name %>
+            <h4>Nom de l'élève: <%= request.student.full_name %></h4>
+            <h6><%= request.student.address %></h6>
           </div>
           <div class="col-xs-6">
-            <%= link_to "accepter", company_student_hiring_path(hiring, state: 2), method: :put, class: "flexbox btn-slim btn-blue" %>
-            <%= link_to "refuser", company_student_hiring_path(hiring, state: 3), method: :put, class: "flexbox btn-slim btn-yellow" %>
+            <%= link_to "accepter", company_student_hiring_path(request, state: 2), method: :put, class: "flexbox btn-slim btn-blue" %>
+            <%= link_to "refuser", company_student_hiring_path(request, state: 3), method: :put, class: "flexbox btn-slim btn-yellow" %>
           </div>
         <% end %>
       <% else %>
-        <div class="col-xs-6">
+        <div class="col-xs-6 col-xs-offset-6">
           <div class="flexbox btn-slim btn-gray">
             Pas de candidat pour ce stage
           </div>
