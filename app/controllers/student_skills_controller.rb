@@ -5,7 +5,7 @@ class StudentSkillsController < ApplicationController
     @skill.student_skills.create(student: current_user, score: params[:score])
     skills_count = StudentSkill.where(student: current_user).size
     @skills = Skill.all
-    redirect_to skills_count < 5 ? @skills[skills_count] : hirings_path
+    redirect_to @skills.size < 5 ? @skills[skills_count] : hirings_path
   end
 
   private
