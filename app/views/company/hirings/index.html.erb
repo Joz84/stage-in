@@ -26,6 +26,8 @@
             <h6><%= request.student.address %></h6>
           </div>
           <div class="col-xs-6">
+            Accepter
+            <%= social_share_button_tag(hiring.company.company, url: company_hirings_url) %>
             <div class="flexbox btn-slim btn-pink">
                 Accepté
             </div>
@@ -51,4 +53,14 @@
       <% end %>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-md-4 col-sm-12 col-md-offset-4">
+      <%= simple_form_for :hiring, url: company_hirings_path, method: :post do |f| %>
+      <%= f.input :internship_id, collection: Internship.all, label: "Stage" %>
+      <%= f.input :job_id, collection: Job.all, label: "Métier" %>
+      <%= f.input :number, as: :integer, label: "Nombre de stagiaires" %>
+      <%= f.button :submit, "Créer une offre de stage", class: "btn btn-primary form-input" %>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -30,7 +30,6 @@ class Hiring < ApplicationRecord
     .where(state: :required)
   end
 
-
   def accepted_student_hirings
     student_hirings
     .where(state: :accepted)
