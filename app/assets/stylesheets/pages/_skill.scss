@@ -1,23 +1,25 @@
-.skill-pic {
-  img {
-    height: 440px;
-    width: 440px;
-    border: 7px solid white;
-    border-radius: 20px;
-    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-    margin: 0px 30px;
-    &:hover {
-      border: 7px solid $green;
-      transition: all 0.3s ease;
-    }
-  }
+.skill-wrapper{
+  position: relative;
+  width: 100%;
+  margin: 0px;
 }
-
-#skill-titre {
-  padding: 30px;
+.skill-column {
+  width: 50%;
+  height: calc(100vh - 70px);
+  float: left;
 }
-
-#skill-name {
-  padding: 30px;
-  font-size: 25px;
+.skill-name {
+  padding: 20px;
+  background-color: $dark-gray;
+  border-radius: 13px;
+  color: white;
+}
+#skill-title {
+  position: absolute;
+  left: 50%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 13px;
+  color: $dark-gray;
+  margin-left: -136px;
 }
