@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:role, :first_name, :last_name, :address, :level, :phone, :company, :email, :password])
   end
 
+  def after_sign_up_path_for(resource)
+    skill_path(Skill.first)
+  end
+
 end

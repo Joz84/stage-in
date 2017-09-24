@@ -1,7 +1,23 @@
-.skill-pic{
+.skill-pic {
   img {
-  height: 300px;
-  width: 300px;
+    height: 440px;
+    width: 440px;
+    border: 7px solid white;
+    border-radius: 20px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+    margin: 0px 30px;
+    &:hover {
+      border: 7px solid $green;
+      transition: all 0.3s ease;
+    }
   }
 }
 
+#skill-titre {
+  padding: 30px;
+}
+
+#skill-name {
+  padding: 30px;
+  font-size: 25px;
+}
