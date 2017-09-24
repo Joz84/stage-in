@@ -3,5 +3,5 @@ class StudentSkill < ApplicationRecord
   belongs_to :skill
   validates :student, presence: true
   validates :skill, presence: true
-  validates :weight, presence: true
+  validates :score, presence: true
 end
