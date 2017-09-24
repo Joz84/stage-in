@@ -78,7 +78,21 @@ is = Internship.new(
   starts_at: Date.new(2017, 12, 4),
   ends_at: Date.new(2017, 12, 8),
   comment: "Stage de 3ème 2017-2018",
-  level: "3eme"
+  name: "3eme"
+  )
+is.save
+is = Internship.new(
+  starts_at: Date.new(2017, 12, 4),
+  ends_at: Date.new(2017, 12, 8),
+  comment: "Stage de 3ème 2017-2018",
+  name: "2eme"
+  )
+is.save
+is = Internship.new(
+  starts_at: Date.new(2017, 12, 4),
+  ends_at: Date.new(2017, 12, 8),
+  comment: "Stage de 3ème 2017-2018",
+  name: "Bac Pro"
   )
 is.save
 
