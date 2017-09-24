@@ -1,7 +1,7 @@
 class HiringsController < ApplicationController
   def index
     @user = current_user
-    @companies = User.where(role: 'company')
+    @companies = Hiring.pending.map do |h| h.company end
     @hirings = Hiring.pending
     @hirings_users = []
     @hirings.each do |h|
