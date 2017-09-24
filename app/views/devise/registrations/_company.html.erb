@@ -21,6 +21,7 @@
           <%= f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum"if @minimum_password_length) %>
           <p>Retaper le mot de passe</p>
           <%= f.input :password_confirmation, required: true, label: false %>
+          <%= f.input :role, input_html: { value: :company }, required: true, as: :hidden %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "S'enregistrer", class: "btn-simpleform btn-blue" %>
