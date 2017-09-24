@@ -3,10 +3,17 @@ class Hiring < ApplicationRecord
   belongs_to :internship
   belongs_to :job
   has_many :student_hirings
-  has_many :hiring_checkpoints
   validates :internship, presence: true
   validates :company, presence: true
   validates :job, presence: true
+
+  def self.pending
+    pendings = []
+    all.each do |h|
+      pendings << h unless h.accepted?
+    end
+    pendings
+  end
 
   def accepted?
     accepted_student_hirings

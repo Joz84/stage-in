@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>STAGE-IN</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag "application" %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -19,8 +20,6 @@
     <%= cloudinary_js_config %>
     <script src='//cdn.jsdelivr.net/gmaps4rails/2.1.2/gmaps4rails.js'> </script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js'> </script>
-
-    <%= javascript_include_tag "application" %>
 
     <%= yield(:after_js) %>
 

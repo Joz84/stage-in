@@ -10,6 +10,7 @@
   line-height: 58px;
   letter-spacing: -2px;
   margin-bottom: 30px;
+  text-shadow: $shadow;
 }
 .menu {
   font-size: 20px;
@@ -38,6 +39,7 @@
 #page1 {
   background-image:url("http://res.cloudinary.com/doodlid/image/upload/v1506109710/stagein_home1_lilt15.jpg");
   height: calc(100vh - 70px);
+  background-position: center;
 }
 #page2 {
   height: 100vh;
@@ -85,5 +87,3 @@
 .icon3 {
   color: $dark-gray;
 }
-
-

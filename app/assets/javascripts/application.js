@@ -4,7 +4,6 @@
 //= require social-share-button
 //= require_tree .
 
-
 $(document).ready(function() {
 
   $(window).scroll(function() {
@@ -26,13 +25,5 @@ $(document).ready(function() {
     }, 500);
   });
 
-  $('#trigger-recapitulatif').on('click', function(event){
-    $('#prenom').html($('#user_first_name').val());
-    $('#nom').html($('#user_last_name').val());
-    $('#adresse').html($('#user_address').val());
-    $('#telephone').html($('#user_phone').val());
-    $('#email').html($('#user_email').val());
-    $('#classe').html($('#user_level').val());
-    // ($('#user_last_name').val());
-  })
+  $('.attachinary-input').attachinary();
 });

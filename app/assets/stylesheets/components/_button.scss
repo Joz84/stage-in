@@ -1,15 +1,18 @@
 input.btn-stagein, .btn-stagein {
   color: white;
   border-radius: 13px;
-  height: 50px;
+  height: 90px;
   border: none;
-  padding: 40px 50px 40px 50px;
+  padding: 0px 50px 0px 50px;
   max-width: 500px;
   border: none;
   margin-bottom: 0px;
   &:hover {
     background-color: $yellow;
     color: white;
+  }
+  p {
+    margin-bottom: 0px;
   }
 }
 input.btn.btn-default.margin-big-top.btn-medium.btn-blue.fix-btn-simpleform {
@@ -28,13 +31,20 @@ input.btn-submit, .btn-submit {
 .btn-gray {
   background-color: $dark-gray;
 }
+.btn-yellow {
+  background-color: $yellow;
+}
+.btn-inverse {
+  background-color: none;
+  color: $dark-gray !important;
+}
 .btn-slim {
   color: white;
-  background-color: $blue;
-  border-radius: 40px;
+  border-radius: 13px;
   height: 40px;
   border: none;
   padding: 0px 30px 0px 30px;
+  margin-bottom: 10px;
 }
 .btn-medium {
   color: white;
@@ -44,7 +54,7 @@ input.btn-submit, .btn-submit {
   text-transform: uppercase;
   height: 50px;
   border: none;
-  padding: 25px 40px 25px 40px;
+  padding: 0px 40px 0px 40px;
   max-width: 250px;
   border: none;
   margin-bottom: 0px;
@@ -54,6 +64,10 @@ input.btn-submit, .btn-submit {
     color: white;
   }
 }
+.btn-inline {
+  padding: 0px;
+  margin: 35px 0 0 0 !important;
+}
 .btn-placehold {
   color: $dark-gray;
   border-radius: 13px;
@@ -62,7 +76,7 @@ input.btn-submit, .btn-submit {
   text-transform: uppercase;
   height: 50px;
   border: none;
-  padding: 25px 40px 25px 40px;
+  padding: 0px 40px 0px 40px;
   border: none;
   margin-bottom: 0px;
   margin-right: 40px;
@@ -75,4 +89,11 @@ input.btn-submit, .btn-submit {
     background-color: $yellow;
     color: white;
   }
+}
+input.btn-simpleform {
+    padding: 25px 35px 25px 35px;
+    border-radius: 13px;
+    color: white;
+    font-size: 24px;
+    border: none;
 }

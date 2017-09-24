@@ -1,7 +1,26 @@
-.skill-pic{
-  img {
-  height: 300px;
-  width: 300px;
-  }
+.skill-wrapper{
+  position: relative;
+  width: 100%;
+  margin: 0px;
 }
-
+.skill-column {
+  width: 50%;
+  height: calc(100vh - 70px);
+  float: left;
+  background-size: cover;
+}
+.skill-name {
+  padding: 20px;
+  background-color: $dark-gray;
+  border-radius: 13px;
+  color: white;
+}
+#skill-title {
+  position: absolute;
+  left: 50%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 13px;
+  color: $dark-gray;
+  margin-left: -136px;
+}

@@ -1,0 +1,13 @@
+.checkpoint-column {
+  width: 50%;
+  height: calc(100vh - 70px);
+  float: left;
+  background-size: cover;
+}
+.checkpoint-placeholder {
+  background-color: white;
+  border-radius: 13px;
+  width: 75%;
+  min-height: 300px;
+  margin: auto;
+}

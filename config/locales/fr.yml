@@ -38,18 +38,18 @@ fr:
     button_text2: "Je propose un stage"
   page_text1:
     signal: "Informations"
-    title: "Responsabilités liées au stage en entreprise"
-    column1: "Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber. Esse molestie consequat vel illum dolore eu feugiat nulla. Placerat facer possim assum typi non habent claritatem."
-    column2: "Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber. Esse molestie consequat vel illum dolore eu feugiat nulla. Placerat facer possim assum typi non habent claritatem."
+    title: "Objectifs du stage de 3ème en entreprise"
+    column1: "Gagner en autonomie, prendre confiance dans un nouvel environnement"
+    column2: "Construire ou confirmer un projet d'orientation"
     image: "https://cloudinary.com/console/media_library#/dialog/image/upload/stagein_home3_afgnee"
   page_card2:
     title: "Les atouts de Stage-In pour votre entreprise"
     icon1: "tint"
     icon2: "binoculars"
     icon3: "map-marker"
-    card1: "Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber. Esse molestie."
-    card2: "Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber. Esse molestie."
-    card3: "Sit amet consectetuer adipiscing elit sed diam nonummy. Zzril delenit augue duis dolore te feugait nulla facilisi nam liber. Esse molestie."
+    card1: "Faciliter la communication entre votre entreprise, les élèves et leurs familles"
+    card2: "Initier les jeunes aux codes et au fonctionnement de l'entreprise"
+    card3: "Agir en faveur de l'égalité des chances lors du premier contact avec l'univers professionnel"
     image: "http://res.cloudinary.com/doodlid/image/upload/v1506112268/stagein_home2_noabjv.jpg"
   buttons:
     button1:
@@ -84,8 +84,6 @@ fr:
     disponibility1: "Choisissez la date et l'heure du rendez-vous."
     disponibility2: "Le diagnostique prend un peu moins d'une demi-journée."
     disponibility3:
-    signup1: "Enregistrez vos informations"
+    signup1: "Inscription pour entreprise"
     signup2: "La prise de rendez-vous requiert vos coordonnées."
     confirmation1: "Récapitulatif de votre rendez-vous"
-
-
