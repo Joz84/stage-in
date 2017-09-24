@@ -3,8 +3,12 @@
     <div class="banner-call text-center">
       <h1>Trouve un stage prés de chez toi.</h1>
       <div class="banner-buttons">
-        <div class="btn-stagein btn-blue flexbox"><p>Je cherche un stage</p></div>
-        <div class="btn-stagein btn-pink flexbox"><p>Je propose un stage</p></div>
+        <%= link_to company_hirings_path, class: "btn-stagein btn-blue flexbox" do %>
+          <p>Je cherche un stage</p>
+        <% end %>
+        <%= link_to company_hirings_path, class: "btn-stagein btn-pink flexbox" do %>
+          <p>Je propose un stage</p>
+        <% end %>
       </div>
       <!-- <p class="invert text-on-image"><%= t('landing.subtitle') %></p> -->
     </div>
