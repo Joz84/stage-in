@@ -1,18 +1,21 @@
 class HiringsController < ApplicationController
   def index
-    @companies = Hiring.pending.map(&:company)
+    # @companies = Hiring.pending.map(&:company)
+    @companies = User.where(role: "company").first(10)
     @hash = Gmaps4rails.build_markers(@companies) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
       marker.infowindow user.company
       marker.picture({
-        :url     => if user.id > 30
-                      "https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_styleguide/118ff475a341/assets/img/logos/favicon.ico"
+        :url     => if user.distance_to(current_user) < 5
+                      "http://res.cloudinary.com/zanzibar/image/upload/v1506266970/GREEN_hkaart.png"
+                    elsif user.distance_to(current_user) < 10
+                      "http://res.cloudinary.com/zanzibar/image/upload/v1506266970/ORANGE_fmuvmg.png"
                     else
-                      "https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-32.png"
+                      "http://res.cloudinary.com/zanzibar/image/upload/v1506266970/RED_onahwf.png"
                     end,
         :width   => 32,
-        :height  => 32
+        :height  => 32,
         })
     end
   end
