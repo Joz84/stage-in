@@ -28,4 +28,8 @@ class Hiring < ApplicationRecord
     student_hirings
     .where(state: :accepted)
   end
+
+  def promote_on_facebook
+    @graph = Koala::Facebook::API.new(ENV['FACEBOOK_API_TOKEN'])
+  end
 end
