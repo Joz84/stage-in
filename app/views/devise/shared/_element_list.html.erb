@@ -1,0 +1,23 @@
+<% @diagnostics.each do |diagnostic| %>
+  <%= link_to diagnostician_diagnostic_path(diagnostic) do %>
+    <div class="user">
+      <div class="line">
+        <div class="user-name">
+          <h5>Diagnostic réf diag-o<%= diagnostic.id %></h5>
+        </div>
+        <div class="user-status">
+          Rendez-vous du <%= diagnostic.booking.set_at.strftime("le %d %b %Y") %>
+        </div>
+      </div>
+      <div class="line">
+        <div>
+          <p class="user-data address"><%= diagnostic.booking.booker.first_name %> <%= diagnostic.booking.booker.last_name %> : <%= diagnostic.booking.housing.address %></p>
+        </div>
+        <div class="min-width text-right">
+          <span class="status declined"><%= "En cours" %></span>
+          <i class="fa fa-pencil"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
