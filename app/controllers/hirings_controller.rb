@@ -1,13 +1,7 @@
 class HiringsController < ApplicationController
   def index
-    @user = current_user
-    @companies = Hiring.pending.map do |h| h.company end
-    @hirings = Hiring.pending
-    @hirings_users = []
-    @hirings.each do |h|
-      @hirings_users << h.company
-    end
-    @hash = Gmaps4rails.build_markers(@hirings_users) do |user, marker|
+    @companies = Hiring.pending.map(&:company)
+    @hash = Gmaps4rails.build_markers(@companies) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
       marker.infowindow user.company
