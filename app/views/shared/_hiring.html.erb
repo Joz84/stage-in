@@ -3,9 +3,7 @@
   <p>L'entreprise <%= @hiring.company.company %> est spécialisé dans Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat ut. Feugait nulla facilisi nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet. </p>
   <p class="margin-bottom-small margin-big-top">Adresse d'activité:<strong> <%= @hiring.company.address %></strong></p>
   <p class="relative margin-bottom-small margin-big-top"><i class="fa fa-hand-o-right fontawesome-insert"></i>Place de stage destiné aux élèves de <span class="blue"><%= @hiring.internship.name %></span></p>
-  <%= link_to hiring_student_hirings_path(@hiring), method: :post, id: "btn-postuler", class: "btn-stagein btn-medium btn-blue flexbox" do %>
-    <p>Postuler</p>
-  <% end %>
+  <%= link_to "Postuler", hiring_student_hirings_path(@hiring), method: :post, id: "btn-postuler", class: "btn-stagein btn-medium btn-blue flexbox" %>
 </div>
 
 
