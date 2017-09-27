@@ -1,6 +1,7 @@
 require "faker"
 
 puts "Cleaning DB..."
+HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
 Hiring.destroy_all
 Internship.destroy_all
@@ -10,7 +11,7 @@ StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
 
-User.create(email: "jules.maregiano@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3eme', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
+User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
 
 urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506205262/zachary-staines-198292_ocdotq.jpg",
         "http://res.cloudinary.com/zanzibar/image/upload/v1506246682/climate-kic-350836_c6mpwb.jpg"]
@@ -20,7 +21,7 @@ Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
 urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202402/jazmin-quaynor-36221_tbs6la.jpg",
         "http://res.cloudinary.com/zanzibar/image/upload/v1506202386/chris-brignola-7766_lfuwbf.jpg"]
-Skill.create(name: "OrganiseCreatif")
+Skill.create(name: "OrganiséCréatif")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
 urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202341/gez-xavier-mansfield-284653_f6k4hy.jpg",
@@ -30,7 +31,7 @@ Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
 urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506244870/Google-Logo-Batiment_gefj6t.jpg",
         "http://res.cloudinary.com/zanzibar/image/upload/v1506244981/Assembl%C3%A9e_nationale_02_j3tlpb.jpg"]
-Skill.create(name: "PrivePublic")
+Skill.create(name: "PrivéPublic")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
 urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506246219/swapnil-dwivedi-246205_jcxabx.jpg",
@@ -115,7 +116,7 @@ puts "Seeding companies and hirings"
   h = Hiring.new(
     internship: Internship.all.first,
     company: c,
-    job: Job.select('RANDOM()').first
+    job: Job.all.sample
     )
   h.save
 end

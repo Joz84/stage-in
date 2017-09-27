@@ -8,44 +8,44 @@
       <%= f.input :internship_id, label: "Type de stage", collection: Internship.all, class: "input-medium" %>
       <%= f.input :job_id, label: "Type de métier", collection: Job.all, class: "input-medium" %>
       <%= f.input :number, label: "Nombre de place", collection: 1..40, class: "input-numeric" %>
-      <%= f.button :submit, "Créer", class: "btn btn-medium btn-blue" %>
+      <%= f.button :submit, "Créer", class: "btn btn-slim btn-blue btn-inline-form" %>
     </div>
   <% end %>
 
   <h5>Places de stage disponibles:</h5>
 
   <% @hirings.each do |hiring| %>
-    <div class="user row">
-      <div class="col-xs-12">
-        <h4>- <%= hiring.internship.name %> - <%= hiring.job.name %></h4>
+    <div class="list-wrapper flex-horizontal">
+      <div class="list-column">
+        <h4><%= hiring.internship.comment %></h4>
+        <h5>hiring.internship.job</h5>
+        <%= link_to "#" do %>
+          <h6 class="pink"><i class="fa fa-trash"></i> supprimer l'offre de stage</h6>
+        <% end %>
       </div>
       <% if hiring.accepted? %>
         <% hiring.accepted_student_hirings.each do |request| %>
-          <div class="col-xs-6">
-            <h4>Nom de l'élève: <%= request.student.full_name %></h4>
+          <div>
+            <h4>Nom de l'élève retenu: <%= request.student.full_name %></h4>
             <h6><%= request.student.address %></h6>
           </div>
-          <div class="col-xs-6">
             <div class="flexbox btn-slim btn-pink">
                 Accepté
             </div>
-          </div>
         <% end %>
       <% elsif hiring.required? %>
         <% hiring.required_student_hirings.each do |request| %>
-          <div class="col-xs-6">
-            <h4>Nom de l'élève: <%= request.student.full_name %></h4>
+          <div class="list-column">
+            <p>Nom de l'élève candidat:</p><p><%= request.student.full_name %></p>
             <h6><%= request.student.address %></h6>
-          </div>
-          <div class="col-xs-6">
-            <%= link_to "accepter", company_student_hiring_path(request, state: 2), method: :put, class: "flexbox btn-slim btn-blue" %>
-            <%= link_to "refuser", company_student_hiring_path(request, state: 3), method: :put, class: "flexbox btn-slim btn-yellow" %>
+            <%= link_to "accepter", company_student_hiring_path(request, state: 2), method: :put, class: "flexbox btn btn-slim btn-blue" %>
+            <%= link_to "refuser", company_student_hiring_path(request, state: 3), method: :put, class: "flexbox btn btn-slim btn-yellow" %>
           </div>
         <% end %>
       <% else %>
-        <div class="col-xs-6 col-xs-offset-6">
-          <div class="flexbox btn-slim btn-gray">
-            Pas de candidat pour ce stage
+        <div class="list-column">
+          <div class="flexbox btn btn-slim btn-gray right">
+            Pas de candidat
           </div>
         </div>
       <% end %>

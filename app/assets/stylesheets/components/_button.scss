@@ -11,6 +11,10 @@ $height-medium: 50px;
   margin-bottom: 0px;
   font-size: 24px;
   font-weight: bold;
+  max-width: 350px;
+  a {
+    color: white;
+  }
   &:hover {
     background-color: $btn-hover;
     color: white;
@@ -61,4 +65,7 @@ $height-medium: 50px;
     font-size: 16px;
     text-transform: downcase;
   }
+}
+.btn-inline-form {
+  margin-top: 25px;
 }

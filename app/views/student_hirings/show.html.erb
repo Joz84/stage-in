@@ -16,7 +16,8 @@
   </div>
 </div>
 
-
-<script type="text/javascript">
-  $('#btn-postuler').hide();
-</script>
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $('#btn-postuler').hide();
+  <% end %>
+<% end %>

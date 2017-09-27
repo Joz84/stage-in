@@ -1,20 +1,18 @@
-.user {
-  padding: 20px 30px 20px 30px;
+.list-wrapper {
+  padding: 20px;
   width: 100%;
   border: 1px solid $dark-gray;
-  border-radius: 8px;
+  border-radius: $radius;
   margin-bottom: 10px;
   box-shadow: $shadow;
-  h5 {
-    margin-top: 0px;
-    font-weight: bold;
-  }
-  .fa {
-    margin-left: 10px;
-  }
+  display: flex;
+  justify-content: space-between;
   p {
     margin-bottom: 0px;
   }
+}
+.list-column {
+  min-width: 350px;
 }
 .line {
   width: 100%;
