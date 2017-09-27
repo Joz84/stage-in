@@ -78,13 +78,8 @@ fr:
     deconfirmation: "Annuler la confirmation"
   agenda:
   inscription:
-    ckeckpoint: "Se connecter"
-    breadcrumb1: "Choix des disponibilités"
-    breadcrumb2: "Enregistrement"
-    breadcrumb3: "Validation"
-    disponibility1: "Choisissez la date et l'heure du rendez-vous."
-    disponibility2: "Le diagnostique prend un peu moins d'une demi-journée."
-    disponibility3:
-    signup1: "Inscription pour entreprise"
-    signup2: "La prise de rendez-vous requiert vos coordonnées."
-    confirmation1: "Récapitulatif de votre rendez-vous"
+    0on4:
+      title: "S'inscrire en tant qu'élève"
+      text: "Tu es sur le point de t’inscrire sur stage-in. Pour trouver un stage facilement dans le pays ribéracois, pose-toi, fait l’inscription sérieusement, et suit le guide. Les champs avec une étoile * sont indispensables."
+      button1: "ok"
+      button2: "S'inscrire en tant qu'entreprise"

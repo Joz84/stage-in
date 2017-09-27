@@ -1,26 +1,27 @@
-input.btn-stagein, .btn-stagein {
+$btn-hover: $yellow;
+$height-big: 90px;
+$height-slim: 40px;
+$height-medium: 50px;
+
+.btn, input.btn {
   color: white;
-  border-radius: 13px;
-  height: 90px;
+  border-radius: $radius;
   border: none;
-  padding: 0px 50px 0px 50px;
-  max-width: 500px;
-  border: none;
+  padding: 0px 40px 0px 40px;
   margin-bottom: 0px;
+  font-size: 24px;
+  font-weight: bold;
   &:hover {
-    background-color: $yellow;
+    background-color: $btn-hover;
     color: white;
   }
   p {
     margin-bottom: 0px;
+    text-transform: uppercase;
   }
 }
-input.btn.btn-default.margin-big-top.btn-medium.btn-blue.fix-btn-simpleform {
-  padding: 9px;
-}
-input.btn-submit, .btn-submit {
-  padding: 10px 50px 10px 50px;
-  margin-bottom: 0px;
+.btn-big {
+  height: $height-big;
 }
 .btn-blue {
   background-color: $blue;
@@ -32,7 +33,7 @@ input.btn-submit, .btn-submit {
   background-color: $dark-gray;
 }
 .btn-green {
-  background-color: #B2D430;
+  background-color: $anis;
 }
 .btn-yellow {
   background-color: $yellow;
@@ -42,30 +43,13 @@ input.btn-submit, .btn-submit {
   color: $dark-gray !important;
 }
 .btn-slim {
-  color: white;
-  border-radius: 13px;
-  height: 40px;
-  border: none;
-  padding: 0px 30px 0px 30px;
+  height: $height-slim;
   margin-bottom: 10px;
 }
 .btn-medium {
-  color: white;
-  border-radius: 13px;
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  height: 50px;
-  border: none;
-  padding: 0px 40px 0px 40px;
-  max-width: 250px;
-  border: none;
+  height: $height-medium;
   margin-bottom: 0px;
   margin-right: 40px;
-  &:hover {
-    background-color: $yellow;
-    color: white;
-  }
 }
 .btn-inline {
   padding: 0px;
@@ -73,30 +57,8 @@ input.btn-submit, .btn-submit {
 }
 .btn-placehold {
   color: $dark-gray;
-  border-radius: 13px;
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  height: 50px;
-  border: none;
-  padding: 0px 40px 0px 40px;
-  border: none;
-  margin-bottom: 0px;
-  margin-right: 40px;
   p {
     font-size: 16px;
     text-transform: downcase;
-    margin-bottom: 0px;
   }
-  &:hover {
-    background-color: $yellow;
-    color: white;
-  }
-}
-input.btn-simpleform {
-    padding: 25px 35px 25px 35px;
-    border-radius: 13px;
-    color: white;
-    font-size: 24px;
-    border: none;
 }

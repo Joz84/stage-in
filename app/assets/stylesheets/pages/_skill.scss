@@ -1,21 +1,15 @@
-.skill-wrapper{
+.splitscreen-wrapper{
   position: relative;
   width: 100%;
   margin: 0px;
 }
-.skill-column {
+.splitscreen-column {
   width: 50%;
   height: calc(100vh - 70px);
   float: left;
   background-size: cover;
 }
-.skill-name {
-  padding: 20px;
-  background-color: $dark-gray;
-  border-radius: 13px;
-  color: white;
-}
-#skill-title {
+#splitscreen-title {
   position: absolute;
   left: 50%;
   padding: 20px;

@@ -1,18 +1,14 @@
-
-
 <div class="inscription-wrapper flexbox" id="step0">
   <div class="inscription-form">
-    <h2>S'inscrire en tant qu'élève</h2>
-    <p class="relative"><i class="fa fa-star fontawesome"></i>Tu es sur le point de t’inscrire sur stage-in.
-    Pour trouver un stage facilement dans le pays ribéracois, pose-toi,  fait l’inscription sérieusement, et suit le guide.
-    Les champs avec une étoile * sont indispensable.
+    <h2><%= t('inscription.0on4.title') %></h2>
+    <p class="relative"><i class="fa fa-star fontawesome"></i><%= t('inscription.0on4.text') %>
     </p>
     <div class="flex-left">
       <%= link_to "#step1", class: "scroll", id: "go-student" do %>
-        <div class="margin-big-top btn-medium btn-blue flexbox">ok</div>
+        <div class="margin-big-top btn btn-medium btn-blue flexbox"><%= t('inscription.0on4.button1') %></div>
       <% end %>
       <%= link_to "#step-company", class: "scroll", id:"go-company" do %>
-        <div class="margin-big-top btn-placehold flexbox"><p>S'inscrire en tant qu'entreprise</p></div>
+        <div class="margin-big-top btn btn-medium btn-placehold flexbox"><p><%= t('inscription.0on4.button2') %></p></div>
       <% end %>
     </div>
   </div>

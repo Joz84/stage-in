@@ -10,10 +10,10 @@
     <%= f.input :last_name, label: "Nom", required: true, class: "input-medium"%>
     <div class="flex-left">
       <%= link_to "#step0", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+        <div class="margin-big-top btn btn-medium btn-gray flexbox">Précédent</div>
       <% end %>
       <%= link_to "#step2", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-blue flexbox">Suivant</div>
+        <div class="margin-big-top btn btn-medium btn-blue flexbox">Suivant</div>
       <% end %>
     </div>
     </div>
@@ -28,10 +28,10 @@
     <%= f.input :phone, label: "Numéro de téléphone", required: true, class: "input-medium"%>
     <div class="flex-left">
       <%= link_to "#step-student", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+        <div class="margin-big-top btn btn-medium btn-gray flexbox">Précédent</div>
       <% end %>
       <%= link_to "#step3", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-blue flexbox">Suivant</div>
+        <div class="margin-big-top btn btn-medium btn-blue flexbox">Suivant</div>
       <% end %>
     </div>
     </div>
@@ -45,10 +45,10 @@
     <%= f.input :level, label: "Choisis ta classe", placeholder: "clique ici", collection: [ "3ème", "2ème", "Bac Pro"], class: "input-medium" %>
     <div class="flex-left">
       <%= link_to "#step2", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+        <div class="margin-big-top btn btn-medium btn-gray flexbox">Précédent</div>
       <% end %>
       <%= link_to "#step4", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-blue flexbox">Suivant</div>
+        <div class="margin-big-top btn btn-medium btn-blue flexbox">Suivant</div>
       <% end %>
     </div>
     </div>
@@ -64,10 +64,10 @@
     <%= f.input :password_confirmation, label: "Confirmer le mot de passe", required: true %>
     <div class="flex-left">
       <%= link_to "#step3", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+        <div class="margin-big-top btn btn-medium btn-gray flexbox">Précédent</div>
       <% end %>
       <%= link_to "#step5", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-blue flexbox" id="trigger-recapitulatif">Suivant</div>
+        <div class="margin-big-top btn btn-medium btn-blue flexbox" id="trigger-recapitulatif">Suivant</div>
       <% end %>
     </div>
     </div>
@@ -87,11 +87,10 @@ Sinon reviens en arrière.
     <p>Classe: <span class="recap-data" id="classe">---</span></p>
     <div class="flex-left">
       <%= link_to "#step4", class: "scroll" do %>
-        <div class="margin-big-top btn-medium btn-gray flexbox">Précédent</div>
+        <div class="margin-big-top btn btn-medium btn-gray flexbox">Précédent</div>
       <% end %>
       <%= f.input :role, input_html: { value: :student }, required: true, as: :hidden %>
-
-      <%= f.button :submit, "Valider", class: "margin-big-top btn-medium btn-blue fix-btn-simpleform" %>
+      <%= f.button :submit, "Valider", class: "margin-big-top btn btn-medium btn-blue" %>
     </div>
     </div>
   </div>

@@ -1,7 +1,25 @@
 $shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 0 0 rgba(0,0,0,0.03);
+$radius: 13px;
+$validation-color: #B2D430;
+
+
+//MARGINS
 .margin-bottom-small {
   margin-bottom: 40px;
 }
+.margin-big-top {
+  margin-top: 60px;
+}
+
+//PADDINGS
+.padding-side {
+  padding: 0 40px 0 40px;
+}
+.padding-box {
+  padding: 20px;
+}
+
+//DIV AND INPUT
 .center {
   margin: auto;
 }
@@ -13,12 +31,7 @@ $shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 0 0 rgba(0,0,0,0.03);
   border-bottom: 1px solid $light-gray;
   padding-bottom: 20px;
 }
-.padding-content {
-  padding: 0 40px 0 40px;
-}
-.padding-box {
-  padding: 20px;
-}
+//PLACEMENT
 .flexbox {
   display: flex;
   justify-content: center;
@@ -42,32 +55,19 @@ $shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 0 0 rgba(0,0,0,0.03);
   width: 100%;
   z-index: 10;
 }
-.fixed-under-top {
-  position: fixed;
-  top: 70px;
-  width: 100%;
-  z-index: 10;
-}
+//LINK
 a:hover {
   text-decoration: none !important;
 }
-.margin-big-top {
-  margin-top: 60px;
-}
+//POSITION
 .relative {
   position: relative;
 }
-.white-back {
-  background-color: white;
-  width: 100%
-}
-.blue {
-  color: $blue;
-}
+//TEXTE
 i.fa.fa-hand-o-right{
     font-size: 32px;
     margin-right: 20px;
 }
 .validated {
-  background-color: #B2D430;
+  background-color: $validation-color;
 }
