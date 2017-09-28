@@ -1,5 +1,6 @@
 require "faker"
 
+
 puts "Cleaning DB..."
 HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
