@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Chercher un stage", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Profil", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
