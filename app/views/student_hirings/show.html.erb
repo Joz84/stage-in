@@ -6,7 +6,12 @@
         <% unless @student_hiring.checked? %>
             <h5>Valide les démarches que tu as fait en cliquant:</h5>
             <% @hiring_checkpoints.each do |hiring_checkpoint| %>
+
+
               <%= render "link_checking", hc: hiring_checkpoint %>
+
+
+
             <% end %>
         <% else %>
 
@@ -21,3 +26,21 @@
     $('#btn-postuler').hide();
   <% end %>
 <% end %>
+
+
+<div id="checks-list">
+ <% unless @student_hiring.checked? %>
+     <% @hiring_checkpoints.each do |hiring_checkpoint| %>
+
+       <div>
+         <%= hiring_checkpoint.checkpoint.title %>
+         <%= link_to "check #{hiring_checkpoint.checked}", hiring_checkpoint, method: :put , remote: true, id: "checked-#{hiring_checkpoint.id}"%>
+       </div>
+
+
+     <% end %>
+
+ <% else %>
+     Postulé!!!
+ <% end %>
+</div>
