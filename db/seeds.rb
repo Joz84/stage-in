@@ -1,6 +1,5 @@
 require "faker"
 
-
 puts "Cleaning DB..."
 HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
@@ -14,29 +13,28 @@ Checkpoint.destroy_all
 
 User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
 
-urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506205262/zachary-staines-198292_ocdotq.jpg",
-        "http://res.cloudinary.com/zanzibar/image/upload/v1506246682/climate-kic-350836_c6mpwb.jpg"]
+urls = ["http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838100/stagein/sociable.jpg",
+  "http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838100/stagein/solitaire.jpg"]
 Skill.create(name: "SolitaireSociable")
 
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
-urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202402/jazmin-quaynor-36221_tbs6la.jpg",
-        "http://res.cloudinary.com/zanzibar/image/upload/v1506202386/chris-brignola-7766_lfuwbf.jpg"]
+urls = ["http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838100/stagein/sportif.jpg",
+  "http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838100/stagein/organized.jpg"]
 Skill.create(name: "OrganiséCréatif")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
-urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506202341/gez-xavier-mansfield-284653_f6k4hy.jpg",
-        "http://res.cloudinary.com/zanzibar/image/upload/v1506205266/jon-tyson-228521_otgd6f.jpg"]
+urls = ["http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838099/stagein/grunge.jpg", "http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838098/stagein/costume.jpg"]
 Skill.create(name: "CommercialCulturel")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
-urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506244870/Google-Logo-Batiment_gefj6t.jpg",
-        "http://res.cloudinary.com/zanzibar/image/upload/v1506244981/Assembl%C3%A9e_nationale_02_j3tlpb.jpg"]
+urls = ["http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838098/stagein/assembly.jpg","http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838098/stagein/google.jpg"
+        ]
 Skill.create(name: "PrivéPublic")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
-urls = ["http://res.cloudinary.com/zanzibar/image/upload/v1506246219/swapnil-dwivedi-246205_jcxabx.jpg",
-        "http://res.cloudinary.com/zanzibar/image/upload/v1506246212/glenn-carstens-peters-203007_uo6655.jpg"]
+urls = ["http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838099/stagein/cerebral.jpg",
+  "http://res.cloudinary.com/doodlid/image/upload/q_40/v1508838099/stagein/manual.jpg"]
 Skill.create(name: "ManuelInformatique")
 Skill.last.photo_urls = urls
 puts "Création de la Skill #{Skill.last.name}"
