@@ -2,12 +2,12 @@
   <%= f.error_notification %>
   <div class="inscription-wrapper flexbox" id="step1">
     <div class="inscription-form">
-    <h2>Inscription 1/4</h2>
-    <p class="relative margin-bottom-small"><i class="fa fa-angle-double-right fontawesome"></i>Inscris tes vrais noms et prénoms, ce seront ceux qui
-  seront envoyés aux entreprises quand tu postuleras à ton stage.
+
+    <h2><%= t('inscription.1on4.title') %></h2>
+    <p class="relative margin-bottom-small"><i class="fa fa-angle-double-right fontawesome"></i><%= t('inscription.1on4.text') %>
     </p>
-    <%= f.input :first_name, label: "Prénom", required: true, class: "input-medium" %>
-    <%= f.input :last_name, label: "Nom", required: true, class: "input-medium"%>
+    <%= f.input t('inscription.1on4.resource1'), label: t('inscription.1on4.label1'), required: true, class: "input-medium" %>
+    <%= f.input t('inscription.1on4.resource2'), label: t('inscription.1on4.label2'), required: true, class: "input-medium"%>
     <div class="flex-left">
       <%= link_to "#step0", class: "scroll" do %>
         <div class="margin-big-top btn btn-medium btn-gray flexbox">Précédent</div>
@@ -16,6 +16,7 @@
         <div class="margin-big-top btn btn-medium btn-blue flexbox">Suivant</div>
       <% end %>
     </div>
+
     </div>
   </div>
 
