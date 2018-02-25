@@ -1,71 +1,141 @@
-$btn-hover: $yellow;
-$height-big: 90px;
-$height-slim: 40px;
-$height-medium: 50px;
-
-.btn, input.btn {
+.btn, input.btn, select.btn {
   color: white;
-  border-radius: $radius;
+  border-radius: $border-radius;
+  height: auto !important;
+  height: $input-height; // for IE
+  min-height: $input-height;
   border: none;
-  padding: 0px 40px 0px 40px;
-  margin-bottom: 0px;
-  font-size: 24px;
-  font-weight: bold;
-  max-width: 350px;
-  a {
-    color: white;
-  }
-  &:hover {
-    background-color: $btn-hover;
-    color: white;
+  padding: $font-size-base 30px $font-size-base 30px;
+  // width: 100%;
+  margin: auto;
+  min-width: 200px;
+  box-shadow: none;
+  font-size: $font-size-base;
+  -webkit-box-shadow: none;
+  border-bottom:none;
+  cursor: pointer;
+  white-space: normal;
+  &.btn-calltoaction {
+    min-height: 75px;
+    font-size: 0.9em;
   }
   p {
     margin-bottom: 0px;
-    text-transform: uppercase;
+  }
+  &:hover {
+    background-color: $light-yellow;
+    color: white;
+  }
+  &.btn-tall {
+    min-height: 70px;
+    font-size: 24px;
+    width: 100%
+  }
+  &.btn-wrap {
+    white-space: normal;
+  }
+  &.btn-large {
+    max-width: 350px;
   }
 }
-.btn-big {
-  height: $height-big;
+
+.btn-submit{
+  &.btn, &.btn-default {
+    min-width: 60px;
+    width: 60px;
+    min-height: 60px;
+    border: none;
+  }
 }
-.btn-blue {
-  background-color: $blue;
-}
-.btn-pink {
+.btn-slim, a.btn-slim {
+  color: white;
   background-color: $pink;
+  border-radius: 40px;
+  height: 40px;
+  border: none;
+  padding: 0px 30px 0px 30px;
+  &:hover {
+    background-color: $yellow !important;
+    color: white;
+  }
+}
+.with-border {
+  border: 1px solid $dark-gray !important;
+}
+input {
+  &:focus {
+    border: none;
+  }
+}
+.btn-pink, .btn-2 {
+  background-color: $pink !important;
 }
 .btn-gray {
   background-color: $dark-gray;
 }
-.btn-green {
-  background-color: $anis;
+.btn-blue {
+  background-color: $blue;
 }
-.btn-yellow {
-  background-color: $yellow;
+.btn-light-blue, .btn-0 {
+  background-color: $light-blue !important;
+}
+.btn-red {
+  background-color: $red;
+}
+.btn-green {
+  background-color: $green;
+}
+.btn-yellow, .btn-1 {
+  background-color: $yellow !important;
 }
 .btn-inverse {
-  background-color: none;
   color: $dark-gray !important;
-}
-.btn-slim {
-  height: $height-slim;
-  margin-bottom: 10px;
-}
-.btn-medium {
-  height: $height-medium;
-  margin-bottom: 0px;
-  margin-right: 40px;
-}
-.btn-inline {
-  padding: 0px;
-  margin: 35px 0 0 0 !important;
-}
-.btn-placehold {
-  color: $dark-gray;
-  p {
-    font-size: 16px;
-    text-transform: downcase;
+  background-color: transparent;
+  &:hover {
+    background-color: $light-yellow;
   }
 }
-.btn-inline-form {
-  margin-top: 25px;
+.btn-inverse-border {
+  color: $dark-gray !important;
+  background-color: transparent !important;
+  border: 1px solid $dark-gray;
+  &:hover {
+    background-color: $light-yellow;
+    color: white;
+  }
+}
+input#case_photo {
+  color: white;
+  background-color: $pink;
+  border-radius: $border-radius;
+  height: 56px;
+  min-width: 280px;
+  border: none;
+  padding: 0px 30px 0px 30px;
+  max-width: 320px;
+  min-width: 300px;
+  box-shadow: none;
+  font-size: 24px !important;
+  -webkit-box-shadow: none !important;
+  border-bottom:none;
+  margin: 5px;
+  p {
+    margin-bottom: 0px;
+  }
+  &:hover {
+    background-color: $yellow;
+    color: white;
+  }
+  a {
+    color: white;
+  }
+}
+input, select {
+  min-height: $input-height;
+}
+.submit-hidden {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  visibility: hidden;
 }
