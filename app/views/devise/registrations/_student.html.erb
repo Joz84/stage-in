@@ -47,7 +47,7 @@
         <h2>Inscription 3/4</h2>
         <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>Choisis ton collège. Les périodes de stage en dépendent, les besoins des entreprises aussi.
         </p>
-        <%= f.input :level, label: "Choisis ta classe", placeholder: "clique ici", collection: [ "Collège Arnaud Daniel", "Collège Notre Dame"], class: "input-medium" %>
+        <%= f.input :level, label: "Choisis ton collège", placeholder: "clique ici", collection: [ "Collège Arnaud Daniel", "Collège Notre Dame"], class: "input-medium" %>
         <div class="full-width">
           <%= link_to "#step2", class: "scroll" do %>
             <div class="btn btn-gray margin-top-big">Précédent</div>
@@ -88,18 +88,18 @@
         <p class="relative margin-bottom-small"><i class="fa fa-hand-o-right fontawesome"></i>Check tes infos et valide si tout est bon.
     Sinon reviens en arrière.
         </p>
-        <p>Prénom: <span class="recap-data" id="prenom">---</span></p>
-        <p>Nom: <span class="recap-data" id="nom">---</span></p>
-        <p>Adresse: <span class="recap-data" id="adresse">---</span></p>
-        <p>Téléphone: <span class="recap-data" id="telephone">---</span></p>
-        <p>Email: <span class="recap-data" id="email">---</span></p>
-        <p>Classe: <span class="recap-data" id="classe">---</span></p>
+        <p>Prénom :  <span class="recap-data" id="prenom">---</span></p>
+        <p>Nom :  <span class="recap-data" id="nom">---</span></p>
+        <p>Adresse :  <span class="recap-data" id="adresse">---</span></p>
+        <p>Téléphone :  <span class="recap-data" id="telephone">---</span></p>
+        <p>Email :  <span class="recap-data" id="email">---</span></p>
+        <p>Collège :  <span class="recap-data" id="classe">---</span></p>
         <div class="row">
           <%= link_to "#step4", class: "scroll" do %>
             <div class="btn btn-gray margin-top-big">Précédent</div>
           <% end %>
             <%= f.input :role, input_html: { value: :student }, required: true, as: :hidden %>
-            <%= f.button :submit, "Valider", class: "btn btn-blue margin-top-bot" %>
+            <%= f.button :submit, "Valider", class: "btn btn-blue margin-top-big" %>
         </div>
     </div>
     </div>

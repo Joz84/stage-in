@@ -6,7 +6,6 @@
   <%= simple_form_for :hiring, url: company_hirings_path, method: :post do |f| %>
     <div class="inline-form-wrapper ">
       <%= f.input :internship_id, label: "Type de stage", collection: Internship.all, class: "input-medium" %>
-      <%= f.input :job_id, label: "Type de métier", collection: Job.all, class: "input-medium" %>
       <%= f.input :number, label: "Nombre de place", collection: 1..40, class: "input-numeric" %>
       <%= f.button :submit, "Créer", class: "btn btn-slim btn-blue btn-inline-form" %>
     </div>

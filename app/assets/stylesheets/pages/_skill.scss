@@ -1,20 +1,13 @@
-.splitscreen-wrapper{
-  position: relative;
-  width: 100%;
-  margin: 0px;
-}
-.splitscreen-column {
-  width: 50%;
-  height: calc(100vh - 70px);
-  float: left;
-  background-size: cover;
-}
-#splitscreen-title {
-  position: absolute;
-  left: 50%;
+.skill-question {
   padding: 20px;
   background-color: white;
-  border-radius: 13px;
+  border-radius: $border-radius;
   color: $dark-gray;
-  margin-left: -136px;
+  margin-top: 30px;
+  h3, p {
+    margin: 0px;
+  }
+}
+.skill-answers {
+  height: calc(100vh - 220px);
 }

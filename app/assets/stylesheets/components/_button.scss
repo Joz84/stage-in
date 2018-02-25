@@ -7,7 +7,6 @@
   border: none;
   padding: $font-size-base 30px $font-size-base 30px;
   // width: 100%;
-  margin: auto;
   min-width: 200px;
   box-shadow: none;
   font-size: $font-size-base;
@@ -53,7 +52,7 @@
   border-radius: 40px;
   height: 40px;
   border: none;
-  padding: 0px 30px 0px 30px;
+  padding: 14px 30px 0 30px;
   &:hover {
     background-color: $yellow !important;
     color: white;

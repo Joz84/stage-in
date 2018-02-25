@@ -50,12 +50,10 @@ ActiveRecord::Schema.define(version: 20170923213129) do
   create_table "hirings", force: :cascade do |t|
     t.integer  "company_id"
     t.integer  "internship_id"
-    t.integer  "job_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["company_id"], name: "index_hirings_on_company_id", using: :btree
     t.index ["internship_id"], name: "index_hirings_on_internship_id", using: :btree
-    t.index ["job_id"], name: "index_hirings_on_job_id", using: :btree
   end
 
   create_table "internships", force: :cascade do |t|
@@ -64,23 +62,6 @@ ActiveRecord::Schema.define(version: 20170923213129) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.text     "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "job_skills", force: :cascade do |t|
-    t.integer  "job_id"
-    t.integer  "skill_id"
-    t.float    "weight"
-    t.float    "score"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["job_id"], name: "index_job_skills_on_job_id", using: :btree
-    t.index ["skill_id"], name: "index_job_skills_on_skill_id", using: :btree
-  end
-
-  create_table "jobs", force: :cascade do |t|
-    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -141,9 +122,6 @@ ActiveRecord::Schema.define(version: 20170923213129) do
   add_foreign_key "hiring_checkpoints", "checkpoints"
   add_foreign_key "hiring_checkpoints", "student_hirings"
   add_foreign_key "hirings", "internships"
-  add_foreign_key "hirings", "jobs"
-  add_foreign_key "job_skills", "jobs"
-  add_foreign_key "job_skills", "skills"
   add_foreign_key "student_hirings", "hirings"
   add_foreign_key "student_skills", "skills"
 end
