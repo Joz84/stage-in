@@ -27,20 +27,29 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
 }
+h3 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+p {
+  font-size: 24px;
+}
 @media (max-width : 375px){
   h1 {
     font-size: 38px;
     line-height: 45px;
   }
+  h3 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+  }
 }
 h2 {
   font-size: 48px;
   font-weight: 700;
-}
-h3 {
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: 1px;
 }
 h4 {
   font-size: 24px;
@@ -54,6 +63,12 @@ h6 {
   font-size: 16px;
   font-weight: 300;
 }
-p {
-  font-size: 24px;
+.pink {
+  color: $pink;
+}
+.blue {
+  color: $blue;
+}
+.darkgray {
+  color: $dark-gray;
 }

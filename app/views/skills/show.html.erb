@@ -1,6 +1,6 @@
 <div class="container-fluid full-height under-navbar hidden-xs" style="background-image: url('<%= cl_image_path @skill.photo.path%>');">
   <div class="row">
-    <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 skill-question">
+    <div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 skill-question">
       <p> Tu as envie de découvrir... </p>
       <h3> <%= @skill.name.capitalize %> ? </h3>
     </div>
@@ -45,7 +45,7 @@
     </div>
   </div>
   <div class="flex-vertical-center skill-answers">
-    <div class="row full-width">
+    <div class="row">
       <%= link_to skill_student_skills_path(@skill, score: 1), method: :post do %>
         <div class="col-xs-12 text-center">
           <p class="btn btn-slim btn-gray">Un peu</p>
