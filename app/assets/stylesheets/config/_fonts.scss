@@ -20,8 +20,18 @@ body {
   font-size: $font-size-base;
 }
 h1 {
+  font-family: $body-font;
   font-size: 56px;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+@media (max-width : 375px){
+  h1 {
+    font-size: 38px;
+    line-height: 45px;
+  }
 }
 h2 {
   font-size: 48px;

@@ -6,7 +6,6 @@
   min-height: $input-height;
   border: none;
   padding: $font-size-base 30px $font-size-base 30px;
-  // width: 100%;
   min-width: 200px;
   box-shadow: none;
   font-size: $font-size-base;
@@ -14,6 +13,7 @@
   border-bottom:none;
   cursor: pointer;
   white-space: normal;
+  margin-bottom: 10px;
   &.btn-calltoaction {
     min-height: 75px;
     font-size: 0.9em;
