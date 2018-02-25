@@ -1,21 +1,24 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <div class="container-fluid" id="step1">
-    <div class="row fullscreen under-navbar flex-vertical-center">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-
+    <div class="row full-height flex-vertical-center">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-md-offset-4">
         <h2><%= t('inscription.1on4.title') %></h2>
-        <p class="relative margin-bottom-small"><i class="fa fa-angle-double-right fontawesome"></i><%= t('inscription.1on4.text') %>
+        <p class="relative margin-bottom-small">
+          <i class="fa fa-angle-double-right fontawesome"></i><%= t('inscription.1on4.text') %>
         </p>
         <%= f.input t('inscription.1on4.resource1'), label: t('inscription.1on4.label1'), required: true, class: "input-medium" %>
         <%= f.input t('inscription.1on4.resource2'), label: t('inscription.1on4.label2'), required: true, class: "input-medium"%>
-        <div class="full-width">
-          <%= link_to "#step0", class: "scroll" do %>
-            <div class="btn btn-gray margin-top-big">Précédent</div>
-          <% end %>
-          <%= link_to "#step2", class: "scroll" do %>
-            <div class="btn btn-blue margin-top-big">Suivant</div>
-          <% end %>
+        <div class="row margin-top-big">
+          <div class="col-sm-6">
+            <%= link_to "précédent", "#step0", class: "scroll btn btn-gray hidden-xs" %>
+          </div>
+          <div class="col-xs-3">
+            <%= link_to "<", "#step0", class: "scroll hidden-sm hidden-md hidden-lg btn btn-gray btn-square " %>
+          </div>
+          <div class="col-xs-9 col-sm-6">
+            <%= link_to "suivant", "#step2", class: "scroll btn btn-blue"%>
+          </div>
         </div>
       </div>
     </div>
@@ -29,12 +32,12 @@
         </p>
         <%= f.input :address, label: "Adresse complète", required: true, class: "input-medium" %>
         <%= f.input :phone, label: "Numéro de téléphone", required: true, class: "input-medium"%>
-        <div class="full-width">
+        <div class="full-width margin-top-big>
           <%= link_to "#step-student", class: "scroll" do %>
-            <div class="btn btn-gray margin-top-big">Précédent</div>
+            <div class="btn btn-gray">Précédent</div>
           <% end %>
           <%= link_to "#step3", class: "scroll" do %>
-            <div class="btn btn-blue margin-top-big">Suivant</div>
+            <div class="btn btn-blue">Suivant</div>
           <% end %>
         </div>
       </div>
@@ -48,12 +51,12 @@
         <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>Choisis ton collège. Les périodes de stage en dépendent, les besoins des entreprises aussi.
         </p>
         <%= f.input :level, label: "Choisis ton collège", placeholder: "clique ici", collection: [ "Collège Arnaud Daniel", "Collège Notre Dame"], class: "input-medium" %>
-        <div class="full-width">
+        <div class="full-width margin-top-big>
           <%= link_to "#step2", class: "scroll" do %>
-            <div class="btn btn-gray margin-top-big">Précédent</div>
+            <div class="btn btn-gray">Précédent</div>
           <% end %>
           <%= link_to "#step4", class: "scroll" do %>
-            <div class="btn btn-blue margin-top-big">Suivant</div>
+            <div class="btn btn-blue">Suivant</div>
           <% end %>
         </div>
       </div>
@@ -69,12 +72,12 @@
         <%= f.input :email, required: true %>
         <%= f.input :password, label: "Mot de passe", required: true %>
         <%= f.input :password_confirmation, label: "Confirmer le mot de passe", required: true %>
-        <div class="full-width">
+        <div class="full-width margin-top-big>
           <%= link_to "#step3", class: "scroll" do %>
-            <div class="btn btn-gray margin-top-big">Précédent</div>
+            <div class="btn btn-gray">Précédent</div>
           <% end %>
           <%= link_to "#step5", class: "scroll" do %>
-            <div class="btn btn-blue margin-top-big" id="trigger-recapitulatif">Suivant</div>
+            <div class="btn btn-blue" id="trigger-recapitulatif">Suivant</div>
           <% end %>
         </div>
     </div>
@@ -96,10 +99,10 @@
         <p>Collège :  <span class="recap-data" id="classe">---</span></p>
         <div class="row">
           <%= link_to "#step4", class: "scroll" do %>
-            <div class="btn btn-gray margin-top-big">Précédent</div>
+            <div class="btn btn-gray">Précédent</div>
           <% end %>
             <%= f.input :role, input_html: { value: :student }, required: true, as: :hidden %>
-            <%= f.button :submit, "Valider", class: "btn btn-blue margin-top-big" %>
+            <%= f.button :submit, "Valider", class: "btn btn-blue" %>
         </div>
     </div>
     </div>

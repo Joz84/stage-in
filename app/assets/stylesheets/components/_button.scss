@@ -87,6 +87,12 @@ input {
 .btn-yellow, .btn-1 {
   background-color: $yellow !important;
 }
+.btn-square{
+  min-width: $input-height;
+  width: $input-height;
+  padding-right: 0;
+  padding-left: 0;
+}
 .btn-inverse {
   color: $dark-gray !important;
   background-color: transparent;

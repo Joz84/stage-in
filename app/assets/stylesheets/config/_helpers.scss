@@ -19,7 +19,12 @@ body {
   width: 100%;
 }
 %full-height, .full-height {
-  height: 100vh;
+  @media (max-height: 375px) {
+    min-height: 100vh;
+  }
+  @media (min-height: 376px) {
+    height: 100vh;
+  }
   background-size: cover;
   background-position: center center;
 }
@@ -58,7 +63,7 @@ body {
   }
 }
 .margin-top-big {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .margin-top-bot {
   margin-top: 5px;
