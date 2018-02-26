@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-0">
             <% if user_signed_in? %>
-              <%= link_to "Je cherche un stage", user_signed_in? ? hirings_path : new_user_registration_path, class: "btn btn-blue" %>
+              <%= link_to "Je cherche un stage", hirings_path, class: "btn btn-blue" %>
             <% else %>
               <%= simple_form_for :query, url: redirect_to_inscription_path, method: :get do |f| %>
                 <%= f.input :role, input_html: { value: "student" }, as: :hidden %>
@@ -15,7 +15,7 @@
           </div>
           <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-md-6 col-lg-offset-0">
             <% if user_signed_in? %>
-              <%= link_to "Je propose un stage", user_signed_in? ? company_hirings_path : new_user_path, class: "btn btn-pink" %>
+              <%= link_to "Je propose un stage", company_hirings_path, class: "btn btn-pink" %>
             <% else %>
               <%= simple_form_for :query, url: redirect_to_inscription_path, method: :get do |f| %>
                 <%= f.input :role, input_html: { value: "company" }, as: :hidden %>
