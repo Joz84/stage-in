@@ -10,22 +10,7 @@
   <h2>Liste :</h2>
   <p>Cliquez sur une vignette pour accéder à la fiche du stage.</p>
   <div class="row">
-    <% @hirings.each do |hiring| %>
-      <div class="col-xs-12 col-sm-4">
-
-        <div class="card" style="background-color: white; margin-bottom: 15px; color: #252A34">
-          <div class="card-category"><%= hiring.company.address.gsub(/\d/, '') if hiring.company.address %></div>
-          <div class="card-description">
-            <h2><%= hiring.company.company if hiring.company %></h2>
-            <p>pour le <%= hiring.internship.name %></p>
-
-          </div>
-          <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
-          <%= link_to "", hiring, class: "card-link" %>
-        </div>
-
-      </div>
-    <% end %>
+    <%= render @hirings %>
   </div>
 </div>
 

@@ -13,7 +13,6 @@ Checkpoint.destroy_all
 User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
 User.create(email: "company@gmail.com", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
 
-
 # SKILLS = SECTEUR D'ACTIVITE
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_artisanat_mvmrvr.jpg"
@@ -99,6 +98,7 @@ puts "Seeding companies and hirings"
   c.password = "123456"
   c.address = towns.sample
   c.phone = "0" + rand(100_000_000..999_999_999).to_s
+  c.skill_id = Skill.all.sample.id
   puts c.errors.messages unless c.valid?
   c.save
   # create one hiring per company :
