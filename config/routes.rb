@@ -3,8 +3,14 @@ Rails.application.routes.draw do
   get 'hiring_checkpoints/update'
 
   devise_for :users
+
   root to: 'pages#home'
+  get 'redirect_to_inscription', to: 'pages#redirect_to_inscription'
+
   mount Attachinary::Engine => "/attachinary"
+
+  resources :users, only: [:new]
+
   namespace :company do
     resources :hirings, only: [:index, :create]
     resources :student_hirings, only: [:update]
