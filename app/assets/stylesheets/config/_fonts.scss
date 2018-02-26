@@ -50,7 +50,11 @@ h6 {
   font-weight: 300;
 }
 p {
-  font-size: 24px;
+  font-size: 18px;
+  img {
+    height: 20px;
+    margin-right: 10px;
+  }
 }
 @media (max-width : 375px){
   h1 {

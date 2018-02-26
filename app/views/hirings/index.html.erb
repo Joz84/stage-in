@@ -1,23 +1,14 @@
+<div class="container padding-box">
+  <div class="row">
+    <h2>Stages disponibles :</h2>
+    <p>Cliquez sur un marqueur pour accéder à la fiche du stage.</p>
+  </div>
+</div>
 <div id="map" style="width: 100%; height: 600px;"></div>
 
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
-    });
-  <% end %>
-<% end %>
-
-<div class="container">
-  <h1>Stages disponibles</h1>
+<div class="container padding-box">
+  <h2>Liste :</h2>
+  <p>Cliquez sur une vignette pour accéder à la fiche du stage.</p>
   <div class="row">
     <% @hirings.each do |hiring| %>
       <div class="col-xs-12 col-sm-4">
@@ -37,3 +28,19 @@
     <% end %>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <script>
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+  </script>
+<% end %>
