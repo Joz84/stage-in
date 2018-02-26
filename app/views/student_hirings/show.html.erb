@@ -1,7 +1,9 @@
-<div class="flexbox padding-side margin-top-big">
-  <%= render "shared/hiring" %>
-  <div class="splitscreen-column">
-    <div class="checkpoint-list">
+<div class="full-height under-navbar flex-vertical-center padding-box">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-lg-offset-2">
+      <%= render "shared/hiring" %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
       <div id="checks-list">
         <% unless @student_hiring.checked? %>
             <h5>Valide les démarches que tu as fait en cliquant:</h5>
@@ -21,3 +23,5 @@
     $('#btn-postuler').hide();
   <% end %>
 <% end %>
+
+

@@ -56,6 +56,22 @@ Skill.create(name: "Le tourisme")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
+
+puts "Seeding internship..."
+is = Internship.new(
+  starts_at: Date.new(2018, 12, 4),
+  ends_at: Date.new(2018, 12, 8),
+  comment: "Stage de 3ème 2018-2019",
+  name: "Collège Arnaud Daniel"
+  )
+is.save
+is = Internship.new(
+  starts_at: Date.new(2018, 12, 4),
+  ends_at: Date.new(2018, 12, 8),
+  comment: "Stage de 3ème 2017-2018",
+  name: "Collège Notre Dame"
+  )
+is.save
 towns = [
   '24600 Allemans',
   '24600 Celles',
@@ -71,29 +87,6 @@ towns = [
   '24600 Ribérac',
   '24600 Ribérac',
 ]
-
-puts "Seeding internship..."
-is = Internship.new(
-  starts_at: Date.new(2018, 12, 4),
-  ends_at: Date.new(2018, 12, 8),
-  comment: "Stage de 3ème 2018-2018",
-  name: "Collège Arnaud Daniel"
-  )
-is.save
-is = Internship.new(
-  starts_at: Date.new(2018, 12, 4),
-  ends_at: Date.new(2018, 12, 8),
-  comment: "Stage de 3ème 2018-2018",
-  name: "Collège Arnaud Daniel"
-  )
-is.save
-is = Internship.new(
-  starts_at: Date.new(2018, 12, 4),
-  ends_at: Date.new(2018, 12, 8),
-  comment: "Stage de 3ème 2017-2018",
-  name: "Collège Notre Dame"
-  )
-is.save
 
 puts "Seeding companies and hirings"
 30.times do
@@ -113,14 +106,14 @@ puts "Seeding companies and hirings"
     internship: Internship.all.first,
     company: c,
     )
-  h.save
+  h.save!
 end
 
 puts "Seeding objectives"
 checkpoints = [ "Tu t'es renseigné sur l'entreprise.",
                 "Tu as postulé par le site.",
                 "Tu as obtenu un rendez-vous téléphonique ou sur place.",
-                "Tu as une confirmation de l’éntreprise au téléphone par mail."
+                "Tu as une confirmation de l’entreprise au téléphone par mail."
               ]
 checkpoints.each_with_index do |title, i|
   Checkpoint.create(title: title, order: i)
