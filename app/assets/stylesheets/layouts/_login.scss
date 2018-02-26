@@ -48,13 +48,13 @@
 .user_remember_me, label.boolean.optional {
     margin: 0;
 }
-.form-control:focus {
-  border: none;
-  border-bottom: 1px solid $dark-gray;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
+// .form-control:focus {
+//   border: none;
+//   border-bottom: 1px solid $dark-gray;
+//   outline: 0;
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
 label.boolean.optional {
   margin-bottom: 10px;
 }
@@ -67,17 +67,6 @@ label.boolean.optional {
 .signup-form {
   margin: 30px auto;
   width: 300px;
-  input {
-    border: none;
-    border-bottom: 1px solid $dark-gray;
-    box-shadow: none;
-    margin-bottom: 30px;
-    font-size: 16px;
-  }
-  .btn-green {
-    width: 300px;
-    border: none;
-  }
 }
 .signup-top {
   width: 100%;

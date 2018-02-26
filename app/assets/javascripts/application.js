@@ -7,6 +7,8 @@
 
 $(document).ready(function() {
 
+  $('.attachinary-input').attachinary();
+
   $(window).scroll(function() {
     $('#animatedElement').each(function(){
     var imagePos = $(this).offset().top;
@@ -25,27 +27,6 @@ $(document).ready(function() {
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
   });
-
-    $('#student').hide();
-    $('#company').hide();
-  });
-
-  $('#go-student').on('click', function(event){
-    $('#student').show();
-  })
-  $('#go-company').on('click', function(event){
-    $('#company').show();
-  })
-
-  $('#trigger-recapitulatif').on('click', function(event){
-    $('#prenom').html($('#user_first_name').val());
-    $('#nom').html($('#user_last_name').val());
-    $('#adresse').html($('#user_address').val());
-    $('#telephone').html($('#user_phone').val());
-    $('#email').html($('#user_email').val());
-    $('#classe').html($('#user_level').val());
-
-  $('.attachinary-input').attachinary();
 });
 
 
