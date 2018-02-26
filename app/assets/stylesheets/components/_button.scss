@@ -70,7 +70,7 @@ input {
   }
 }
 .btn-pink, .btn-2 {
-  background-color: $pink !important;
+  background-color: $pink;
 }
 .btn-gray {
   background-color: $dark-gray;
@@ -79,7 +79,7 @@ input {
   background-color: $blue;
 }
 .btn-light-blue, .btn-0 {
-  background-color: $light-blue !important;
+  background-color: $light-blue;
 }
 .btn-red {
   background-color: $red;
@@ -88,7 +88,7 @@ input {
   background-color: $green;
 }
 .btn-yellow, .btn-1 {
-  background-color: $yellow !important;
+  background-color: $yellow;
 }
 .btn-square{
   min-width: $input-height;

@@ -1,24 +1,23 @@
-<div class="devise-screens-wrapper login flexbox">
+<div class="fullscreen under-navbar login flexbox">
   <div class="login-box">
-    <div class="login-top">
-      <div class="tab active_tab"><h6>Connexion</h6></div>
-      <div class="tab"><h6><%= render "devise/shared/top_links" %></h6></div>
-      <div class="tab long-tab"><h6><%= render "devise/shared/links" %></h6></div>
+    <div class="login-top flex-line flex-left">
+      <div class="tab flexbox active_tab"><h6>Connexion</h6></div>
+      <div class="tab flexbox"><h6><%= render "devise/shared/top_links" %></h6></div>
+      <div class="tab flexbox"><h6><%= render "devise/shared/links" %></h6></div>
     </div>
-    <div class="flexbox login-bottom text-center">
-      <div class="login-form">
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
+    <div class="text-center">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="login-form flexbox">
+          <div class="login-fields">
             <%= f.input :email, required: false, autofocus: true, placeholder: "email", label: false %>
             <%= f.input :password, required: false, placeholder: "password", label: false %>
             <%= f.input :remember_me, class: "bottom-left", as: :boolean if devise_mapping.rememberable? %>
           </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Se connecter", class: "btn btn-blue margin-top-big" %>
-          </div>
-        <% end %>
-
+        </div>
+        <div>
+          <%= f.button :submit, "Se connecter", class: "btn btn-blue" %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>
