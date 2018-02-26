@@ -19,6 +19,9 @@ body {
   width: 100%;
 }
 %full-height, .full-height {
+  &.under-navbar {
+    min-height: calc(100vh - 70px);
+  }
   @media (max-height: 375px) {
     min-height: 100vh;
   }

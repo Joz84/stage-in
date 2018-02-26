@@ -32,24 +32,10 @@ h3 {
   font-weight: 600;
   letter-spacing: 1px;
 }
-p {
-  font-size: 24px;
-}
-@media (max-width : 375px){
-  h1 {
-    font-size: 38px;
-    line-height: 45px;
-  }
-  h3 {
-    font-size: 30px;
-  }
-  p {
-    font-size: 18px;
-  }
-}
 h2 {
   font-size: 48px;
   font-weight: 700;
+  margin-top: 10px;
 }
 h4 {
   font-size: 24px;
@@ -62,6 +48,26 @@ h5 {
 h6 {
   font-size: 16px;
   font-weight: 300;
+}
+p {
+  font-size: 24px;
+}
+@media (max-width : 375px){
+  h1 {
+    font-size: 38px;
+    line-height: 45px;
+  }
+  h2 {
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+  }
 }
 .pink {
   color: $pink;

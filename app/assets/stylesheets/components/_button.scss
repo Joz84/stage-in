@@ -37,6 +37,9 @@
     max-width: 350px;
   }
 }
+select {
+  height: 70px;
+}
 
 .btn-submit{
   &.btn, &.btn-default {
