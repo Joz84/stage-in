@@ -1,5 +1,5 @@
 .card-info {
-  height: 350px;
+  min-height: 200px;
   border: none;
   padding: 20px;
   color: $dark-gray;
@@ -12,6 +12,4 @@
     font-size: 48px;
     margin: 20px;
   }
-  margin-bottom: 20px;
-  margin-top: 20px;
 }

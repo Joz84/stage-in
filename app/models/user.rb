@@ -15,12 +15,11 @@ class User < ApplicationRecord
   validates :last_name, presence: true, if: :student?
   validates :phone, presence: true
 
-
   has_many :company_hirings, foreign_key: :company_id, class_name: "Hiring"
   has_many :student_hirings, foreign_key: :student_id, class_name: "StudentHiring"
 
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  # geocoded_by :address
+  # after_validation :geocode, if: :address_changed?
 
   def full_name
     "#{first_name} #{last_name}"

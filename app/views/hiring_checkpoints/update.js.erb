@@ -1,5 +1,5 @@
 <% unless @student_hiring.checked? %>
   $("#checked-<%= @hiring_checkpoint.id %>").html("<%= render 'student_hirings/link_checking', hc: @hiring_checkpoint %>");
 <% else %>
-  $("#checks-list").html("<h2>Postulé!</h2><img src='https://media.giphy.com/media/xT8qBt2943MLRO8zuM/giphy.gif'>");
+  $("#checks-list").html("<h2>Stage décroché!</h2><img src='https://media.giphy.com/media/CmQQsUxwjBEgU/giphy.gif'>");
 <% end %>

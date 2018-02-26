@@ -1,13 +1,71 @@
-<div class="splitscreen-wrapper">
-  <h3 id="splitscreen-title"> Es-tu plutôt...</h3>
-  <%= link_to skill_student_skills_path(@skill, score: 1), method: :post do %>
-    <div class="splitscreen-column flexbox" style="background-image: url('<%= cl_image_path @skill.photos[1].path %>');">
-      <p class="btn btn-slim btn-gray flexbox"><%= @skill.name.split(/(?<!^)(?=[A-Z])/)[0] %></p>
+<div class="container-fluid full-height under-navbar hidden-xs" style="background-image: url('<%= cl_image_path @skill.photo.path%>');">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 skill-question">
+      <p> Tu as envie de découvrir... </p>
+      <h3> <%= @skill.name.capitalize %> ? </h3>
     </div>
-  <% end %>
-  <%= link_to skill_student_skills_path(@skill, score: -1), method: :post do %>
-    <div class="splitscreen-column flexbox" style="background-image: url('<%= cl_image_path @skill.photos[0].path %>');">
-      <p class="btn btn-slim btn-gray flexbox"><%= @skill.name.split(/(?<!^)(?=[A-Z])/)[1] %></p>
+  </div>
+  <div class="flex-vertical-center skill-answers">
+    <div class="row full-width">
+      <%= link_to skill_student_skills_path(@skill, score: 1), method: :post do %>
+        <div class="col-md-3 col-lg-3 text-center">
+          <p class="btn btn-slim btn-gray">Un peu</p>
+        </div>
+      <% end %>
+      <%= link_to skill_student_skills_path(@skill, score: 2), method: :post do %>
+        <div class="col-md-3 col-lg-3 text-center">
+          <p class="btn btn-slim btn-gray">Beaucoup</p>
+        </div>
+      <% end %>
+      <%= link_to skill_student_skills_path(@skill, score: 0), method: :post do %>
+        <div class="col-md-3 col-lg-3 text-center ">
+          <p class="btn btn-slim btn-gray">À la folie</p>
+        </div>
+      <% end %>
+      <%= link_to skill_student_skills_path(@skill, score: 2), method: :post do %>
+        <div class="col-md-3 col-lg-3 text-center">
+          <p class="btn btn-slim btn-gray">Pas du tout</p>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+</div>
+
+<div class="container full-height under-navbar hidden-sm hidden-md hidden-lg">
+  <div class="row">
+    <div class="col-xs-12 skill-image" style="background-image: url('<%= cl_image_path @skill.photo.path%>');">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 skill-question">
+      <p> Tu as envie de découvrir... </p>
+      <h3> <%= @skill.name.capitalize %> ? </h3>
+    </div>
+  </div>
+  <div class="flex-vertical-center skill-answers">
+    <div class="row">
+      <%= link_to skill_student_skills_path(@skill, score: 1), method: :post do %>
+        <div class="col-xs-12 text-center">
+          <p class="btn btn-slim btn-gray">Un peu</p>
+        </div>
+      <% end %>
+      <%= link_to skill_student_skills_path(@skill, score: 2), method: :post do %>
+        <div class="col-xs-12 text-center">
+          <p class="btn btn-slim btn-gray">Beaucoup</p>
+        </div>
+      <% end %>
+      <%= link_to skill_student_skills_path(@skill, score: 0), method: :post do %>
+        <div class="col-xs-12 text-center ">
+          <p class="btn btn-slim btn-gray">À la folie</p>
+        </div>
+      <% end %>
+      <%= link_to skill_student_skills_path(@skill, score: 2), method: :post do %>
+        <div class="col-xs-12 text-center">
+          <p class="btn btn-slim btn-gray">Pas du tout</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

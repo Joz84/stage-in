@@ -1,11 +1,9 @@
 class Hiring < ApplicationRecord
   belongs_to :company, class_name: "User"
   belongs_to :internship
-  belongs_to :job
   has_many :student_hirings
   validates :internship, presence: true
   validates :company, presence: true
-  validates :job, presence: true
 
   def self.pending
     pendings = []
