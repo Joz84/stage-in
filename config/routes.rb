@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new]
 
   namespace :company do
-    resources :hirings, only: [:index, :create]
+    resources :hirings, only: [:index, :create, :destroy]
     resources :student_hirings, only: [:update]
   end
 

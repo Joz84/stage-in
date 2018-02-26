@@ -2,7 +2,6 @@ class Company::HiringsController < ApplicationController
   def index
     @hirings = current_user.company_hirings
     @company_name = current_user.company
-
   end
 
   def create
@@ -20,6 +19,12 @@ class Company::HiringsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def destroy
+    @hiring = Hiring.find(params[:id])
+    @hiring.destroy
+    redirect_to company_hirings_path
   end
 
   def hiring_params

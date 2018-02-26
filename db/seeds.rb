@@ -62,14 +62,14 @@ is = Internship.new(
   starts_at: Date.new(2018, 12, 4),
   ends_at: Date.new(2018, 12, 8),
   comment: "Stage de 3ème 2018-2019",
-  name: "Collège Arnaud Daniel"
+  name: "Collège Arnaud Daniel - du 16 au 21 juin 2018"
   )
 is.save
 is = Internship.new(
   starts_at: Date.new(2018, 12, 4),
   ends_at: Date.new(2018, 12, 8),
   comment: "Stage de 3ème 2017-2018",
-  name: "Collège Notre Dame"
+  name: "Collège Notre Dame  - du 24 au 29 juin 2018"
   )
 is.save
 towns = [

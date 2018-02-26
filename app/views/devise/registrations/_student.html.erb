@@ -130,6 +130,11 @@
         $('#email').html($('#user_email').val());
         $('#classe').html($('#user_level').val());
       });
+
+      var step0_button = document.getElementById('step0');
+      step0_button.addEventListener('click', function(event){
+        this.style.display = "none";
+      });
     });
   </script>
 <% end %>
