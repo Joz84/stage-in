@@ -1,7 +1,7 @@
 <div id="map" style="width: 100%; height: 600px;"></div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
+  <script>
     var handler = Gmaps.build('Google');
     handler.buildMap({ internal: { id: 'map' } }, function() {
       markers = handler.addMarkers(<%= raw @hash.to_json %>);
@@ -13,7 +13,7 @@
         handler.getMap().setZoom(14);
       }
     });
-  <% end %>
+  </script>
 <% end %>
 
 <div class="container">
