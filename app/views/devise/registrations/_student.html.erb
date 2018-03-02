@@ -1,14 +1,29 @@
+  <div class="container-fluid" id="step0">
+    <div class="row full-height under-navbar flex-vertical-center">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+        <h2><%= t('inscription.student0.title') %></h2>
+        <p class="relative"><i class="fa fa-star fontawesome"></i><%= t('inscription.student0.text') %>
+        </p>
+        <div class="full-width">
+          <%= link_to "#step1", class: "scroll", id: "go-student" do %>
+            <div class="btn margin-top-big btn-blue margin-bottom-small"><%= t('inscription.student0.button1') %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <div class="container-fluid" id="step1">
     <div class="row full-height flex-vertical-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-        <h2><%= t('inscription.1on4.title') %></h2>
+        <h2><%= t('inscription.student1.title') %></h2>
         <p class="relative margin-bottom-small">
-          <i class="fa fa-angle-double-right fontawesome"></i><%= t('inscription.1on4.text') %>
+          <i class="fa fa-angle-double-right fontawesome"></i><%= t('inscription.student1.text') %>
         </p>
-        <%= f.input t('inscription.1on4.resource1'), label: t('inscription.1on4.label1'), required: true, class: "input-medium" %>
-        <%= f.input t('inscription.1on4.resource2'), label: t('inscription.1on4.label2'), required: true, class: "input-medium"%>
+        <%= f.input t('inscription.student1.resource1'), label: t('inscription.student1.label1'), required: true, class: "input-medium" %>
+        <%= f.input t('inscription.student1.resource2'), label: t('inscription.student1.label2'), required: true, class: "input-medium"%>
         <div class="row margin-top-big">
           <div class="col-xs-12">
               <%= link_to "précédent", "#step0", class: "scroll btn btn-gray hidden-xs" %>
@@ -114,6 +129,11 @@
         $('#telephone').html($('#user_phone').val());
         $('#email').html($('#user_email').val());
         $('#classe').html($('#user_level').val());
+      });
+
+      var step0_button = document.getElementById('step0');
+      step0_button.addEventListener('click', function(event){
+        this.style.display = "none";
       });
     });
   </script>

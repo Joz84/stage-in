@@ -1,18 +1,5 @@
-<div class="container-fluid" id="step0">
-  <div class="row full-height under-navbar flex-vertical-center">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      <h2><%= t('inscription.0on4.title') %></h2>
-      <p class="relative"><i class="fa fa-star fontawesome"></i><%= t('inscription.0on4.text') %>
-      </p>
-      <div class="full-width">
-        <%= link_to "#step1", class: "scroll", id: "go-student" do %>
-          <div class="btn margin-top-big btn-blue margin-bottom-small"><%= t('inscription.0on4.button1') %></div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="student">
+<% if session[:role] == "student" %>
   <%= render "student" %>
-</div>
+<% else %>
+  <%= render "company" %>
+<% end %>
