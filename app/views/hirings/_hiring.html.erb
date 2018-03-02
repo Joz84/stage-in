@@ -1,0 +1,11 @@
+<div class="col-xs-12 col-sm-4">
+  <%= link_to hiring do %>
+    <div class="card" style="background-image: url('<%= hiring.company.skill.present? ? (cl_image_path hiring.company.skill.photo.path) : "" %>')">
+      <div class="card-category"><%= hiring.company.address.present? ? hiring.company.address.gsub(/\d/, '') : "" %></div>
+      <div class="card-description">
+        <h2><%= hiring.company.company.presence %></h2>
+        <p>pour le <%= hiring.internship.name.presence %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

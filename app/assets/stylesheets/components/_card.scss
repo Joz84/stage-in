@@ -5,6 +5,14 @@
   background-image: none;
   position: relative;
   margin: 15px;
+  background-size: cover;
+  p, h2 {
+    margin: 0px;
+  }
+  h2 {
+    line-height: 30px;
+  }
+
 }
 .card-user {
   position: absolute;
@@ -15,15 +23,22 @@
 }
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 0px;
+  left: 0px;
   font-size: 15px;
+  padding: 5px;
+  background-color: white;
   text-transform: uppercase;
 }
 .card-description {
+  width: 100%;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0px;
+  left: 0px;
+  padding: 5px 10px 5px 10px;
+  z-index: 3;
+  background-color: white;
+
 }
 .card-description h2 {
   font-size: 24px;
@@ -34,11 +49,6 @@
   font-weight: lighter;
 }
 .card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
   z-index: 2;
   background: black;
   opacity: 0;

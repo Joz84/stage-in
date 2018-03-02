@@ -10,15 +10,14 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Profil", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Chercher un stage", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profil", edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path, class: "navbar-wagon-item navbar-wagon-link scroll" %>
-      <%= link_to "Première connexion", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
@@ -28,9 +27,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path %></li>
+        <li><%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
