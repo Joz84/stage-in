@@ -1,18 +1,12 @@
 .list-wrapper {
   padding: 20px;
-  width: 100%;
   border: 1px solid $dark-gray;
   border-radius: $border-radius;
   margin-bottom: 10px;
   box-shadow: $shadow;
-  display: flex;
-  justify-content: space-between;
   p {
     margin-bottom: 0px;
   }
-}
-.list-column {
-  min-width: 350px;
 }
 .line {
   width: 100%;
