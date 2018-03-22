@@ -33,4 +33,5 @@ class Hiring < ApplicationRecord
     student_hirings
     .where(state: :accepted)
   end
+
 end
