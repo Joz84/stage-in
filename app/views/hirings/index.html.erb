@@ -10,22 +10,30 @@
   <h2>Liste :</h2>
   <p>Cliquez sur une vignette pour accéder à la fiche du stage.</p>
   <div class="row">
-    <%= render @hirings %>
+    <% @hirings.each_with_index do |hirings, index| %>
+      <div class="col-xs-12">
+        <H3> <i class="fa fa-star"></i>  Stages qui devraient vous plaire <%= @preference[index] %></h3>
+        <% hirings.each do |hiring| %>
+          <%= render "hiring", hiring: hiring %>
+        <% end %>
+      </div>
+    <% end %>
+
   </div>
 </div>
 
-<% content_for(:after_js) do %>
+<% content_for :after_js do %>
   <script>
-      var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
   </script>
 <% end %>
