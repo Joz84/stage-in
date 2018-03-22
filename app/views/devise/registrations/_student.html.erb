@@ -41,7 +41,10 @@
         <h2>Inscription 2/4</h2>
         <p class="relative margin-bottom-small"><i class="fa fa-map-marker fontawesome"></i>Inscris ton adresse postale et ton numéro. L'adresse permettra de trouver les stages les plus proches de chez toi automatiquement.
         </p>
-        <%= f.input :address, label: "Adresse complète", required: true, class: "input-medium" %>
+        <%= f.input :address, label: "Adresse complète", required: true, class: "input-medium"%>
+        <%= f.input :latitude, as: :hidden %>
+        <%= f.input :longitude, as: :hidden %>
+
         <%= f.input :phone, label: "Numéro de téléphone", required: true, class: "input-medium"%>
         <div class="row margin-top-big">
           <div class="col-xs-12">
