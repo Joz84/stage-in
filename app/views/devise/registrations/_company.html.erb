@@ -28,7 +28,7 @@
           <div class="form-inputs ">
             <%= f.input :company, required: :true, label: "Nom de l'entreprise" %>
             <%= f.input :address, required: :true, label: "Adresse de l'entreprise" %>
-            <%= f.association :skill %>
+            <%= f.association :skill, required: :true, label: "Domaine d'activité" %>
             <%= f.input :first_name, label: "Prénom du référent" %>
             <%= f.input :last_name, required: true, label: "Nom du référent" %>
             <%= f.input :phone, required: true, label: "Téléphone" %>

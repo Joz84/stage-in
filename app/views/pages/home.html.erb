@@ -1,28 +1,33 @@
 <div class="home container-fluid flex-vertical-center" id="page1">
     <div class="row center">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
-        <h1>Trouve un stage près de chez toi.</h1>
-        <div class="row">
-          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-0">
-            <% if user_signed_in? %>
+        <% if current_user && current_user.company? %>
+          <h1>Proposez une place de stage prés de chez vous.</h1>
+        <% elsif current_user && current_user.student? %>
+          <h1>Trouve un stage près de chez toi.</h1>
+        <% else %>
+          <h1>Trouve un stage près de chez toi.</h1>
+        <% end %>
+        <% if user_signed_in? %>
+          <div class="flexbox">
+            <% if current_user.student? %>
               <%= link_to "Je cherche un stage", hirings_path, class: "btn btn-blue" %>
-            <% else %>
-              <%= simple_form_for :query, url: redirect_to_inscription_path, method: :get do |f| %>
-                <%= f.input :role, input_html: { value: "student" }, as: :hidden %>
-                <%= f.button :submit, value: "Je cherche un stage", data: { disable_with: "Je cherche un stage" }, class: "btn btn-blue" %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-md-6 col-lg-offset-0">
-            <% if user_signed_in? %>
+            <% elsif current_user.company? %>
               <%= link_to "Je propose un stage", company_hirings_path, class: "btn btn-pink" %>
-            <% else %>
-              <%= simple_form_for :query, url: redirect_to_inscription_path, method: :get do |f| %>
-                <%= f.input :role, input_html: { value: "company" }, as: :hidden %>
-                <%= f.button :submit, value: "Je propose un stage", data: { disable_with: "Je cherche un stage" }, class: "btn btn-pink" %>
-              <% end %>
             <% end %>
           </div>
+        <% else %>
+          <div class="flex-line">
+            <%= simple_form_for :query, url: redirect_to_inscription_path, method: :get do |f| %>
+              <%= f.input :role, input_html: { value: "student" }, as: :hidden %>
+              <%= f.button :submit, value: "Je cherche un stage", data: { disable_with: "Je cherche un stage" }, class: "btn btn-blue" %>
+            <% end %>
+            <%= simple_form_for :query, url: redirect_to_inscription_path, method: :get do |f| %>
+              <%= f.input :role, input_html: { value: "company" }, as: :hidden %>
+              <%= f.button :submit, value: "Je propose un stage", data: { disable_with: "Je cherche un stage" }, class: "btn btn-pink" %>
+            <% end %>
+          </div>
+        <% end %>
         </div>
       </div>
     </div>
