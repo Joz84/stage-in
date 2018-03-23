@@ -6,7 +6,7 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
       <div id="checks-list">
         <% unless @student_hiring.checked? %>
-            <h5>Valide les démarches que tu as fait en cliquant:</h5>
+            <h5>Valide les démarches que tu as fait en cliquant :</h5>
             <% @hiring_checkpoints.each do |hiring_checkpoint| %>
               <%= render "link_checking", hc: hiring_checkpoint %>
             <% end %>

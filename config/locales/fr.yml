@@ -47,25 +47,29 @@ fr:
     deconfirmation: "Annuler la confirmation"
   agenda:
   inscription:
-    0on4:
+    student0:
       title: "S'inscrire en tant qu'élève"
       text: "Tu es sur le point de t’inscrire sur stage-in. Pour trouver un stage facilement dans le pays ribéracois, pose-toi, fait l’inscription sérieusement, et suit le guide. Les champs avec une étoile * sont indispensables."
       button1: "ok"
-      button2: "S'inscrire en tant qu'entreprise"
-    1on4:
+    student1:
       title: "Inscription 1/4"
       text: "Inscris tes vrais noms et prénoms, ce seront ceux qui seront envoyés aux entreprises quand tu postuleras à ton stage."
       resource1: "first_name"
       resource2: "last_name"
       label1: "Prénom"
       label2: "Nom"
-    1on4:
-      title: "Inscription 1/4"
-      text: "Inscris tes vrais noms et prénoms, ce seront ceux qui seront envoyés aux entreprises quand tu postuleras à ton stage."
-      resource1: "first_name"
-      resource2: "last_name"
-      label1: "Prénom"
-      label2: "Nom"
+    company0:
+      title: "S'inscrire en tant qu'entreprise"
+      text: "Vous êtes sur le point d'inscrire votre entreprise sur Stage-In afin de mettre à disposition des places de stages aux élèves du pays ribéracois. Veuillez prendre connaissance des points suivants à propos des stages de 3ème :"
+      point0 : "la durée d'une journée ne doit pas excéder 8 heures."
+      point1 : "l'élève peut, sous le contrôle de son tuteur, participer à des activités sans pouvoir accéder aux machines et aux produits."
+      point2 : "il n'est pas rémunéré, mais une gratification peut lui être versée."
+      point3 : "le chef d'entreprise s'engage à prendre toutes les mesures nécessaires pour assurer la sécurité des élèves qui lui sont confiés."
+      point4 : "le chef d'établissement doit avoir une assurance couvrant la responsabilité de l'élève (pour les dommages qu'il pourrait causer en milieu professionnel)."
+      button1: "ok"
+    company1:
+      title: "Inscription entreprise"
+
 # GENERIC
   activerecord:
     errors:
