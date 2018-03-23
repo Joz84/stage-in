@@ -5,7 +5,7 @@
         <p class="relative"><i class="fa fa-star fontawesome"></i><%= t('inscription.student0.text') %>
         </p>
         <div class="full-width">
-          <%= link_to "#step1", class: "scroll", id: "go-student" do %>
+          <%= link_to "#step1", class: "scroll" do %>
             <div class="btn margin-top-big btn-blue margin-bottom-small"><%= t('inscription.student0.button1') %></div>
           <% end %>
         </div>
@@ -22,8 +22,8 @@
         <p class="relative margin-bottom-small">
           <i class="fa fa-angle-double-right fontawesome"></i><%= t('inscription.student1.text') %>
         </p>
-        <%= f.input :first_name, label: t('inscription.student1.label1'), required: true, input_html: { data_step: "step1", class: "input_field" } %>
-        <%= f.input :last_name, label: t('inscription.student1.label2'), required: true, input_html: { data_step: "step1", class: "input_field" } %>
+        <%= f.input :first_name, label: t('inscription.student1.label1'), required: true, input_html: { class: "focus_sender", id:"field1" } %>
+        <%= f.input :last_name, label: t('inscription.student1.label2'), required: true, input_html: { data_step: "step1", class: "input_to_scroll", id:"field2" } %>
         <div class="row margin-top-big">
           <div class="col-xs-12">
               <%= link_to "précédent", "#step0", class: "scroll btn btn-gray hidden-xs" %>
@@ -41,11 +41,11 @@
         <h2>Inscription 2/4</h2>
         <p class="relative margin-bottom-small"><i class="fa fa-map-marker fontawesome"></i>Inscris ton adresse postale et ton numéro. L'adresse permettra de trouver les stages les plus proches de chez toi automatiquement.
         </p>
-        <%= f.input :address, label: "Adresse complète", required: true, input_html: { data_step: "step2", class: "input_field" }, id: "field1_step2" %>
+        <%= f.input :address, label: "Adresse complète", required: true, input_html: { class: "focus_sender input_to_scroll", id: "field3" }%>
         <%= f.input :latitude, as: :hidden %>
         <%= f.input :longitude, as: :hidden %>
 
-        <%= f.input :phone, label: "Numéro de téléphone", required: true, input_html: { data_step: "step2", class: "input_field" }, id: "field2_step2" %>
+        <%= f.input :phone, label: "Numéro de téléphone", required: true, input_html: { data_step: "step2", class: "input_to_scroll", id: "field4" } %>
         <div class="row margin-top-big">
           <div class="col-xs-12">
             <%= link_to "précédent", "#step1", class: "scroll btn btn-gray hidden-xs" %>
@@ -63,7 +63,7 @@
         <h2>Inscription 3/4</h2>
         <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>Choisis ton collège. Les périodes de stage en dépendent, les besoins des entreprises aussi.
         </p>
-        <%= f.input :level, label: "Choisis ton collège", placeholder: "clique ici", collection: [ "Collège Arnaud Daniel", "Collège Notre Dame"], input_html: { data_step: "step3", class: "input_field" }, id: "field1_step3" %>
+        <%= f.input :level, label: "Choisis ton collège", placeholder: "clique ici", collection: [ "Collège Arnaud Daniel", "Collège Notre Dame"], input_html: { data_step: "step3", class: "input_to_scroll", id: "field5" } %>
         <div class="row margin-top-big">
           <div class="col-xs-12">
             <%= link_to "précédent", "#step2", class: "scroll btn btn-gray hidden-xs" %>
@@ -81,9 +81,9 @@
         <h2>Inscription 4/4</h2>
         <p class="relative margin-bottom-small"><i class="fa fa-email fontawesome"></i>L’email doit être valide, elles permettront de te connnecter et l’entreprise et de te contacter facilement.
         </p>
-        <%= f.input :email, required: true, id: "field1_step4", input_html: { data_step: "step4", class: "input_field" } %>
-        <%= f.input :password, label: "Mot de passe", required: true, id: "field1_step4", input_html: { data_step: "step4", class: "input_field" } %>
-        <%= f.input :password_confirmation, label: "Confirmer le mot de passe", required: true, id: "field1_step4", input_html: { data_step: "step4", class: "input_field" } %>
+        <%= f.input :email, required: true, id: "field1_step4", input_html: { class: "focus_sender", id: "field6" } %>
+        <%= f.input :password, label: "Mot de passe", required: true, id: "field1_step4", input_html: { class: "focus_sender", id: "field7"  } %>
+        <%= f.input :password_confirmation, label: "Confirmer le mot de passe", required: true, id: "field1_step4", input_html: { data_step: "step4", class: "input_to_scroll", id: "field8" } %>
         <div class="row margin-top-big">
           <div class="col-xs-12">
             <%= link_to "précédent", "#step3", class: "scroll btn btn-gray hidden-xs" %>
@@ -137,10 +137,26 @@
       var step0_button = document.getElementById('step0');
       step0_button.addEventListener('click', function(event){
         this.style.display = "none";
+        setTimeout(function(){
+          document.getElementById('field1').focus();
+        }, 400);
       });
 
-      var inputs = document.getElementsByClassName('input_field');
-      var submits = []
+      var inputs = document.getElementsByClassName('input_to_scroll');
+      var submits = [];
+      var focus_receivers = [];
+      var input_to_focus = [];
+
+      var focus_senders = document.getElementsByClassName('focus_sender');
+
+      for(i=0; i<focus_senders.length; i++) {
+        focus_senders[i].addEventListener('keydown', function(e) {
+          if (e.key === "Enter") {
+            focus_receivers[i] = document.getElementById('field'+(parseInt(this.id.slice(-1))+1));
+            focus_receivers[i].focus();
+          }
+        });
+      };
 
       document.addEventListener('keydown', function(e) {
         if (e.key === "Enter") {
@@ -152,6 +168,10 @@
           if (e.key === "Enter") {
             submits[i] = document.getElementById("submit_step" + this.getAttribute("data_step").slice(-1));
             submits[i].click();
+              input_to_focus[i] = document.getElementById("field"+(parseInt(this.id.slice(-1))+1));
+            setTimeout(function(){
+              input_to_focus[i].focus();
+            }, 400);
           }
         });
       }
