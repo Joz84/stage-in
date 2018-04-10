@@ -124,15 +124,22 @@
 <% content_for(:after_js) do %>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      $('#step5').on('click', function(event){
+      $('#submit_step4').on('click', function(event){
         console.log('recap');
-        $('#prenom').html($('#user_first_name').val());
-        $('#nom').html($('#user_last_name').val());
-        $('#adresse').html($('#user_address').val());
-        $('#telephone').html($('#user_phone').val());
-        $('#email').html($('#user_email').val());
-        $('#classe').html($('#user_level').val());
+        $('#prenom').html($('#field1').val());
+        $('#nom').html($('#field2').val());
+        $('#adresse').html($('#field3').val());
+        $('#telephone').html($('#field4').val());
+        $('#classe').html($('#field5').val());
+        $('#email').html($('#field6').val());
       });
+      // var submit4 = document.getElementById('step5');
+
+      // submit4.addEventListener('click', recap);
+
+      // function recap(e) {
+      //   console.log("recap");
+      // }
 
       var step0_button = document.getElementById('step0');
       step0_button.addEventListener('click', function(event){

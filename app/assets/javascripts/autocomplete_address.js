@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     country: 'long_name',
     postal_code: 'short_name'
   };
-  var autocomplete_field = document.getElementById('user_address');
+  var autocomplete_field = document.getElementById('field3');
   var userlat = document.getElementById('user_latitude');
   var userlng = document.getElementById('user_longitude');
 
@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-
-  initAutocomplete();
+  if (autocomplete_field) {
+    initAutocomplete();
+  }
 
 });
