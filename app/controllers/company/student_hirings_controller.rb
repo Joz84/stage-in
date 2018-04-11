@@ -1,5 +1,4 @@
 class Company::StudentHiringsController < ApplicationController
-
   def update
     @student_hiring = StudentHiring.find(params[:id])
     @student_hiring.update(state: links_params[:state].to_i)
