@@ -33,6 +33,7 @@ end
 gem 'faker'
 
 group :development, :test do
+  gem 'rails-erd'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'
