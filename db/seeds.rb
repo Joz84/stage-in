@@ -1,7 +1,7 @@
 require "faker"
 
 puts "Cleaning DB..."
-College.destroy_all
+
 HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
 Hiring.destroy_all
@@ -10,7 +10,7 @@ User.destroy_all
 StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
-
+College.destroy_all
 
 c1 = College.create(name: "Collège Arnault Daniel", city: "Ribérac")
 College.create(name: "Collège Michel Debet", city: "Tocane-Saint-Apre")
@@ -23,47 +23,51 @@ User.create(email: "company@gmail.com", first_name: 'Max', last_name: 'Boue', ro
 # SKILLS = SECTEUR D'ACTIVITE
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_artisanat_mvmrvr.jpg"
-Skill.create(name: "L'artisanat")
+Skill.create(name: "Artisanat, Métiers du Batiment")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578054/SA_agriculture_b8up9i.jpg"
-Skill.create(name: "L'agriculture")
+Skill.create(name: "Agriculture, Agroalimentaire")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_assurance_ouojh5.jpg"
-Skill.create(name: "L'assurance")
+Skill.create(name: "Secrétariat, Comptabilité, Commerce")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578054/SA_commerce_s67fbz.jpg"
-Skill.create(name: "Le commerce")
+Skill.create(name: "Métiers de bouche, Hôtellerie, Restauration")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_industry_abd7bg.jpg"
-Skill.create(name: "L'industrie")
+Skill.create(name: "Métiers de l’industrie et de la maintenance")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_internet_ojzgiw.jpg"
-Skill.create(name: "Les télécoms et internet")
+Skill.create(name: "Métiers du numérique")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_research_cns4mx.jpg"
-Skill.create(name: "La recherche")
+Skill.create(name: "Métiers du Social, de la Santé, Service à la personne")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
 url = "http://res.cloudinary.com/stage-in/image/upload/v1519578054/SAtourisme_d6qtkw.jpg"
-Skill.create(name: "Le tourisme")
+Skill.create(name: "Tourisme, Culture, Sport")
 Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 
-
+url = "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+Skill.create(name: "Transport, logistique")
+Skill.last.photo_url = url
+puts "Création de la Skill #{Skill.last.name}"
 puts "Seeding internship..."
+
 is = Internship.new(
   starts_at: Date.new(2018, 12, 4),
   ends_at: Date.new(2018, 12, 8),
