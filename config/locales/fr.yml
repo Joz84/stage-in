@@ -52,7 +52,7 @@ fr:
   inscription:
     0on4:
       title: "S'inscrire en tant qu'élève"
-      text: "Tu es sur le point de t’inscrire sur stage-in. Pour trouver un stage facilement dans le pays ribéracois, pose-toi, fait l’inscription sérieusement, et suit le guide. Les champs avec une étoile * sont indispensables."
+      text: "Les champs avec une étoile sont indispensable."
       button1: "ok"
       button2: "S'inscrire en tant qu'entreprise"
     1on4:
@@ -60,15 +60,19 @@ fr:
       text: "Inscris tes vrais noms et prénoms, ce seront ceux qui seront envoyés aux entreprises quand tu postuleras à ton stage."
       resource1: "first_name"
       resource2: "last_name"
+      resource3: "birthday"
       label1: "Prénom"
       label2: "Nom"
+      label3: "Date de Naissance"
     1on4:
       title: "Inscription 1/4"
       text: "Inscris tes vrais noms et prénoms, ce seront ceux qui seront envoyés aux entreprises quand tu postuleras à ton stage."
       resource1: "first_name"
       resource2: "last_name"
+      resource3: "birthday"
       label1: "Prénom"
       label2: "Nom"
+      label3: "Date de Naissance"
 # GENERIC
   activerecord:
     errors:

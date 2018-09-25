@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :student_skills, foreign_key: :student_id, class_name: "Student_Skill"
   has_many :skills, through: :student_skills
+  belongs_to :college, optional: true
 
   validates :role, presence: true
   validates :company, presence: true, if: :company?

@@ -1,6 +1,7 @@
 require "faker"
 
 puts "Cleaning DB..."
+College.destroy_all
 HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
 Hiring.destroy_all
@@ -10,7 +11,12 @@ StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
 
-User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
+
+c1 = College.create(name: "Collège Arnault Daniel", city: "Ribérac")
+College.create(name: "Collège Michel Debet", city: "Tocane-Saint-Apre")
+College.create(name: "MFR du Ribéracois", city: "Vanxains")
+
+User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1)
 User.create(email: "company@gmail.com", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923213129) do
+ActiveRecord::Schema.define(version: 20180925083427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20170923213129) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "order"
+  end
+
+  create_table "colleges", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "address"
+    t.boolean  "visible",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "hiring_checkpoints", force: :cascade do |t|
@@ -115,6 +124,12 @@ ActiveRecord::Schema.define(version: 20170923213129) do
     t.string   "phone"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "college_id"
+    t.datetime "birthday"
+    t.string   "num"
+    t.string   "zipcode"
+    t.string   "city"
+    t.index ["college_id"], name: "index_users_on_college_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -124,4 +139,5 @@ ActiveRecord::Schema.define(version: 20170923213129) do
   add_foreign_key "hirings", "internships"
   add_foreign_key "student_hirings", "hirings"
   add_foreign_key "student_skills", "skills"
+  add_foreign_key "users", "colleges"
 end
