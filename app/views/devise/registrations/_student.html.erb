@@ -65,9 +65,9 @@
     <div class="row fullscreen flex-vertical-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
         <h2>Inscription 4/4</h2>
-        <p class="relative margin-bottom-small"><i class="fa fa-email fontawesome"></i>L’email doit être valide, elles permettront de te connnecter et l’entreprise et de te contacter facilement.
+        <p class="relative margin-bottom-small"><i class="fa fa-email fontawesome"></i>Veuillez indiquer votre courriel et un mot de passe.
         </p>
-        <%= f.input :email, required: true %>
+        <%= f.input :email, required: true, placeholder: "prenom.nom@mail.com" %>
         <%= f.input :password, label: "Mot de passe", required: true %>
         <%= f.input :password_confirmation, label: "Confirmer le mot de passe", required: true %>
         <div class="row margin-top-big">
@@ -93,6 +93,7 @@
         <p>Adresse :  <span class="recap-data" id="adresse">---</span></p>
         <p>Téléphone :  <span class="recap-data" id="telephone">---</span></p>
         <p>Email :  <span class="recap-data" id="email">---</span></p>
+        <p>Mot de Passe :  <span class="recap-data" id="password">---</span></p>
         <p>Collège :  <span class="recap-data" id="classe">---</span></p>
         <div class="row margin-top-big">
           <div class="col-xs-12">
@@ -117,6 +118,7 @@
         $('#adresse').html($('#user_address').val());
         $('#telephone').html($('#user_phone').val());
         $('#email').html($('#user_email').val());
+        $('#password').html($('#user_password').val());
         $('#classe').html($('#user_level').val());
       });
     });
