@@ -19,7 +19,7 @@
     <%= render 'shared/next_page', target_page: "#page2", icon: "fa-arrow-circle-down" %>
   </div>
 
-  <%= render 'shared/page_text', page_id: "page2",  signal: "informations étudiant", title: t('page_text1.title'), column1: t('page_text1.column1'), column2: t('page_text1.column2'), target_page: "#page3", image: t('page_text1.image') %>
+  <%= render 'shared/page_cards', page_id: "page2",  signal: "informations élèves", title: t('page_card1.title'), icon1: "building", icon2: "compass",  icon3: "map-marker", card1: t('page_card1.card1'), card2: t('page_card1.card2'), card3: t('page_card1.card3'), target_page: "#page3", image: t('page_card1.image') %>
 
-  <%= render 'shared/page_cards', page_id: "page3", signal: "informations entreprises", title: t('page_card2.title'), icon1: "flag", icon2: "calendar",  icon3: "map-marker", card1: t('page_card2.card1'), card2: t('page_card2.card2'), card3: t('page_card2.card3'), target_page: "#navbar", image: t('page_card2.image') %>
+  <%= render 'shared/page_cards', page_id: "page3", signal: "informations entreprises", title: t('page_card2.title'), icon1: "flag", icon2: "calendar",  icon3: "thumbs-up", card1: t('page_card2.card1'), card2: t('page_card2.card2'), card3: t('page_card2.card3'), target_page: "#navbar", image: t('page_card2.image') %>
 </div>

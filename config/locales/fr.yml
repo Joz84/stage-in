@@ -5,12 +5,15 @@ fr:
     placeholder: ""
     button_text1: "Je cherche un stage"
     button_text2: "Je propose un stage"
-  page_text1:
+  page_card1:
     signal: "Informations"
     title: "Objectifs du stage de 3ème en entreprise."
-    column1: "Gagner en autonomie, prendre confiance dans un nouvel environnement. Legere me lius quod ii legunt saepius claritas est etiam processus dynamicus. Facit eorum claritatem Investigationes demonstraverunt lectores qui."
-    column2: "Construire ou confirmer un projet d'orientation. Legere me lius quod ii legunt saepius claritas est etiam processus dynamicus. Facit eorum claritatem Investigationes demonstraverunt lectores qui.
-"
+    icon1: "tint"
+    icon2: "binoculars"
+    icon3: "map-marker"
+    card1: "Découvrir le monde du travail et de l’entreprise"
+    card2: "Aider à construire le parcours d’orientation"
+    card3: "Se découvrir dans un autre environnement que l’école"
     image: "http://res.cloudinary.com/doodlid/image/upload/v1508838121/stagein/stagein_home3.jpg"
   page_card2:
     title: "Les atouts de Stage-In pour votre entreprise"
