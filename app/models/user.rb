@@ -9,12 +9,13 @@ class User < ApplicationRecord
   has_many :skills, through: :student_skills
   belongs_to :college, optional: true
 
+  validates :college, presence: true, if: :student?
   validates :role, presence: true
   validates :company, presence: true, if: :company?
   validates :level, presence: true, if: :student?
   validates :first_name, presence: true, if: :student?
   validates :last_name, presence: true, if: :student?
-  validates :phone, presence: true
+  validates :phone, presence: true, if: :company?
 
   has_many :company_hirings, foreign_key: :company_id, class_name: "Hiring"
   has_many :student_hirings, foreign_key: :student_id, class_name: "StudentHiring"
