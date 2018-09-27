@@ -17,3 +17,10 @@
 select#hiring_number {
   width: 100px;
 }
+.inline-form-wrapper-xs {
+  margin: 50px 0 50px 0;
+  select {
+    width: 150px;
+    margin-right: 40px;
+  }
+}
