@@ -15,8 +15,8 @@ class HiringsController < ApplicationController
     #     height: 32,
     #     })
     # end
-  @companies = User.companies.with_lng_lat.limit(10)
-  @hash = current_user.gmap_hash(@companies)
+    @companies = User.companies.with_lng_lat.limit(10)
+    @hash = current_user.gmap_hash(@companies)
   end
 
   def show

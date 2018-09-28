@@ -12,9 +12,9 @@ Skill.destroy_all
 Checkpoint.destroy_all
 College.destroy_all
 
-c1 = College.create(name: "Collège Arnault Daniel", city: "Ribérac")
-College.create(name: "Collège Michel Debet", city: "Tocane-Saint-Apre")
-College.create(name: "MFR du Ribéracois", city: "Vanxains")
+c1 = College.create(name: "Collège Arnault Daniel", city: "Ribérac", email:"arnault.daniel@averifier.com")
+c2 = College.create(name: "Collège Michel Debet", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr")
+c3 = College.create(name: "MFR du Ribéracois", city: "Vanxains", email: "mfr.vanxains@mfr.asso.fr")
 
 User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1)
 User.create(email: "company@gmail.com", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
@@ -69,17 +69,24 @@ puts "Création de la Skill #{Skill.last.name}"
 puts "Seeding internship..."
 
 is = Internship.new(
-  starts_at: Date.new(2018, 12, 4),
-  ends_at: Date.new(2018, 12, 8),
+  starts_at: Date.new(2018, 12, 3),
+  ends_at: Date.new(2018, 12, 7),
   comment: "Stage de 3ème 2018-2019",
-  name: "Collège Arnaud Daniel"
+  college: c1
   )
 is.save
 is = Internship.new(
-  starts_at: Date.new(2018, 12, 4),
-  ends_at: Date.new(2018, 12, 8),
-  comment: "Stage de 3ème 2017-2018",
-  name: "Collège Notre Dame"
+  starts_at: Date.new(2018, 12, 17),
+  ends_at: Date.new(2018, 12, 21),
+  comment: "Stage de 3ème 2018-2019",
+  college: c2
+  )
+is.save
+is = Internship.new(
+  starts_at: Date.new(2019, 01, 14),
+  ends_at: Date.new(2019, 01, 25),
+  comment: "Stage de 3ème 2018-2019",
+  college: c3
   )
 is.save
 towns = [

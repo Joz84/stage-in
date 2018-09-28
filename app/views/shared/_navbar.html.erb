@@ -11,7 +11,7 @@
 
       <!-- Links when logged in -->
       <%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Profil", edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profil", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -31,7 +31,7 @@
         <% if user_signed_in? %>
           <!-- Links when logged in -->
           <li><%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Profil", edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Profil", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
 
           <!-- Avatar with dropdown menu -->

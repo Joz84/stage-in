@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180925083427) do
+ActiveRecord::Schema.define(version: 20180928092740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20180925083427) do
     t.boolean  "visible",    default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "email"
   end
 
   create_table "hiring_checkpoints", force: :cascade do |t|
@@ -73,6 +74,8 @@ ActiveRecord::Schema.define(version: 20180925083427) do
     t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "college_id"
+    t.index ["college_id"], name: "index_internships_on_college_id", using: :btree
   end
 
   create_table "skills", force: :cascade do |t|
@@ -137,6 +140,7 @@ ActiveRecord::Schema.define(version: 20180925083427) do
   add_foreign_key "hiring_checkpoints", "checkpoints"
   add_foreign_key "hiring_checkpoints", "student_hirings"
   add_foreign_key "hirings", "internships"
+  add_foreign_key "internships", "colleges"
   add_foreign_key "student_hirings", "hirings"
   add_foreign_key "student_skills", "skills"
   add_foreign_key "users", "colleges"
