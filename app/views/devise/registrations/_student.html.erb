@@ -6,7 +6,7 @@
         <h2><%= t('inscription.0on4.title') %></h2>
         <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>Choisissez votre établissement :
         </p>
-        <%= f.association :college, label: false, placeholder: "Cliquez ici", collection: College.all.order(:name), class: "input-medium", input_html: { id: "student_college"} %>
+        <%= f.association :college, as: :radio_buttons,label: false, placeholder: "Cliquez ici", collection: College.all.order(:name), class: "input-medium test" %>
         <div class="row margin-top-big">
           <div class="col-xs-12">
             <%= link_to "suivant", "#step2", class: "scroll btn btn-blue", id: "college_name"%>
@@ -121,10 +121,13 @@
         $('#telephone').html($('#user_phone').val());
         $('#email').html($('#user_email').val());
         $('#password').html($('#user_password').val());
-        $('#college').html($('#student_college option:selected').text());
+        $('#college').html($('input[name="user[college_id]"]:checked')[0].offsetParent.innerText);
+        // $('#college').html($('#student_college option:selected').text());
       });
       $('#college_name').on('click', function(event){
-        $('#college_name_sentence').html($('#student_college option:selected').text());
+        console.log($('input[name="user[college_id]"]:checked')[0].offsetParent.innerText);
+        $('#college_name_sentence').html($('input[name="user[college_id]"]:checked')[0].offsetParent.innerText);
+        // $('#college_name_sentence').html($('#student_college option:selected').text());
       });
     });
   </script>
