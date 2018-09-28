@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :student_hirings, only: [:show, :create]
   end
   resources :hiring_checkpoints, only: [:update]
-  resources :hirings, only: [:index, :show, :update]
+  resources :hirings, only: [:index, :show, :update, :destroy]
 
 end

@@ -22,4 +22,10 @@ class HiringsController < ApplicationController
   def show
     @hiring = Hiring.find(params[:id])
   end
+
+  def destroy
+    @hiring = Hiring.find(params[:id])
+    @hiring.destroy
+    redirect_to company_hirings_path
+  end
 end

@@ -10,8 +10,12 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Profil", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if current_user.role == "student" %>
+        <%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Profil", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% else %>
+        <%= link_to "Profil", "", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
       <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -30,8 +34,10 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
           <!-- Links when logged in -->
-          <li><%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Profil", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <% if current_user.role == "student" %>
+            <li><%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li><%= link_to "Profil", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <% end %>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
 
           <!-- Avatar with dropdown menu -->
