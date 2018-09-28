@@ -12,7 +12,6 @@ class User < ApplicationRecord
   validates :college, presence: true, if: :student?
   validates :role, presence: true
   validates :company, presence: true, if: :company?
-  validates :level, presence: true, if: :student?
   validates :first_name, presence: true, if: :student?
   validates :last_name, presence: true, if: :student?
   validates :phone, presence: true, if: :company?

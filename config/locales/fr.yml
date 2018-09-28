@@ -56,8 +56,8 @@ fr:
       button1: "ok"
       button2: "S'inscrire en tant qu'entreprise"
     1on4:
-      title: "Inscription 1/4"
-      text: "Inscris tes vrais noms et prénoms, ce seront ceux qui seront envoyés aux entreprises quand tu postuleras à ton stage."
+      title: "Inscription 1/3"
+      text: "Renseignez vos noms, prénoms et date de naissance."
       resource1: "first_name"
       resource2: "last_name"
       resource3: "birthday"
@@ -65,8 +65,8 @@ fr:
       label2: "Nom"
       label3: "Date de Naissance"
     1on4:
-      title: "Inscription 1/4"
-      text: "Inscris tes vrais noms et prénoms, ce seront ceux qui seront envoyés aux entreprises quand tu postuleras à ton stage."
+      title: "Inscription 1/3"
+      text: "Renseignez vos noms, prénoms et date de naissance."
       resource1: "first_name"
       resource2: "last_name"
       resource3: "birthday"
