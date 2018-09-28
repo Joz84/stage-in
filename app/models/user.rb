@@ -19,8 +19,14 @@ class User < ApplicationRecord
   has_many :company_hirings, foreign_key: :company_id, class_name: "Hiring"
   has_many :student_hirings, foreign_key: :student_id, class_name: "StudentHiring"
 
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode, if: :address_changed?
+  after_validation :geocode, if: :city_changed?
+  after_validation :geocode, if: :zipcode_changed?
+
+  def full_address
+    "#{num} #{address} #{zipcode} #{city}"
+  end
 
   def full_name
     "#{first_name} #{last_name}"
@@ -62,11 +68,5 @@ class User < ApplicationRecord
       host + "v1506266970/RED_onahwf.png"
     end
   end
-
-
-
-
-
-
 
 end

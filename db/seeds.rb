@@ -12,9 +12,9 @@ Skill.destroy_all
 Checkpoint.destroy_all
 College.destroy_all
 
-c1 = College.create(name: "Collège Arnault Daniel", city: "Ribérac", email:"arnault.daniel@averifier.com")
-c2 = College.create(name: "Collège Michel Debet", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr")
-c3 = College.create(name: "MFR du Ribéracois", city: "Vanxains", email: "mfr.vanxains@mfr.asso.fr")
+c1 = College.create(name: "Collège Arnault Daniel", city: "Ribérac", email:"arnault.daniel@averifier.com", latitude:"45.243756", longitude: "0.335228")
+c2 = College.create(name: "Collège Michel Debet", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr", latitude:"45.250822", longitude: "0.496137")
+c3 = College.create(name: "MFR du Ribéracois", city: "Vanxains", email: "mfr.vanxains@mfr.asso.fr", latitude:"45.217030", longitude: "0.286809")
 
 User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1)
 User.create(email: "company@gmail.com", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510")
@@ -120,7 +120,7 @@ puts "Seeding companies and hirings"
   c.save
   # create one hiring per company :
   h = Hiring.new(
-    internship: Internship.all.first,
+    internship: Internship.all.sample,
     company: c,
     )
   h.save!

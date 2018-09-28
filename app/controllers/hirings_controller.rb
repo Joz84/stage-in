@@ -23,6 +23,8 @@ class HiringsController < ApplicationController
     @hiring = Hiring.find(params[:id])
   end
 
+
+  # A refacto avec une possibilité d'archiver les offres
   def destroy
     @hiring = Hiring.find(params[:id])
     @hiring.destroy
