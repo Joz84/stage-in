@@ -20,8 +20,8 @@
       <div class="list-column">
         <h4><%= hiring.internship.comment %></h4>
         <p><%= hiring.internship.full_name %></p>
-        <%= link_to company_hiring_path(hiring), method: :delete, data: { confirm: "Etes vous sur de vouloir supprimer cette offre ?" } do %>
-          <h6 class="pink"><i class="fa fa-trash"></i> supprimer l'offre de stage</h6>
+        <%= link_to company_hiring_path(hiring), method: :patch, data: { confirm: "Etes vous sur de vouloir archiver cette offre ?" } do %>
+          <h6 class="pink"><i class="fa fa-trash"></i> archiver l'offre de stage</h6>
         <% end %>
       </div>
       <% if hiring.accepted? %>

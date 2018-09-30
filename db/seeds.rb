@@ -125,6 +125,7 @@ puts "Seeding companies and hirings"
   h = Hiring.new(
     internship: Internship.all.sample,
     company: c,
+    visible: true
     )
   h.save!
 end
