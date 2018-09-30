@@ -30,8 +30,7 @@ class User < ApplicationRecord
   end
 
   def self.colleges
-    all
-    .where(role: "college")
+    where(role: "college")
   end
 
   def full_address
