@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def update_college_acceptation
-    raise
     @user = User.find(params[:id])
     @user.update(college_acceptation: true)
     flash[:alert] = "Nouvel élève validée avec succés !"
