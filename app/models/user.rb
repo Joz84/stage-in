@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  after_create :send_welcome_email, if: :student?
+
   enum role: { company: 0, school: 1, student: 2 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -63,9 +65,10 @@ class User < ApplicationRecord
   end
 
 
+  private
 
-
-
-
+  def send_welcome_email
+    StudentMailer.welcome(self).deliver_now
+  end
 
 end
