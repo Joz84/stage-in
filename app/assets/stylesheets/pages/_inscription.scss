@@ -7,13 +7,27 @@
   font-style: italic;
 }
 .inline-form-wrapper {
-  height: 90px;
   margin: 50px 0 50px 0;
-  select {
-    width: 150px;
+  input {
+    max-height: 40px;
     margin-right: 40px;
   }
+  select {
+    max-height: 40px;
+    width: 100%;
+    background-color: white;
+    margin-right: 40px;
+  }
+  label {
+    margin-right: 50px;
+  }
 }
-select#hiring_number {
-  width: 100px;
-}
+
+
+// .inline-form-wrapper-xs {
+//   margin: 50px 0 50px 0;
+//   select {
+//     width: 150px;
+//     margin-right: 40px;
+//   }
+// }

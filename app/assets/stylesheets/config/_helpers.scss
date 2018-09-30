@@ -7,6 +7,9 @@ $padding-side: 0 20px 0 20px;
 $white-space: 20px;
 $input-height: 56px;
 
+.page-size {
+  min-height: calc(100vh - 200px);
+}
 .tester {
   background-color: red;
   border-color: black;

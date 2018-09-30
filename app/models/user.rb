@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum role: { company: 0, school: 1, student: 2 }
+  enum role: { company: 0, college: 1, student: 2 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,19 +7,35 @@ class User < ApplicationRecord
 
   has_many :student_skills, foreign_key: :student_id, class_name: "Student_Skill"
   has_many :skills, through: :student_skills
+  belongs_to :college, class_name: "User", optional: true, dependent: :delete
+  has_many :internships
 
+  # validates :college_id, presence: true, if: :student?
   validates :role, presence: true
   validates :company, presence: true, if: :company?
-  validates :level, presence: true, if: :student?
   validates :first_name, presence: true, if: :student?
   validates :last_name, presence: true, if: :student?
-  validates :phone, presence: true
+  validates :phone, presence: true, if: :company?
 
   has_many :company_hirings, foreign_key: :company_id, class_name: "Hiring"
   has_many :student_hirings, foreign_key: :student_id, class_name: "StudentHiring"
 
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode, if: :address_changed?
+  after_validation :geocode, if: :city_changed?
+  after_validation :geocode, if: :zipcode_changed?
+
+  def self.college_list_name
+    colleges.map(&:college_name)
+  end
+
+  def self.colleges
+    where(role: "college")
+  end
+
+  def full_address
+    "#{num} #{address} #{zipcode} #{city}"
+  end
 
   def full_name
     "#{first_name} #{last_name}"
@@ -61,11 +77,5 @@ class User < ApplicationRecord
       host + "v1506266970/RED_onahwf.png"
     end
   end
-
-
-
-
-
-
 
 end
