@@ -1,6 +1,22 @@
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-  <div class="container-fluid" id="step1">
+  <div class="container-fluid" id="step0">
+    <div class="row fullscreen flex-vertical-center">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+        <h2><%= t('inscription.0on4.title') %></h2>
+        <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>Choisissez votre établissement :
+        </p>
+        <%= f.input :college, as: :radio_buttons,label: false, placeholder: "Cliquez ici", collection: User.college_list_name, class: "input-medium test" %>
+        <div class="row margin-top-big">
+          <div class="col-xs-12">
+            <%= link_to "suivant", "#step2", class: "scroll btn btn-blue", id: "college_name"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="step2">
     <div class="row full-height flex-vertical-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
         <h2><%= t('inscription.1on4.title') %></h2>
@@ -9,30 +25,14 @@
         </p>
         <%= f.input t('inscription.1on4.resource1'), label: t('inscription.1on4.label1'), required: true, class: "input-medium" %>
         <%= f.input t('inscription.1on4.resource2'), label: t('inscription.1on4.label2'), required: true, class: "input-medium"%>
+        <%= f.input t('inscription.1on4.resource3'), label: t('inscription.1on4.label3'), required: true, class: "input-medium", as: :string, input_html: { class: 'datepicker' }%>
+        <br>
+        <p>Votre établissement <span id="college_name_sentence"></span> sera informé de votre inscription.</p>
         <div class="row margin-top-big">
           <div class="col-xs-12">
               <%= link_to "précédent", "#step0", class: "scroll btn btn-gray hidden-xs" %>
               <%= link_to "<", "#step0", class: "scroll btn btn-gray btn-square hidden-sm hidden-md hidden-lg" %>
-              <%= link_to "suivant", "#step2", class: "scroll btn btn-blue"%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="step2">
-    <div class="row fullscreen flex-vertical-center">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-        <h2>Inscription 2/4</h2>
-        <p class="relative margin-bottom-small"><i class="fa fa-map-marker fontawesome"></i>Inscris ton adresse postale et ton numéro. L'adresse permettra de trouver les stages les plus proches de chez toi automatiquement.
-        </p>
-        <%= f.input :address, label: "Adresse complète", required: true, class: "input-medium" %>
-        <%= f.input :phone, label: "Numéro de téléphone", required: true, class: "input-medium"%>
-        <div class="row margin-top-big">
-          <div class="col-xs-12">
-            <%= link_to "précédent", "#step1", class: "scroll btn btn-gray hidden-xs" %>
-            <%= link_to "<", "#step1", class: "scroll hidden-sm hidden-md hidden-lg btn btn-gray btn-square " %>
-            <%= link_to "suivant", "#step3", class: "scroll btn btn-blue"%>
+              <%= link_to "suivant", "#step3", class: "scroll btn btn-blue"%>
           </div>
         </div>
       </div>
@@ -42,10 +42,14 @@
   <div class="container-fluid" id="step3">
     <div class="row fullscreen flex-vertical-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-        <h2>Inscription 3/4</h2>
-        <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>Choisis ton collège. Les périodes de stage en dépendent, les besoins des entreprises aussi.
+        <h2>Inscription 2/3</h2>
+        <p class="relative margin-bottom-small"><i class="fa fa-map-marker fontawesome"></i>Indiquer vos coordonées.
         </p>
-        <%= f.input :level, label: "Choisis ton collège", placeholder: "clique ici", collection: [ "Collège Arnaud Daniel", "Collège Notre Dame"], class: "input-medium" %>
+        <%= f.input :num, label: "Numéro", required: true, class: "input-medium" %>
+        <%= f.input :address, label: "Adresse", required: true, class: "input-medium" %>
+        <%= f.input :zipcode, label: "Code Postal", required: true, class: "input-medium" %>
+        <%= f.input :city, label: "Ville", required: true, class: "input-medium" %>
+        <%= f.input :phone, label: "Numéro de téléphone (facultatif)", class: "input-medium"%>
         <div class="row margin-top-big">
           <div class="col-xs-12">
             <%= link_to "précédent", "#step2", class: "scroll btn btn-gray hidden-xs" %>
@@ -57,13 +61,15 @@
     </div>
   </div>
 
+
+
   <div class="container-fluid" id="step4">
     <div class="row fullscreen flex-vertical-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-        <h2>Inscription 4/4</h2>
-        <p class="relative margin-bottom-small"><i class="fa fa-email fontawesome"></i>L’email doit être valide, elles permettront de te connnecter et l’entreprise et de te contacter facilement.
+        <h2>Inscription 3/3</h2>
+        <p class="relative margin-bottom-small"><i class="fa fa-email fontawesome"></i>Veuillez indiquer votre courriel et un mot de passe.
         </p>
-        <%= f.input :email, required: true %>
+        <%= f.input :email, required: true, placeholder: "prenom.nom@mail.com" %>
         <%= f.input :password, label: "Mot de passe", required: true %>
         <%= f.input :password_confirmation, label: "Confirmer le mot de passe", required: true %>
         <div class="row margin-top-big">
@@ -81,15 +87,15 @@
     <div class="row fullscreen flex-vertical-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
         <h2>Récapitulatif</h2>
-        <p class="relative margin-bottom-small"><i class="fa fa-hand-o-right fontawesome"></i>Check tes infos et valide si tout est bon.
-    Sinon reviens en arrière.
+        <p class="relative margin-bottom-small"><i class="fa fa-hand-o-right fontawesome"></i>Vérifiez vos informations.
         </p>
         <p>Prénom :  <span class="recap-data" id="prenom">---</span></p>
         <p>Nom :  <span class="recap-data" id="nom">---</span></p>
         <p>Adresse :  <span class="recap-data" id="adresse">---</span></p>
         <p>Téléphone :  <span class="recap-data" id="telephone">---</span></p>
         <p>Email :  <span class="recap-data" id="email">---</span></p>
-        <p>Collège :  <span class="recap-data" id="classe">---</span></p>
+        <p>Mot de Passe :  <span class="recap-data" id="password">---</span></p>
+        <p>Collège :  <span class="recap-data" id="college">---</span></p>
         <div class="row margin-top-big">
           <div class="col-xs-12">
             <%= link_to "précédent", "#step3", class: "scroll btn btn-gray hidden-xs" %>
@@ -113,7 +119,14 @@
         $('#adresse').html($('#user_address').val());
         $('#telephone').html($('#user_phone').val());
         $('#email').html($('#user_email').val());
-        $('#classe').html($('#user_level').val());
+        $('#password').html($('#user_password').val());
+        $('#college').html($('input:checked')[0].offsetParent.innerText);
+        // $('#college').html($('#student_college option:selected').text());
+      });
+      $('#college_name').on('click', function(event){
+        console.log($('input:checked')[0].offsetParent.innerText);
+        $('#college_name_sentence').html($('input:checked')[0].offsetParent.innerText);
+        // $('#college_name_sentence').html($('#student_college option:selected').text());
       });
     });
   </script>

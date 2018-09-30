@@ -13,6 +13,10 @@ class Hiring < ApplicationRecord
     pendings
   end
 
+  def self.visibles
+    where(visible: true)
+  end
+
   def accepted?
     accepted_student_hirings
     .any?
@@ -32,6 +36,10 @@ class Hiring < ApplicationRecord
   def accepted_student_hirings
     student_hirings
     .where(state: :accepted)
+  end
+
+  def not_visible
+    update(visible: false)
   end
 
 end

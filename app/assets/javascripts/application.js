@@ -3,7 +3,9 @@
 //= require bootstrap-sprockets
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require bootstrap-datepicker
 //= require_tree .
+
 
 $(document).ready(function() {
 
@@ -28,6 +30,4 @@ $(document).ready(function() {
     }, 500);
   });
 });
-
-
 
