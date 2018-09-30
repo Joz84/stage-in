@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
     skill_path(Skill.first)
   end
 
-  def after_sign_in_path_for(resource)
-    hirings_path
-  end
+  # def after_sign_in_path_for(resource)
+  #   hirings_path
+  # end
 
 end

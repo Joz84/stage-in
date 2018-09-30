@@ -120,12 +120,12 @@
         $('#telephone').html($('#user_phone').val());
         $('#email').html($('#user_email').val());
         $('#password').html($('#user_password').val());
-        $('#college').html($('input[name="user[college_id]"]:checked')[0].offsetParent.innerText);
+        $('#college').html($('input:checked')[0].offsetParent.innerText);
         // $('#college').html($('#student_college option:selected').text());
       });
       $('#college_name').on('click', function(event){
-        console.log($('input[name="user[college_id]"]:checked')[0].offsetParent.innerText);
-        $('#college_name_sentence').html($('input[name="user[college_id]"]:checked')[0].offsetParent.innerText);
+        console.log($('input:checked')[0].offsetParent.innerText);
+        $('#college_name_sentence').html($('input:checked')[0].offsetParent.innerText);
         // $('#college_name_sentence').html($('#student_college option:selected').text());
       });
     });
