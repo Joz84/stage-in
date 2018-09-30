@@ -26,11 +26,10 @@ class User < ApplicationRecord
   after_validation :geocode, if: :zipcode_changed?
 
   def self.college_list_name
-    all
-    .where(role: "college").map(&:college_name)
+    colleges.map(&:college_name)
   end
 
-  def self.college_list
+  def self.colleges
     all
     .where(role: "college")
   end
