@@ -1,11 +1,8 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
   after_create :send_welcome_email, if: :student?
 
-  enum role: { company: 0, school: 1, student: 2 }
-=======
   enum role: { company: 0, college: 1, student: 2 }
->>>>>>> f1793c2baf750a10d65dec17878162ccde1392c7
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -83,7 +80,6 @@ class User < ApplicationRecord
       host + "v1506266970/RED_onahwf.png"
     end
   end
-
 
   private
 
