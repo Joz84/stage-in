@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180930170151) do
+ActiveRecord::Schema.define(version: 20180930190751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,12 +129,15 @@ ActiveRecord::Schema.define(version: 20180930170151) do
     t.string   "phone"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "college_id"
     t.datetime "birthday"
     t.string   "num"
     t.string   "zipcode"
     t.string   "city"
     t.text     "description"
+    t.string   "college_name"
+    t.boolean  "visible"
+    t.boolean  "college_acceptation"
+    t.integer  "college_id"
     t.index ["college_id"], name: "index_users_on_college_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -143,8 +146,8 @@ ActiveRecord::Schema.define(version: 20180930170151) do
   add_foreign_key "hiring_checkpoints", "checkpoints"
   add_foreign_key "hiring_checkpoints", "student_hirings"
   add_foreign_key "hirings", "internships"
-  add_foreign_key "internships", "colleges"
+  add_foreign_key "internships", "users", column: "college_id"
   add_foreign_key "student_hirings", "hirings"
   add_foreign_key "student_skills", "skills"
-  add_foreign_key "users", "colleges"
+  add_foreign_key "users", "users", column: "college_id"
 end

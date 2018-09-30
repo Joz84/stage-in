@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum role: { company: 0, school: 1, student: 2 }
+  enum role: { company: 0, college: 1, student: 2 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,9 +7,10 @@ class User < ApplicationRecord
 
   has_many :student_skills, foreign_key: :student_id, class_name: "Student_Skill"
   has_many :skills, through: :student_skills
-  belongs_to :college, optional: true
+  belongs_to :college, class_name: "User", optional: true, dependent: :delete
+  has_many :internships
 
-  validates :college, presence: true, if: :student?
+  # validates :college_id, presence: true, if: :student?
   validates :role, presence: true
   validates :company, presence: true, if: :company?
   validates :first_name, presence: true, if: :student?
@@ -23,6 +24,16 @@ class User < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   after_validation :geocode, if: :city_changed?
   after_validation :geocode, if: :zipcode_changed?
+
+  def self.college_list_name
+    all
+    .where(role: "college").map(&:college_name)
+  end
+
+  def self.college_list
+    all
+    .where(role: "college")
+  end
 
   def full_address
     "#{num} #{address} #{zipcode} #{city}"

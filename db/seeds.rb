@@ -6,15 +6,16 @@ HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
 Hiring.destroy_all
 Internship.destroy_all
-User.destroy_all
+User.where(role: :student).destroy_all
+User.where(role: :college).destroy_all
 StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
 College.destroy_all
 
-c1 = College.create(name: "Collège Arnault Daniel", city: "Ribérac", email:"arnault.daniel@averifier.com", latitude:"45.243756", longitude: "0.335228")
-c2 = College.create(name: "Collège Michel Debet", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr", latitude:"45.250822", longitude: "0.496137")
-c3 = College.create(name: "MFR du Ribéracois", city: "Vanxains", email: "mfr.vanxains@mfr.asso.fr", latitude:"45.217030", longitude: "0.286809")
+c1 = User.create(college_name: "Collège Arnault Daniel", city: "Ribérac", email:"arnault.daniel@averifier.com", password: "123456",latitude:"45.243756", longitude: "0.335228", role: 'college')
+c2 = User.create(college_name: "Collège Michel Debet", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr", password: "123456", latitude:"45.250822", longitude: "0.496137", role: 'college')
+c3 = User.create(college_name: "MFR du Ribéracois", city: "Vanxains", email: "mfr.vanxains@mfr.asso.fr", password: "123456", latitude:"45.217030", longitude: "0.286809", role: 'college')
 
 User.create(email: "jules@gmail.com", first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1)
 User.create(email: "company@gmail.com", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", description: "Extencia, experts en accompagnement C’est cette idée qui dirige notre cabinet d’experts-comptables : accompagner nos clients au quotidien et réserver notre énergie à votre réussite. Cet état d’esprit se résume ainsi : « c’est en faisant particulièrement bien notre métier que vous pourrez vous consacrer pleinement au vôtre ! »")
