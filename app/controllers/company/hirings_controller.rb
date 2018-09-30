@@ -21,6 +21,15 @@ class Company::HiringsController < ApplicationController
     end
   end
 
+  # A refacto avec une possibilité d'archiver les offres
+  def destroy
+    @hiring = Hiring.find(params[:id])
+    @hiring.destroy
+    redirect_to company_hirings_path
+  end
+
+  private
+
   def hiring_params
     params.require(:hiring).permit(:job_id, :internship_id, :number)
   end

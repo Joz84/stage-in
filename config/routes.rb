@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   mount Attachinary::Engine => "/attachinary"
   namespace :company do
-    resources :hirings, only: [:index, :create]
+    resources :hirings, only: [:index, :create, :destroy]
     resources :student_hirings, only: [:update]
   end
 
