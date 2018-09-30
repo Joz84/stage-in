@@ -1,5 +1,10 @@
 
-
-<div id="student">
-  <%= render "student" %>
-</div>
+<% if params[:role] == "student" %>
+  <div id="student">
+    <%= render "student" %>
+  </div>
+<% else %>
+  <div class="container-fluid" style="display: flex; justify-content: center">
+    <%= render "company" %>
+  </div>
+<% end %>
