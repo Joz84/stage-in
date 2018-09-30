@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   after_create :send_welcome_email, if: :student?
+  after_create :send_student_confirmation_mail, if: :student?
 
   enum role: { company: 0, college: 1, student: 2 }
 
@@ -87,4 +88,7 @@ class User < ApplicationRecord
     StudentMailer.welcome(self).deliver_now
   end
 
+  def send_student_confirmation_mail
+    CollegeMailer.student_confirmation(self).deliver_now
+  end
 end

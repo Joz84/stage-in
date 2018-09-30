@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'hiring_checkpoints/update'
 
+  patch 'student_acceptation/:id', to: "users#update_college_acceptation", as: "student_acceptation"
+
   devise_for :users
   root to: 'pages#home'
   mount Attachinary::Engine => "/attachinary"
@@ -17,6 +19,6 @@ Rails.application.routes.draw do
     resources :student_hirings, only: [:show, :create]
   end
   resources :hiring_checkpoints, only: [:update]
-  resources :hirings, only: [:index, :show, :update, :destroy]
+  resources :hirings, only: [:index, :show, :update]
 
 end

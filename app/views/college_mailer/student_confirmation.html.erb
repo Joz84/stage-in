@@ -1,5 +1,44 @@
-<h1>College#student_confirmation</h1>
+<div style="text-align: left;">
+  <%= link_to "#", class: "navbar-wagon-brand" do %>
+    <%= image_tag "stagein_logo.png" %>
+  <% end %>
+  <h1>Nouvel Inscription à votre établissement.</h1>
+</div>
+<br>
 
+<p>Bonjour</p>
+<p>Un nouvel élève s'est inscrit sur Stage-In en sélectionnant votre établissement.<br></p>
+
+<p>Veuillez trouver ci-dessous le récapitulatif de cette nouvelle inscription :</p>
+<p>Prénom :  <span class="recap-data" id="prenom"><%= @user.first_name %></span></p>
+<p>Nom :  <span class="recap-data" id="nom"><%= @user.last_name %></span></p>
+<p>Date de Naissance :  <span class="recap-data" id="birthday"><%= @user.birthday.strftime("%d/%m/%Y") %></span></p>
+<p>Email :  <span class="recap-data" id="email"><%= @user.email %></span></p>
+<p>Collège :  <span class="recap-data" id="college"><%= @user.college.college_name %></span></p>
+
+<p>Si cet éléve est bien de votre établissement, veuillez valider son inscription :</p>
+<br>
+<%= link_to "Valider son inscription", student_acceptation_url(@user), method: :patch, class: "btn btn-blue",
+    style: "text-decoration:none;
+    background-color: #08D9D6;
+    color: white;
+    border-radius: 8px;
+    height: auto !important;
+    height: 56px;
+    min-height: 56px;
+    border: none;
+    padding: 16px 30px 16px 30px;
+    min-width: 200px;
+    box-shadow: none;
+    font-size: 16px;
+    -webkit-box-shadow: none;
+    border-bottom: none;
+    cursor: pointer;
+    white-space: normal;
+    margin-bottom: 10px;"%>
 <p>
-  <%= @greeting %>, find me in app/views/college_mailer/student_confirmation.html.erb
+
+<br>
+Bien cordialement, <br>
+Stage-In<br>
 </p>
