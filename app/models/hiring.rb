@@ -42,4 +42,20 @@ class Hiring < ApplicationRecord
     update(visible: false)
   end
 
+  def score(user)
+
+
+  end
+
+  def self.group_by_score(user)
+    joins(:internship).where(internships: {college_id: user.college_id})
+      .group_by do |hiring|
+        hiring.company
+              .skill
+              .student_skills
+              .find_by(student: user)
+              .score
+      end.sort{|x,y| y <=> x }.to_h
+  end
+
 end
