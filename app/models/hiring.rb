@@ -50,9 +50,13 @@ class Hiring < ApplicationRecord
     .score
   end
 
-  def self.group_by_score(user)
+  def self.college_filter(user)
     joins(:internship)
     .where(internships: {college_id: user.college_id})
+  end
+
+  def self.group_by_score(user)
+    college_filter(user)
     .group_by { |h| h.score(user) }.sort{|x,y| y <=> x }.to_h
   end
 

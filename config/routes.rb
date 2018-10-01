@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'hiring_checkpoints/update'
 
-  patch 'student_acceptation/:id', to: "users#update_college_acceptation", as: "student_acceptation"
+  get 'student_acceptation/:token', to: "users#update_college_acceptation", as: "student_acceptation"
 
   devise_for :users
   root to: 'pages#home'

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_token
   after_create :send_welcome_email, if: :student?
   after_create :send_student_confirmation_mail, if: :student?
 
