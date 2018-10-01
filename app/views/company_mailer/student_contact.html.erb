@@ -1,9 +1,10 @@
 <div style="text-align: left;">
   <h1>Demande de contact</h1>
 
-  <p>Un élève du collège <%= @student.college.name %> souhaite entrer en contact avec pour avoir des informations sur une offre de stage</p>
-  <br>
+  <p>Bonjour,</p>
+  <p>Un élève du collège <%= @student.college.college_name %> souhaite entrer en contact avec vous pour avoir des informations sur une offre de stage. </p>
   <p>Consulter votre compte pour gérer vos offres :</p>
+  <br>
   <%= link_to "Mes offres de stage", company_hirings_url, class: "btn btn-blue",
     style: "text-decoration:none;
     background-color: #08D9D6;
@@ -23,4 +24,9 @@
     white-space: normal;
     margin-bottom: 10px;"%>
 </div>
+
 <br>
+<br>
+Bien cordialement, <br>
+Stage-In<br>
+</p>

@@ -4,4 +4,5 @@ class CompanyMailer < ApplicationMailer
     @student = student
     mail(to: @company.email, subject: '>> Stage-In - Prise de contact')
   end
+
 end
