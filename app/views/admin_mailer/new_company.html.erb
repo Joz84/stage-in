@@ -2,11 +2,17 @@
   <h1>Bilan des entreprises inscrites</h1>
 </div>
 <br>
-
-<p>La société <%= @user.company %> vient de s'inscrire.</p>
+<p>Bonjour,</p>
+<p>La société <b><%= @user.company %></b> vient de s'inscrire.</p>
 
 <p>Veuillez trouver ci-dessous le récapitulatif des entreprises inscrites :</p>
+<ol>
+  <% @companies.each do |company| %>
+    <li> <%= company.company %> - Référent : <%= company.last_name.nil? ? "" : "#{company.first_name.capitalize} #{company.last_name.capitalize}"  %> - Contact : <%= company.email %> , <%= company.phone %>
+    </li>
+  <% end %>
 
+</ol>
 
 <p>
 Bien cordialement, <br>
