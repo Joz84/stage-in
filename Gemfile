@@ -33,6 +33,7 @@ end
 gem 'faker'
 
 group :development, :test do
+  gem "letter_opener"
   gem 'rails-erd'
   gem 'pry-byebug'
   gem 'pry-rails'

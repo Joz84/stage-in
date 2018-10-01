@@ -2,10 +2,12 @@ class StudentSkillsController < ApplicationController
 
   def create
     @skill = Skill.find(params[:skill_id])
-    @skill.student_skills.create(student: current_user, score: params[:score])
-    skills_count = StudentSkill.where(student: current_user).size.to_i
+    @student_skill = @skill.student_skills.find_or_create_by(student: current_user)
+    @student_skill.update(score: params[:score])
     @skills = Skill.all
-    redirect_to skills_count < @skills.size ? @skills[skills_count] : hirings_path
+    skills_count = @skills.index(@skill)
+    # skills_count = StudentSkill.where(student: current_user).size.to_i
+    redirect_to skills_count < (@skills.size - 1) ? @skills[skills_count + 1] : hirings_path
   end
 
   private

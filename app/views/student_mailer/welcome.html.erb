@@ -1,0 +1,23 @@
+<div style="text-align: left;">
+  <h1>Bienvenue <%= @user.full_name %></h1>
+</div>
+<br>
+
+<p><b>Votre inscription sur Stage-In a bien été prise en compte.</b></p>
+<p>Votre établissement va prendre connaissance de votre inscription et la validera sous 48 heures, si votre dossier est complet. <br>
+Une fois votre inscription validée, vous pourrez alors postuler en ligne aux stages proposés selon vos centres d'intérêt.</p>
+
+<p>Veuillez trouver ci-dessous le récapitulatif de votre inscription :</p>
+
+<p>Prénom :  <span class="recap-data" id="prenom"><%= @user.first_name %></span></p>
+<p>Nom :  <span class="recap-data" id="nom"><%= @user.last_name %></span></p>
+<p>Adresse :  <span class="recap-data" id="adresse"><%= @user.full_address %></span></p>
+<p>Téléphone :  <span class="recap-data" id="telephone"><%= @user.phone %></span></p>
+<p>Email :  <span class="recap-data" id="email"><%= @user.email %></span></p>
+<p>Mot de Passe :  <span class="recap-data" id="password"><%= @user.password %></span></p>
+<p>Collège :  <span class="recap-data" id="college"><%= @user.college.college_name %></span></p>
+
+<p>
+Bien cordialement, <br>
+Stage-In<br>
+</p>

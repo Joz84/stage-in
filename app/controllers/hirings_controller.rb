@@ -1,6 +1,10 @@
 class HiringsController < ApplicationController
   def index
-    @hirings = Hiring.group_by_score(current_user)
+    begin
+      @hirings = Hiring.group_by_score(current_user)
+    rescue
+      @hirings = { 3 => Hiring.college_filter(current_user) }
+    end
     # @companies = User.where(role: "company")
     #                  .where
     #                  .not(latitude: nil, longitude: nil)
