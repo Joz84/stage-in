@@ -1,36 +1,27 @@
 <div class="container-fluid">
     <div class="row fullscreen flex-vertical-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      <h2><%= t(".title", resource: resource_class.model_name.human) %></h2>
+      <h2>Mon Compte</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :address, required: true %>
+          <%= f.input :zipcode, required: true %>
+          <%= f.input :city, required: true %>
+          <%= f.input :phone %>
 
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <p>
-              <%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %>
-            </p>
-          <% end %>
-
-          <%= f.input :password, autocomplete: "off", hint: t(".leave_blank_if_you_don_t_want_to_change_it"), required: false %>
+          <%= f.input :password, autocomplete: "off", hint: "Laisser ce champ vide si vous ne souhaitez pas le modifier", required: false %>
           <%= f.input :password_confirmation, required: false %>
-          <%= f.input :current_password, hint: t(".we_need_your_current_password_to_confirm_your_changes"), required: true %>
-          <%= f.input :num, label: "Numéro", class: "input-medium" %>
-          <%= f.input :address, label: "Adresse", class: "input-medium" %>
-          <%= f.input :zipcode, label: "Code Postal", class: "input-medium" %>
-          <%= f.input :city, label: "Ville", class: "input-medium" %>
-          <%= f.input :phone, label: "Numéro de téléphone (facultatif)", class: "input-medium"%>
+          <%= f.input :current_password, hint: "Veuillez saisir votre mot de passe actuel pour confirmer ces modifications", required: true %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, t(".update") %>
+          <%= f.button :submit, "Modifier", class: "btn btn-blue" %>
         </div>
       <% end %>
-
-      <p><%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %></p>
 
     </div>
   </div>
