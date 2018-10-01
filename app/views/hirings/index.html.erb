@@ -32,7 +32,12 @@
                   <p><%= hiring.company.skill.name %></p>
                 </div>
                 <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
-                <%= link_to "", hiring, class: "card-link" %>
+                <% if current_user.college_acceptation %>
+                  <%= link_to( "", hiring, class: "card-link") %>
+                <% else %>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="card-link" data-toggle="modal" data-target="#myModal"></button>
+                <% end %>
               </div>
 
             </div>
@@ -42,4 +47,19 @@
     <% else %>
     <p>Il n'y a pas encore de stage disponible.</p>
     <% end %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Compte en attente de validation</h4>
+      </div>
+      <div class="modal-body">
+        Vous ne pouvez pas accéder à l'offre car votre compte n'a pas encore été validé par l'établissement.
+      </div>
+    </div>
+  </div>
 </div>
