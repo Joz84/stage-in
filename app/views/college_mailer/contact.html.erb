@@ -1,0 +1,14 @@
+<div style="text-align: left;">
+  <h1>Demande de contact</h1>
+
+  <p>L'élève <%= "#{@student.first_name.capitalize} #{@student.last_name.upcase}" %> Vous souhaitez entrer en contact avec la socété <%= @company.company %></p>
+  <br>
+  <p>Détails de la société :</p>
+  <p>Nom:<%= @company.company %></p>
+  <p><b><%= @company.email %></b></p>
+  <p>Tel.: <%= @company.phone %></p>
+  <p>Nom du référent: <%= "#{@company.first_name.capitalize} #{@company.last_name.upcase}" %></p>
+  <p></p>
+
+</div>
+<br>

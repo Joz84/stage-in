@@ -10,13 +10,6 @@ class HiringCheckpointsController < ApplicationController
       StudentMailer.company_contact(@company, current_user).deliver_now
       CollegeMailer.contact(@company, current_user).deliver_now
     end
-    # respond_to do |format|
-    #   format.js
-    # end
-    @hiring = @student_hiring.hiring
-    @hiring_checkpoints = @student_hiring.hiring_checkpoints
-                                         .includes(:checkpoint)
-                                         .order("checkpoints.order")
     redirect_to @student_hiring
   end
 end
