@@ -132,10 +132,9 @@ puts "Seeding companies and hirings"
 end
 
 puts "Seeding objectives"
-checkpoints = [ "Tu t'es renseigné sur l'entreprise.",
-                "Tu as postulé par le site.",
-                "Tu as obtenu un rendez-vous téléphonique ou sur place.",
-                "Tu as une confirmation de l’entreprise au téléphone par mail."
+checkpoints = [ "Je me renseigne sur l'entreprise.",
+                "J'informe l'entreprise que je suis intéressé.",
+                "Je prend rendez-vous avec l'entreprise."
               ]
 checkpoints.each_with_index do |title, i|
   Checkpoint.create(title: title, order: i)

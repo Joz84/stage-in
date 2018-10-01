@@ -1,13 +1,7 @@
 class CompanyMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.company_mailer.welcome.subject
-  #
-  def welcome
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def student_contact(company, student)
+    @company = company
+    @student = student
+    mail(to: @company.email, subject: '>> Stage-In - Prise de contact')
   end
 end
