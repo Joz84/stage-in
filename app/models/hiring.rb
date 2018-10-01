@@ -1,11 +1,9 @@
 class Hiring < ApplicationRecord
   belongs_to :company, class_name: "User"
   belongs_to :internship
-  belongs_to :job
   has_many :student_hirings
   validates :internship, presence: true
   validates :company, presence: true
-  validates :job, presence: true
 
   def self.pending
     pendings = []
@@ -13,6 +11,10 @@ class Hiring < ApplicationRecord
       pendings << h unless h.accepted?
     end
     pendings
+  end
+
+  def self.visibles
+    where(visible: true)
   end
 
   def accepted?
@@ -35,4 +37,23 @@ class Hiring < ApplicationRecord
     student_hirings
     .where(state: :accepted)
   end
+
+  def not_visible
+    update(visible: false)
+  end
+
+  def score(user)
+    company
+    .skill
+    .student_skills
+    .find_by(student: user)
+    .score
+  end
+
+  def self.group_by_score(user)
+    joins(:internship)
+    .where(internships: {college_id: user.college_id})
+    .group_by { |h| h.score(user) }.sort{|x,y| y <=> x }.to_h
+  end
+
 end

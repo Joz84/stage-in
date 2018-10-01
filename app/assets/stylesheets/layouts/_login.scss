@@ -1,29 +1,34 @@
-.devise-screens-wrapper {
-  background-color: #F6F6F8;
-  width: 100%;
-  height: calc(100vh - 70px);
-  // object-fit: cover;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-}
 .login {
   background-image: url('stagein_company.jpg');
 }
-.login-box {
-  background-color: white;
-  width: 640px;
-  height: 450px;
-  box-shadow: $shadow;
+@media (min-width: 376px) {
+  .login-box {
+    background-color: white;
+    width: 640px;
+    height: 450px;
+    box-shadow: $shadow;
+  }
+  .login-form {
+    width: 100%;
+    height: 230px;
+  }
+}
+@media (max-width: 375px) {
+  .login-box {
+    background-color: white;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .login-form {
+    width: 100%;
+    height: calc(100vh - 290px);
+  }
 }
 .login-top {
   width: 100%;
   height: 80px;
-  display: flex;
-  justify-content: left;
   background-color: $dark-gray;
-  color: white;
-  p, a {
+  h6, a {
     color: white;
     margin: 0;
     &:hover {
@@ -33,44 +38,23 @@
   }
 }
 .tab {
-  width: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 80px;
   border-bottom: 7px solid $dark-gray;
+  padding: 0 15px 0 15px;
 }
 .active_tab {
   border-bottom: 7px solid $blue;
 }
-.long-tab {
-  width: 220px;
+.user_remember_me, label.boolean.optional {
+    margin: 0;
 }
-.login-bottom {
-  width: 100%;
-  height: 370px;
-  font-size: 16px;
-}
-.login-form {
-  width: 300px;
-  input {
-    border: none;
-    border-bottom: 1px solid $dark-gray;
-    box-shadow: none;
-    margin-bottom: 30px;
-    font-size: 16px;
-  }
-  .btn-green {
-    width: 250px;
-    border: none;
-  }
-}
-.form-control:focus {
-  border: none;
-  border-bottom: 1px solid $dark-gray;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
+// .form-control:focus {
+//   border: none;
+//   border-bottom: 1px solid $dark-gray;
+//   outline: 0;
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
 label.boolean.optional {
   margin-bottom: 10px;
 }
@@ -83,17 +67,6 @@ label.boolean.optional {
 .signup-form {
   margin: 30px auto;
   width: 300px;
-  input {
-    border: none;
-    border-bottom: 1px solid $dark-gray;
-    box-shadow: none;
-    margin-bottom: 30px;
-    font-size: 16px;
-  }
-  .btn-green {
-    width: 300px;
-    border: none;
-  }
 }
 .signup-top {
   width: 100%;

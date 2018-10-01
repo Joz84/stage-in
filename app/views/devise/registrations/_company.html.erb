@@ -1,7 +1,7 @@
 <div class="flex-horizontal" id="step-company">
   <div class="signup-box">
     <div class="signup-top flexbox">
-      <h3 class="text-center "><%= t('inscription.signup1') %></h3>
+      <h3 class="text-center ">S'inscrire</h3>
     </div>
     <div class="signup-form">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -9,6 +9,10 @@
         <div class="form-inputs ">
           <p>Nom de l'entreprise</p>
           <%= f.input :company, required: :true, label: false %>
+          <p>Description de l'entreprise</p>
+          <%= f.input :description, required: :true, label: false, input_html: { style: "height: 200px;"} %>
+          <p>Domaine de l'entreprise</p>
+          <%= f.association :skill, required: :true, label: false %>
           <p>Prénom du référent</p>
           <%= f.input :first_name, label: false %>
           <p>Nom du référent</p>
@@ -24,7 +28,7 @@
           <%= f.input :role, input_html: { value: :company }, required: true, as: :hidden %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "S'enregistrer", class: "btn btn-medium btn-blue" %>
+          <%= f.button :submit, "S'enregistrer", class: "btn  btn-blue" %>
         </div>
       <% end %>
     </div>

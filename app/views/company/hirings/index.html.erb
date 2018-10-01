@@ -1,26 +1,27 @@
-<div class="padding-side margin-big-top">
+<div class="container page-size padding-side margin-top-big">
   <h2><i class="fa fa-cube"></i> <%= @company_name %></h2>
 
-  <h5 class="margin-big-top">Ajouter des places de stage dans votre entreprise:</h5>
+  <h5 class="margin-top-big">Ajouter des places de stage dans votre entreprise:</h5>
 
   <%= simple_form_for :hiring, url: company_hirings_path, method: :post do |f| %>
-    <div class="inline-form-wrapper flex-left">
-      <%= f.input :internship_id, label: "Type de stage", collection: Internship.all, class: "input-medium" %>
-      <%= f.input :job_id, label: "Type de métier", collection: Job.all, class: "input-medium" %>
+    <div class="inline-form-wrapper">
+      <%= f.input :internship_id, label: "Etablissement & Période concernés",class: "input-numeric" do %>
+          <%= f.select :internship_id, Internship.display_internship, include_blank: true %>
+      <% end %>
       <%= f.input :number, label: "Nombre de place", collection: 1..40, class: "input-numeric" %>
       <%= f.button :submit, "Créer", class: "btn btn-slim btn-blue btn-inline-form" %>
     </div>
   <% end %>
 
-  <h5>Places de stage disponibles:</h5>
+  <h5><%= @hirings.present? ? "Places de stage mises en ligne:" : "" %></h5>
 
   <% @hirings.each do |hiring| %>
     <div class="list-wrapper flex-horizontal">
       <div class="list-column">
         <h4><%= hiring.internship.comment %></h4>
-        <h5>hiring.internship.job</h5>
-        <%= link_to "#" do %>
-          <h6 class="pink"><i class="fa fa-trash"></i> supprimer l'offre de stage</h6>
+        <p><%= hiring.internship.full_name %></p>
+        <%= link_to company_hiring_path(hiring), method: :patch, data: { confirm: "Etes vous sur de vouloir archiver cette offre ?" } do %>
+          <h6 class="pink"><i class="fa fa-trash"></i> archiver l'offre de stage</h6>
         <% end %>
       </div>
       <% if hiring.accepted? %>

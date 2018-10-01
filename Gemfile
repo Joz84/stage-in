@@ -21,7 +21,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'devise-i18n'
-
+gem 'bootstrap-datepicker-rails'
 gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
@@ -33,6 +33,7 @@ end
 gem 'faker'
 
 group :development, :test do
+  gem 'rails-erd'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'

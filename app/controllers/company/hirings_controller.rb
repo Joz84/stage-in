@@ -1,6 +1,6 @@
 class Company::HiringsController < ApplicationController
   def index
-    @hirings = current_user.company_hirings
+    @hirings = current_user.company_hirings.where(visible: true)
     @company_name = current_user.company
   end
 
@@ -21,7 +21,16 @@ class Company::HiringsController < ApplicationController
     end
   end
 
+  # A refacto avec une possibilité d'archiver les offres
+  def update
+    @hiring = Hiring.find(params[:id])
+    @hiring.not_visible
+    redirect_to company_hirings_path
+  end
+
+  private
+
   def hiring_params
-    params.require(:hiring).permit(:job_id, :internship_id, :number)
+    params.require(:hiring).permit(:job_id, :internship_id, :number, :visible)
   end
 end

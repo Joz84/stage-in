@@ -1,29 +1,35 @@
-<div class="banner background-bottom" id=<%= page_id %> style="background-image: url(<%= image %> );" >
-      <div class="page-content container text-center">
-        <div class="row">
-          <div class="col-xs-12">
-            <h3><%= title %></h3>
+<div class="relative" id= <%= page_id %>  >
+  <div class="page-text-information padding-box">
+    <h3><%= signal %></h3>
+  </div>
+  <div class="page-content container flex-vertical-center">
+    <div class="padding-box">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h3><%= title %></h3>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div class="card-info text-center">
+            <i class="fa fa-<%= icon1 %> pink" aria-hidden="true"></i>
+            <p><%= card1 %></p>
           </div>
-          <div class="col-xs-4">
-            <div class="card-info ">
-              <i class="fa icon1 fa-<%= icon1 %>" aria-hidden="true"></i>
-              <p><%= card1 %></p>
-            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div class="card-info text-center">
+            <i class="fa fa-<%= icon2 %> blue" aria-hidden="true"></i>
+            <p><%= card2 %></p>
           </div>
-          <div class="col-xs-4">
-            <div class="card-info">
-              <i class="fa icon2 fa-<%= icon2 %>" aria-hidden="true"></i>
-              <p><%= card2 %></p>
-            </div>
-          </div>
-          <div class="col-xs-4">
-            <div class="card-info icon3">
-              <i class="fa icon3 fa-<%= icon3 %>" aria-hidden="true"></i>
-              <p><%= card3 %></p>
-            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div class="card-info text-center">
+            <i class="fa fa-<%= icon3 %> darkgray" aria-hidden="true"></i>
+            <p><%= card3 %></p>
           </div>
         </div>
       </div>
-    <%= render 'shared/next_page', target_page: target_page, icon: "fa-arrow-circle-up" %>
+    </div>
   </div>
+  <div class="page-bottom" style="background-image: url(<%= image %> );"></div>
+  <%= render 'shared/next_page', target_page: target_page, icon: "fa-arrow-circle-up" %>
 </div>
+

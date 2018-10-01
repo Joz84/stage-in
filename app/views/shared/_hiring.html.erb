@@ -1,9 +1,10 @@
-<div class="splitscreen-column">
-  <h2><%= @hiring.company.company %></h2>
-  <p>L'entreprise <%= @hiring.company.company %> est spécialisé dans Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat ut. Feugait nulla facilisi nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet. </p>
-  <p class="margin-bottom-small margin-big-top">Adresse d'activité:<strong> <%= @hiring.company.address %></strong></p>
-  <p class="relative margin-bottom-small margin-big-top"><i class="fa fa-hand-o-right fontawesome-insert"></i>Place de stage destinée aux élèves de <span class="blue"><%= @hiring.internship.name %></span></p>
-  <%= link_to "Postuler", hiring_student_hirings_path(@hiring), method: :post, id: "btn-postuler", class: "btn btn-medium btn-blue flexbox" %>
-</div>
+<h2><%= @hiring.company.company %></h2>
+<p><%= @hiring.company.description %></p>
+<p class="margin-bottom-small margin-top-big">Adresse d'activité:<strong> <%= @hiring.company.full_address %></strong></p>
+<p class="relative margin-bottom-small margin-top-big"><i class="fa fa-hand-o-right fontawesome-insert"></i>Place de stage destinée aux élèves de <span class="blue"><%= @hiring.internship.college.college_name %></span></p>
+
+
+<%= link_to "Postuler", hiring_student_hirings_path(@hiring), method: :post, id: "btn-postuler", class: "btn  btn-blue flexbox" %>
+
 
 

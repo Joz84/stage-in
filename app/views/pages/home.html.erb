@@ -1,21 +1,25 @@
-<div class="home">
-  <div class="banner flexbox" id="page1" >
-    <div class="banner-call text-center">
-      <h1 class="home-title">Trouve un stage près de chez toi.</h1>
-      <div class="banner-buttons">
-        <%= link_to skill_path(Skill.first), class: "btn btn-big btn-blue flexbox" do %>
-          <p>Je cherche un stage</p>
-        <% end %>
-        <%= link_to company_hirings_path, class: "btn btn-big btn-pink flexbox" do %>
-          <p>Je propose un stage</p>
-        <% end %>
+<div class="home container-fluid flex-vertical-center" id="page1">
+    <div class="row center">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
+        <h1>Trouve un stage près de chez toi.</h1>
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-0"  >
+            <%= link_to skill_path(Skill.first), class: "btn btn-blue" do %>
+              <p>Je cherche un stage</p>
+            <% end %>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-md-6 col-lg-offset-0">
+            <%= link_to company_hirings_path, class: "btn btn-pink" do %>
+              <p>Je propose un stage</p>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <!-- <p class="invert text-on-image"><%= t('landing.subtitle') %></p> -->
     </div>
     <%= render 'shared/next_page', target_page: "#page2", icon: "fa-arrow-circle-down" %>
   </div>
 
-  <%= render 'shared/page_text', page_id: "page2",  signal: t('page_text1.informations'), title: t('page_text1.title'), column1: t('page_text1.column1'), column2: t('page_text1.column2'), target_page: "#page3", image: "http://res.cloudinary.com/doodlid/image/upload/v1506113861/stagein_home2_mijxvs.jpg" %>
+  <%= render 'shared/page_cards', page_id: "page2",  signal: "informations élèves", title: t('page_card1.title'), icon1: "building", icon2: "compass",  icon3: "map-marker", card1: t('page_card1.card1'), card2: t('page_card1.card2'), card3: t('page_card1.card3'), target_page: "#page3", image: t('page_card1.image') %>
 
-  <%= render 'shared/page_cards', page_id: "page3", title: t('page_card2.title'), icon1: "flag", icon2: "calendar",  icon3: "map-marker", card1: t('page_card2.card1'), card2: t('page_card2.card2'), card3: t('page_card2.card3'), target_page: "#navbar", image: "http://res.cloudinary.com/doodlid/image/upload/v1506113863/stagein_home3_qbl8ki.jpg" %>
+  <%= render 'shared/page_cards', page_id: "page3", signal: "informations entreprises", title: t('page_card2.title'), icon1: "flag", icon2: "calendar",  icon3: "thumbs-up", card1: t('page_card2.card1'), card2: t('page_card2.card2'), card3: t('page_card2.card3'), target_page: "#navbar", image: t('page_card2.image') %>
 </div>

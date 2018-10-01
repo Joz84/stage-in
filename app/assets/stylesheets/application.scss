@@ -6,15 +6,13 @@
 
 // Graphical variables
 @import "config/colors";
+@import "config/helpers";
 @import "config/fonts";
 @import "config/bootstrap_variables";
-@import "config/helpers";
 
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
 
-body {
-  background-color: $light-blue;
-}
+ @import "bootstrap-datepicker";
