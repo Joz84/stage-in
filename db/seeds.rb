@@ -11,7 +11,7 @@ User.where(role: :college).destroy_all
 StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
-College.destroy_all
+
 
 c1 = User.create(college_name: "Collège Arnault Daniel", city: "Ribérac", email:"arnault.daniel@averifier.com", password: "123456",latitude:"45.243756", longitude: "0.335228", role: 'college')
 c2 = User.create(college_name: "Collège Michel Debet", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr", password: "123456", latitude:"45.250822", longitude: "0.496137", role: 'college')
@@ -115,6 +115,7 @@ puts "Seeding companies and hirings"
   c.role = 0
   c.company = company
   c.description = description
+  c.skill = Skill.all.sample
   c.email = email
   c.password = "123456"
   c.address = towns.sample

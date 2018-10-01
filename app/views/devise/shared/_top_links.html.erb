@@ -4,8 +4,8 @@
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   S'enregistrer en tant que <br>
-  <%= link_to "Étudiant", new_registration_path(resource_name, role: :student) %>
+  <%= link_to "Étudiant", new_registration_path(resource_name, "user[role]" => :student) %>
   /
-  <%= link_to "Entreprise", new_registration_path(resource_name, role: :company) %>
+  <%= link_to "Entreprise", new_registration_path(resource_name, "user[role]" => :company) %>
   <br />
 <% end -%>

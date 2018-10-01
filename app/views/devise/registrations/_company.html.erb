@@ -9,6 +9,10 @@
         <div class="form-inputs ">
           <p>Nom de l'entreprise</p>
           <%= f.input :company, required: :true, label: false %>
+          <p>Description de l'entreprise</p>
+          <%= f.input :description, required: :true, label: false, input_html: { style: "height: 200px;"} %>
+          <p>Domaine de l'entreprise</p>
+          <%= f.association :skill, required: :true, label: false %>
           <p>Prénom du référent</p>
           <%= f.input :first_name, label: false %>
           <p>Nom du référent</p>

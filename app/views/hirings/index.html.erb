@@ -18,24 +18,28 @@
 
 <div class="container">
   <h1>Liste des entreprises qui correspondent à vos centres d'intérêt :</h1>
-  <div class="row">
-    <% if @hirings.present? %>
-      <% @hirings.each do |hiring| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-color: white; margin-bottom: 15px; color: #252A34">
-            <div class="card-category"><%= hiring.company.address.gsub(/\d/, '') if hiring.company %></div>
-            <div class="card-description">
-              <h2><%= hiring.company.company if hiring.company %></h2>
-              <p><%= hiring.internship.name %></p>
-            </div>
-            <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
-            <%= link_to "", hiring, class: "card-link" %>
-          </div>
 
+    <% if @hirings.present? %>
+      <% @hirings.each do |score, hirings| %>
+        <h3><i class="fa fa-star"></i> Stages qui devraient vous plaire "<%= StudentSkill.score_names[score]%>"</h3>
+        <div class="row">
+          <% hirings.each do |hiring| %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hiring.company.skill.photo.path%>');">
+                <div class="card-category"><%= hiring.company.full_address.gsub(/\d/, '') if hiring.company %></div>
+                <div class="card-description">
+                  <h2><%= hiring.company.company if hiring.company %></h2>
+                  <p><%= hiring.company.skill.name %></p>
+                </div>
+                <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+                <%= link_to "", hiring, class: "card-link" %>
+              </div>
+
+            </div>
+          <% end %>
         </div>
       <% end %>
     <% else %>
-    <p>Il n'y a pas encore de stages disponibles.</p>
+    <p>Il n'y a pas encore de stage disponible.</p>
     <% end %>
-  </div>
 </div>

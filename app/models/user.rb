@@ -9,14 +9,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :student_skills, foreign_key: :student_id, class_name: "Student_Skill"
+  has_many :student_skills, foreign_key: :student_id, class_name: "StudentSkill"
   has_many :skills, through: :student_skills
   belongs_to :college, class_name: "User", optional: true, dependent: :delete
   has_many :internships
+  belongs_to :skill, optional: true
 
-  # validates :college_id, presence: true, if: :student?
+  validates :college_id, presence: true, if: :student?
   validates :role, presence: true
   validates :company, presence: true, if: :company?
+  validates :description, presence: true, if: :company?
+  validates :skill, presence: true, if: :company?
   validates :first_name, presence: true, if: :student?
   validates :last_name, presence: true, if: :student?
   validates :phone, presence: true, if: :company?
@@ -30,7 +33,7 @@ class User < ApplicationRecord
   after_validation :geocode, if: :zipcode_changed?
 
   def self.college_list_name
-    colleges.map(&:college_name)
+    colleges.map{ |college| [college.college_name, college.id]}
   end
 
   def self.colleges

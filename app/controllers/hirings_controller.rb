@@ -1,6 +1,6 @@
 class HiringsController < ApplicationController
   def index
-    # @hirings = Hiring.all
+    @hirings = Hiring.group_by_score(current_user)
     # @companies = User.where(role: "company")
     #                  .where
     #                  .not(latitude: nil, longitude: nil)
@@ -15,8 +15,8 @@ class HiringsController < ApplicationController
     #     height: 32,
     #     })
     # end
-    @companies = User.companies.with_lng_lat.limit(10)
-    @hash = current_user.gmap_hash(@companies)
+    @companies = User.companies
+    @hash = current_user.gmap_hash(User.companies.with_lng_lat.limit(10))
   end
 
   def show
