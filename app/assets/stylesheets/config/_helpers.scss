@@ -110,29 +110,21 @@ body {
   flex-direction: row;
 }
 .flexbox {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 .flex-vertical-center {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  display: flex;
   align-items: center;
 }
 .flexbox-bottom {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  display: flex;
   justify-content: center;
   align-items: end;
 }
 .flex-line {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
@@ -141,9 +133,7 @@ body {
   }
 }
 .flex-column {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
