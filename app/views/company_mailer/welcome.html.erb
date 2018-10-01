@@ -1,5 +1,20 @@
-<h1>Company#welcome</h1>
+<div style="text-align: left;">
+  <h1>Bienvenue <%= @user.full_name %></h1>
+</div>
+<br>
+
+<p><b>Votre inscription sur Stage-In a bien été prise en compte.</b></p>
+
+<p>Veuillez trouver ci-dessous le récapitulatif de votre inscription :</p>
+
+<p>Société :  <span class="recap-data" id="prenom"><%= @user.company %></span></p>
+<p>Prénom du référent :  <span class="recap-data" id="prenom"><%= @user.first_name %></span></p>
+<p>Nom du référent :  <span class="recap-data" id="nom"><%= @user.last_name %></span></p>
+<p>Adresse :  <span class="recap-data" id="adresse"><%= @user.full_address %></span></p>
+<p>Téléphone :  <span class="recap-data" id="telephone"><%= @user.phone %></span></p>
+<p>Email :  <span class="recap-data" id="email"><%= @user.email %></span></p>
 
 <p>
-  <%= @greeting %>, find me in app/views/company_mailer/welcome.html.erb
+Bien cordialement, <br>
+Stage-In<br>
 </p>

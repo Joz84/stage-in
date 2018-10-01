@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_token
   after_create :send_welcome_email, if: :student?
+  after_create :send_company_welcome_email, if: :company?
+  after_create :send_admin_companies_email, if: :company?
   after_create :send_student_confirmation_mail, if: :student?
 
   enum role: { company: 0, college: 1, student: 2 }
@@ -90,6 +92,14 @@ class User < ApplicationRecord
 
   def send_welcome_email
     StudentMailer.welcome(self).deliver_now
+  end
+
+  def send_company_welcome_email
+    CompanyMailer.welcome(self).deliver_now
+  end
+
+  def send_admin_companies_email
+    AdminMailer.new_company(self).deliver_now
   end
 
   def send_student_confirmation_mail
