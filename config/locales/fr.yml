@@ -97,25 +97,33 @@ fr:
         user:
           attributes:
             first_name:
-              blank: "Ton prénom est indispensable."
+              blank: "Votre prénom est indispensable."
             last_name:
-              blank: "Ton nom est indispensable."
+              blank: "Votre nom est indispensable."
             level:
-              blank: "Tu dois choisir un établissement."
+              blank: "Votre établissement est indispensable."
             phone:
-              blank: "Le numéro est nécessaire pour que l'entreprise prenne contact."
+              blank: "Le numéro est nécessaire."
             current_password:
-              blank: "le mot de passe est nécessaire."
-              invalid: "le mot de passe n'est pas valide"
+              blank: "Le mot de passe est nécessaire."
+              invalid: "Le mot de passe n'est pas valide"
             password_confirmation:
-              confirmation: "la confirmation de mot de passe n'a pu se faire, saisissez le de nouveau."
+              confirmation: "La confirmation de mot de passe n'a pu se faire, saisissez le de nouveau."
             password:
-              too_short: "le mot de passe est trop court."
-              blank: "veuillez entrer un mot de passe."
+              too_short: "Le mot de passe est trop court."
+              blank: "Veuillez entrer un mot de passe."
             email:
               taken: "Ce mail n'est pas disponible."
               blank: "veuillez entrer un email."
               invalid: "Ce mail n'est pas valide."
+            address:
+              blank: "Une addresse est indispensable."
+            zipcode:
+              blank: "Un code postal est indispensable."
+            city:
+              blank: "Une ville est indispensable."
+            birthday:
+              blank: "Votre date de naissance est indispensable pour que votre établissement confirme votre inscription."
         profile:
           attributes:
             photo:

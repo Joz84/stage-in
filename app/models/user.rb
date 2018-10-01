@@ -18,14 +18,20 @@ class User < ApplicationRecord
   has_many :internships
   belongs_to :skill, optional: true
 
-  validates :college_id, presence: true, if: :student?
+
   validates :role, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  #Company
   validates :company, presence: true, if: :company?
   validates :description, presence: true, if: :company?
   validates :skill, presence: true, if: :company?
+  validates :phone, presence: true, if: :company?
+  #Student
+  validates :birthday, presence: true, if: :student?
+  validates :college_id, presence: true, if: :student?
   validates :first_name, presence: true, if: :student?
   validates :last_name, presence: true, if: :student?
-  validates :phone, presence: true, if: :company?
 
   has_many :company_hirings, foreign_key: :company_id, class_name: "Hiring"
   has_many :student_hirings, foreign_key: :student_id, class_name: "StudentHiring"
