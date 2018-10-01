@@ -6,6 +6,7 @@ HiringCheckpoint.destroy_all
 StudentHiring.destroy_all
 Hiring.destroy_all
 Internship.destroy_all
+User.where(role: :company).destroy_all
 User.where(role: :student).destroy_all
 User.where(role: :college).destroy_all
 StudentSkill.destroy_all
@@ -118,7 +119,7 @@ puts "Seeding companies and hirings"
   c.skill = Skill.all.sample
   c.email = email
   c.password = "123456"
-  c.address = towns.sample
+  c.city = towns.sample
   c.phone = "0" + rand(100_000_000..999_999_999).to_s
   puts c.errors.messages unless c.valid?
   c.save

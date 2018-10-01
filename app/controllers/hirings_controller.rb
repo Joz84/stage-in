@@ -1,5 +1,6 @@
 class HiringsController < ApplicationController
   def index
+    raise
     begin
       @hirings = Hiring.group_by_score(current_user)
     rescue
@@ -19,8 +20,8 @@ class HiringsController < ApplicationController
     #     height: 32,
     #     })
     # end
-    @companies = User.companies
-    @hash = current_user.gmap_hash(User.companies.with_lng_lat.limit(10))
+    @companies = @hirings[2.0].map(&:company).select{|c| c.latitude != nil}
+    @hash = current_user.gmap_hash(@companies.limit(10))
   end
 
   def show
