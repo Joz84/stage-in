@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:role, :first_name, :last_name, :address, :level, :phone, :company, :email, :password, :college_id, :birthday, :city, :zipcode, :num])
-      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:role, :first_name, :last_name, :address, :level, :phone, :company, :email, :password, :college_id, :birthday, :city, :zipcode, :num) }
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:role, :first_name, :last_name, :address, :level, :phone, :company, :email, :password, :college_id, :birthday, :city, :zipcode, :num, :description, :skill_id])
+      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:role, :first_name, :last_name, :address, :level, :phone, :company, :email, :password, :college_id, :birthday, :city, :zipcode, :num, :description, :skill_id) }
   end
 
   def after_sign_up_path_for(resource)

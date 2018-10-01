@@ -6,7 +6,7 @@
         <h2><%= t('inscription.0on4.title') %></h2>
         <p class="relative margin-bottom-small"><i class="fa fa-user fontawesome"></i>Choisissez votre établissement :
         </p>
-        <%= f.input :college, as: :radio_buttons,label: false, placeholder: "Cliquez ici", collection: User.college_list_name, class: "input-medium test" %>
+        <%= f.input :college_id, as: :radio_buttons,label: false, placeholder: "Cliquez ici", collection: User.college_list_name, class: "input-medium test" %>
         <div class="row margin-top-big">
           <div class="col-xs-12">
             <%= link_to "suivant", "#step2", class: "scroll btn btn-blue", id: "college_name"%>

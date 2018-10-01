@@ -1,9 +1,9 @@
 
-<% if params[:role] == "student" %>
+<% if params[:user][:role] == "student"  %>
   <div id="student">
     <%= render "student" %>
   </div>
-<% else %>
+<% elsif params[:user][:role] == "company" %>
   <div class="container-fluid" style="display: flex; justify-content: center">
     <%= render "company" %>
   </div>
