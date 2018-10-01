@@ -6,6 +6,7 @@ class HiringCheckpointsController < ApplicationController
     # @student_hiring.update(state: 1) if @student_hiring.checked?
     if @hiring_checkpoint.checkpoint.order == 1 && @hiring_checkpoint.checked
       @company = @student_hiring.hiring.company
+      @student_hiring.required!
       CompanyMailer.student_contact(@company, current_user).deliver_now
       StudentMailer.company_contact(@company, current_user).deliver_now
       CollegeMailer.contact(@company, current_user).deliver_now

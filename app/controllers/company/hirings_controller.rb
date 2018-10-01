@@ -24,7 +24,7 @@ class Company::HiringsController < ApplicationController
   # A refacto avec une possibilité d'archiver les offres
   def update
     @hiring = Hiring.find(params[:id])
-    @hiring.not_visible
+    @hiring.not_visible!
     redirect_to company_hirings_path
   end
 

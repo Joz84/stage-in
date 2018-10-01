@@ -14,6 +14,17 @@
   width: 40px;
   border-radius: 50%;
 }
+
+.card-status{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+
 .card-category {
   position: absolute;
   top: 10px;

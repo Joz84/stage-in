@@ -17,6 +17,25 @@ class Hiring < ApplicationRecord
     where(visible: true)
   end
 
+  def subscribed_by?(user)
+    required_student_hirings
+    .find_by(student: user)
+    .present?
+  end
+
+  def accepted_for?(user)
+    accepted_student_hirings
+    .find_by(student: user)
+    .present?
+  end
+
+
+  def denied_for?(user)
+    denied_student_hirings
+    .find_by(student: user)
+    .present?
+  end
+
   def accepted?
     accepted_student_hirings
     .any?
@@ -38,8 +57,29 @@ class Hiring < ApplicationRecord
     .where(state: :accepted)
   end
 
-  def not_visible
+  def denied_student_hirings
+    student_hirings
+    .where(state: :denied)
+  end
+
+  def not_visible!
     update(visible: false)
+  end
+
+  def self.visibles
+    where(visible: true)
+  end
+
+  def self.not_accepteds
+    joins(:student_hirings)
+    .where
+    .not(student_hirings: {state: :accepted})
+  end
+
+  def self.not_denieds_for(user)
+    joins(:student_hirings)
+    .where
+    .not(student_hirings: {state: :denied, student: user})
   end
 
   def score(user)
