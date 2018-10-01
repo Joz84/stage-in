@@ -71,15 +71,19 @@ class Hiring < ApplicationRecord
   end
 
   def self.not_accepteds
-    joins(:student_hirings)
-    .where
-    .not(student_hirings: {state: :accepted})
+    includes(:student_hirings)
+    .where(student_hirings: {hiring_id: nil})
+    .or(self.includes(:student_hirings)
+            .where.not(student_hirings: {state: :accepted})
+        )
   end
 
   def self.not_denieds_for(user)
-    joins(:student_hirings)
-    .where
-    .not(student_hirings: {state: :denied, student: user})
+    includes(:student_hirings)
+    .where(student_hirings: {hiring_id: nil})
+    .or(self.includes(:student_hirings)
+            .where.not(student_hirings: {state: :denied, student: user})
+        )
   end
 
   def score(user)
