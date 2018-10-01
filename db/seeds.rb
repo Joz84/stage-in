@@ -17,7 +17,7 @@ c1 = User.create(college_name: "Collège Arnault Daniel", city: "Ribérac", emai
 c2 = User.create(college_name: "Collège Michel Debet", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr", password: "123456", latitude:"45.250822", longitude: "0.496137", role: 'college')
 c3 = User.create(college_name: "MFR du Ribéracois", city: "Vanxains", email: "mfr.vanxains@mfr.asso.fr", password: "123456", latitude:"45.217030", longitude: "0.286809", role: 'college')
 
-User.create(email: "jules@gmail.com", birthday: Date.new(2000, 01, 14),first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1)
+User.create(email: "jules@gmail.com", birthday: Date.new(2000, 01, 14),first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1, college_acceptation: true)
 User.create(email: "company@gmail.com", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", description: "Extencia, experts en accompagnement C’est cette idée qui dirige notre cabinet d’experts-comptables : accompagner nos clients au quotidien et réserver notre énergie à votre réussite. Cet état d’esprit se résume ainsi : « c’est en faisant particulièrement bien notre métier que vous pourrez vous consacrer pleinement au vôtre ! »")
 
 
@@ -132,10 +132,9 @@ puts "Seeding companies and hirings"
 end
 
 puts "Seeding objectives"
-checkpoints = [ "Tu t'es renseigné sur l'entreprise.",
-                "Tu as postulé par le site.",
-                "Tu as obtenu un rendez-vous téléphonique ou sur place.",
-                "Tu as une confirmation de l’entreprise au téléphone par mail."
+checkpoints = [ "Je me renseigne sur l'entreprise.",
+                "J'informe l'entreprise que je suis intéressé.",
+                "Je prend rendez-vous avec l'entreprise."
               ]
 checkpoints.each_with_index do |title, i|
   Checkpoint.create(title: title, order: i)

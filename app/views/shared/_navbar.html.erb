@@ -64,7 +64,7 @@
         <% else %>
           <!-- Login link (when logged out) -->
           <li><%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path, class: "navbar-wagon-item navbar-wagon-link scroll" %></li>
-          <li><%= link_to "Première connexion", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <!-- <li><%#= link_to "Première connexion", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li> -->
           <%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <% end %>
       </ul>

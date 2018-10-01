@@ -1,0 +1,19 @@
+<div style="text-align: left;">
+  <h1>Demande de contact</h1>
+
+  <p>Bonjour,</p>
+  <p></p>
+  <p>Vous souhaitez entrer en contact avec la société <strong><%= @company.company %></strong></p>
+  <p>Veuillez trouver ci-dessous leur coordonnées :</p>
+  <p>Nom:<%= @company.company %></p>
+  <p><b><%= @company.email %></b></p>
+  <p>Tel.: <%= @company.phone %></p>
+  <p><%= "Nom du référent: #{@company.first_name.capitalize} #{@company.last_name.upcase}" unless (@company.last_name.nil? && @company.first_name.nil?) %></p>
+  <p>Bonne recherche</p>
+
+</div>
+
+<br>
+Bien cordialement, <br>
+Stage-In<br>
+</p>

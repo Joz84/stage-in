@@ -31,9 +31,11 @@
                   <h2><%= hiring.company.company if hiring.company %></h2>
                   <p><%= hiring.company.skill.name %></p>
                 </div>
-                <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+                <% if hiring.subscribed_by? current_user %>
+                  <div class="card-status", style="background-color: orange">en attente</div>
+                <% end %>
                 <% if current_user.college_acceptation %>
-                  <%= link_to( "", hiring, class: "card-link") %>
+                  <%= link_to( "", hiring_student_hirings_path(hiring), method: :post, class: "card-link") %>
                 <% else %>
                   <!-- Button trigger modal -->
                   <button type="button" class="card-link" data-toggle="modal" data-target="#myModal"></button>

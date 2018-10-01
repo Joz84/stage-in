@@ -1,5 +1,5 @@
 <div >
-  <%= link_to hc, method: :put , remote: true, id: "checked-#{hc.id}" do%>
+  <%= link_to hc, method: :put, id: "checked-#{hc.id}" do%>
     <% if hc.checked? %>
         <p class="checkpoint checked"><%= hc.checkpoint.title %>
         <i class="fa fa-thumbs-o-up"></i></p>
