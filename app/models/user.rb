@@ -28,10 +28,8 @@ class User < ApplicationRecord
   has_many :company_hirings, foreign_key: :company_id, class_name: "Hiring"
   has_many :student_hirings, foreign_key: :student_id, class_name: "StudentHiring"
 
-  geocoded_by :full_address
-  after_validation :geocode, if: :address_changed?
-  after_validation :geocode, if: :city_changed?
-  after_validation :geocode, if: :zipcode_changed?
+  geocoded_by :address_geocoding
+  after_validation :geocode
 
   def self.college_list_name
     colleges.map{ |college| [college.college_name, college.id]}
@@ -43,6 +41,10 @@ class User < ApplicationRecord
 
   def full_address
     "#{num} #{address} #{zipcode} #{city}"
+  end
+
+  def address_geocoding
+    [num, address, zipcode, city].compact.join(', ')
   end
 
   def full_name
