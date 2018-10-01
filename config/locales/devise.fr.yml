@@ -1,6 +1,9 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 fr:
+  simple_form:
+    error_notification:
+      default_message: "Des données sont manquantes ou erronées, veuillez vérifier les données ci-dessous :"
   devise:
     confirmations:
       confirmed: Votre compte a été confirmé avec succès.
