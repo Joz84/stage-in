@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   validates :role, presence: true
   validates :address, presence: true
-  validates :city, presence: true
+  # validates :city, presence: true
   #Company
   validates :company, presence: true, if: :company?
   validates :description, presence: true, if: :company?
