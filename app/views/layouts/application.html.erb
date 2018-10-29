@@ -3,7 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>STAGE-IN</title>
+
+    <title><%= yield(:title) || "STAGE-IN" %></title>
+    <meta name="description" content="<%=(yield(:description) || "").squish %>" >
+
+
+    <!-- pour fb -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="STAGE-IN" />
+    <meta property=“og:title” content="STAGE-IN">
+    <meta property="og:url" content="www.stage-in.fr" />
+    <meta property=“og:image” content="https://www.stage-in.fr/images/stagein_logo.png">
+    <meta property=“og:description” content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content="STAGE-IN">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image:src" content="https://www.stage-in.fr/images/stagein_logo.png">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
