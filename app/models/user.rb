@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
 
   validates :role, presence: true
-  validates :address, presence: true
+  validates :address, presence: true, if: :student?
   # validates :city, presence: true
   #Company
   validates :company, presence: true, if: :company?
