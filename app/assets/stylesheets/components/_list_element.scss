@@ -12,7 +12,9 @@
   }
 }
 .list-column {
-  min-width: 350px;
+  @media (min-width: 768px) {
+    min-width: 350px;
+  }
 }
 .line {
   width: 100%;
