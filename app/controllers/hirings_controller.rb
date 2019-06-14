@@ -1,5 +1,6 @@
 class HiringsController < ApplicationController
   def index
+
     begin
       @hirings = Hiring.visibles
                        .not_accepteds

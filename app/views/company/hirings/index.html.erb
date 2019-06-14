@@ -16,7 +16,7 @@
   <h5><%= @hirings.present? ? "Places de stage mises en ligne:" : "" %></h5>
 
   <% @hirings.each do |hiring| %>
-    <div class="list-wrapper flex-horizontal">
+    <div class="list-wrapper flex-wrap flex-horizontal">
       <div class="list-column">
         <h4><%= hiring.internship.comment %></h4>
         <p><%= hiring.internship.full_name %></p>
