@@ -18,38 +18,54 @@
 
 <div class="container hirings-container">
   <h1>Liste des entreprises qui correspondent à vos centres d'intérêt :</h1>
-
-    <% if @hirings.present? %>
-      <% @hirings.each do |score, hirings| %>
-        <h3><i class="fa fa-star"></i> Stages qui devraient vous plaire "<%= StudentSkill.score_names[score]%>"</h3>
-        <div class="row">
-          <% hirings.each do |hiring| %>
-            <div class="col-xs-12 col-sm-4">
-              <!-- UPDATER IMAGE -->
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hiring.company.skill.photo.path %>');">
-                <div class="card-category"><%= hiring.company.full_address.gsub(/\d/, '') if hiring.company %></div>
-                <div class="card-description">
-                  <h2><%= hiring.company.company if hiring.company %></h2>
-                  <p><%= hiring.company.skill.name %></p>
-                </div>
-                <% if hiring.subscribed_by?(current_user) %>
-                  <div class="card-status", style="background-color: orange">en attente</div>
-                <% end %>
-                <% if current_user.college_acceptation %>
-                  <%= link_to "", hiring_student_hirings_path(hiring), method: :post, class: "card-link" %>
-                <% else %>
-                  <!-- Button trigger modal -->
-                  <button type="button" class="card-link" data-toggle="modal" data-target="#myModal"></button>
-                <% end %>
-              </div>
-
+  <% if @student_hirings.present? %>
+    <h3><i class="fa fa-star"></i> Stages acceptés</h3>
+    <div class="row">
+      <% @student_hirings.each do |student_hiring| %>
+        <div class="col-xs-12 col-sm-4">
+          <!-- UPDATER IMAGE -->
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path student_hiring.hiring.company.skill.photo.path %>');">
+            <div class="card-category"><%= student_hiring.hiring.company.full_address.gsub(/\d/, '') if student_hiring.hiring.company %></div>
+            <div class="card-description">
+              <h2><%= student_hiring.hiring.company.company if student_hiring.hiring.company %></h2>
+              <p><%= student_hiring.hiring.company.skill.name %></p>
             </div>
-          <% end %>
+            <div class="card-status hiring_state state_<%= student_hiring.state %>"></div>
+            <%= link_to "", student_hiring_path(student_hiring), class: "card-link" %>
+          </div>
         </div>
       <% end %>
-    <% else %>
-    <p>Il n'y a pas encore de stage disponible.</p>
+    </div>
+  <% end %>
+  <% if @hirings.present? %>
+    <% @hirings.each do |score, hirings| %>
+      <h3><i class="fa fa-star"></i> Stages qui devraient vous plaire "<%= StudentSkill.score_names[score]%>"</h3>
+      <div class="row">
+        <% hirings.each do |hiring| %>
+          <div class="col-xs-12 col-sm-4">
+            <!-- UPDATER IMAGE -->
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hiring.company.skill.photo.path %>');">
+              <div class="card-category"><%= hiring.company.full_address.gsub(/\d/, '') if hiring.company %></div>
+              <div class="card-description">
+                <h2><%= hiring.company.company if hiring.company %></h2>
+                <p><%= hiring.company.skill.name %></p>
+              </div>
+              <% if current_user.college_acceptation %>
+                <%= link_to "", hiring_student_hirings_path(hiring), method: :post, class: "card-link" %>
+              <% else %>
+                <!-- Button trigger modal -->
+                <button type="button" class="card-link" data-toggle="modal" data-target="#myModal"></button>
+              <% end %>
+            </div>
+
+          </div>
+        <% end %>
+      </div>
     <% end %>
+  <% else %>
+  <p>Il n'y a pas encore de stage disponible.</p>
+  <% end %>
+
 </div>
 
 <!-- Modal -->

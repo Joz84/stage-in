@@ -1,3 +1,20 @@
 .flex-wrap {
   flex-wrap: wrap;
 }
+.hiring_state.state_accepted::after {
+  content: "Accepté";
+  background: green;
+}
+.hiring_state.state_required::after {
+  content: "En attente";
+  background: orange;
+}
+.hiring_state.state_denied::after {
+  content: "Refusé";
+  background: red;
+}
+.hiring_state::after {
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: white;
+}
