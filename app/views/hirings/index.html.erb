@@ -25,17 +25,18 @@
         <div class="row">
           <% hirings.each do |hiring| %>
             <div class="col-xs-12 col-sm-4">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hiring.company.skill.photo.path%>');">
+              <!-- UPDATER IMAGE -->
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hiring.company.skill.photo.path %>');">
                 <div class="card-category"><%= hiring.company.full_address.gsub(/\d/, '') if hiring.company %></div>
                 <div class="card-description">
                   <h2><%= hiring.company.company if hiring.company %></h2>
                   <p><%= hiring.company.skill.name %></p>
                 </div>
-                <% if hiring.subscribed_by? current_user %>
+                <% if hiring.subscribed_by?(current_user) %>
                   <div class="card-status", style="background-color: orange">en attente</div>
                 <% end %>
                 <% if current_user.college_acceptation %>
-                  <%= link_to( "", hiring_student_hirings_path(hiring), method: :post, class: "card-link") %>
+                  <%= link_to "", hiring_student_hirings_path(hiring), method: :post, class: "card-link" %>
                 <% else %>
                   <!-- Button trigger modal -->
                   <button type="button" class="card-link" data-toggle="modal" data-target="#myModal"></button>
