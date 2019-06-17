@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'pages#home'
+  get '/legal', to: 'pages#legal', as: 'legal'
+
   mount Attachinary::Engine => "/attachinary"
   namespace :company do
     resources :hirings, only: [:index, :create, :update]
