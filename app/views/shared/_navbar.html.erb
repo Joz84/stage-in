@@ -1,22 +1,26 @@
 <div class="navbar-wagon" id="navbar">
+
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "stagein_logo.png" %>
+    <p>Pays Ribéracois</p>
   <% end %>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
       <% if current_user.role == "student" %>
-        <%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link hidden-xs" %>
       <% end %>
-        <%#= link_to "Profil", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "", class: "fa fa-bars dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <div class="burger dropdown-toggle" data-toggle='dropdown' id="navbar-wagon-menu">
+            <%= image_tag "", class: "fa fa-bars" %>
+          </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to edit_user_registration_path do %>
@@ -36,39 +40,27 @@
           </ul>
         </div>
       </div>
-      <!-- Avatar with dropdown menu -->
+
     <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path, class: "navbar-wagon-item navbar-wagon-link scroll" %>
-      <%#= link_to "Première connexion", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Links when logged out -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag "", class: "fa fa-bars dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path, class: "navbar-wagon-item navbar-wagon-link scroll" %>
+            </li>
+            <li>
+              <%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     <% end %>
+
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <% if user_signed_in? %>
-          <!-- Links when logged in -->
-          <% if current_user.role == "student" %>
-            <li><%= link_to "Chercher un stage", skill_path(Skill.first), class: "navbar-wagon-item navbar-wagon-link" %></li>
-            <li><%= link_to "Mes offres de stage", hirings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <% else %>
-            <li><%= link_to "Mes offres de stage", company_hirings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <% end %>
-          <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
-
-          <!-- Avatar with dropdown menu -->
-        <% else %>
-          <!-- Login link (when logged out) -->
-          <li><%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path, class: "navbar-wagon-item navbar-wagon-link scroll" %></li>
-          <!-- <li><%#= link_to "Première connexion", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li> -->
-          <%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
 </div>
 

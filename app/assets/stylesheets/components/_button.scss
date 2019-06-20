@@ -55,8 +55,8 @@ select {
   border-radius: 40px;
   height: 40px;
   border: none;
-  padding: 16px 30px 0 30px;
-  &:hover {
+  padding: 0px 30px;
+  &.btn-slim:hover {
     background-color: $yellow !important;
     color: white;
   }
