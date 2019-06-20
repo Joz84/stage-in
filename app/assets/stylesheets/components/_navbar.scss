@@ -46,6 +46,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  i {
+    font-size: 27px;
+  }
 }
 
 .navbar-wagon-dropdown-menu {
@@ -81,5 +84,9 @@
 @media (max-width: 768px) {
   .navbar-wagon {
     padding: 0 10px;
+  }
+
+  .navbar-wagon-brand img {
+    height: 30px;
   }
 }
