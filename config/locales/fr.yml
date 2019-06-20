@@ -96,6 +96,8 @@ fr:
               blank: "ne peut pas être vide"
         user:
           attributes:
+            college_id:
+              blank: "Votre collège est indispensable."
             first_name:
               blank: "Votre prénom est indispensable."
             last_name:
@@ -118,6 +120,12 @@ fr:
               invalid: "Ce mail n'est pas valide."
             address:
               blank: "Une addresse est indispensable."
+            skill:
+              blank: "Un domaine est indispensable"
+            description:
+              blank: "Une description est indispensable"
+            company:
+              blank: "Un nom est indispensable"
             zipcode:
               blank: "Un code postal est indispensable."
             city:
@@ -258,6 +266,43 @@ fr:
       month: Mois
       second: Seconde
       year: Année
+  errors:
+    format: "%{message}"
+    messages:
+      extension_whitelist_error: le format du document fourni n'est pas accepté
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      present: doit être vide
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: cette information a déjà été utilisée par un autre utilisateur
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas valide
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      taken:  est invalide ou déjà utilisé
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: n'est pas valide
+      other_than: doit être différent de %{count}
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
   helpers:
     select:
       prompt: Veuillez sélectionner

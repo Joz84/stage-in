@@ -1,0 +1,35 @@
+fr:
+  simple_form:
+    "yes": 'Oui'
+    "no": 'Non'
+    hints:
+      defaults:
+        current_password: 'Veuillez saisir votre mot de passe actuel pour confirmer les changements'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Merci de vérifier vos informations ci-dessous:"
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # # hints:
+    # #   defaults:
+    # #     username: 'User name to sign in.'
+    # #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #    last_name: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     last_name: 'Select your age'
+
