@@ -1,27 +1,50 @@
+.skill-container {
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+
+.skill-top-half {
+  height: 50%;
+  display: flex;
+  align-items: center;
+}
+
 .skill-question {
   padding: 20px;
   background-color: white;
   border-radius: $border-radius;
   color: $dark-gray;
   margin-top: 30px;
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2);
   h3, p {
     margin: 0px;
   }
 }
 
-@media (max-width : 375px){
+.skill-bottom-half {
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width : 770px){
   .skill-question {
     margin-top: 0;
     border-radius: 0;
+    box-shadow: none;
     h3, p {
       margin: 0px;
     }
   }
+
+  .skill-bottom-half {
+    height: 50%;
+    flex-direction: column;
+  }
+
   .skill-image {
     height: 140px;
     background-size: cover;
   }
-}
-.skill-answers {
-  height: calc(100vh - 260px);
 }

@@ -10,5 +10,4 @@ class StudentHiring < ApplicationRecord
     hiring_checkpoints.each{ |hc| total_check &&= hc.checked }
     total_check
   end
-
 end
