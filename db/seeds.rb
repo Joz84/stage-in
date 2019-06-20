@@ -8,6 +8,7 @@ Hiring.destroy_all
 Internship.destroy_all
 User.where(role: :student).destroy_all
 User.where(role: :college).destroy_all
+User.where(role: :company).destroy_all
 StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
@@ -20,7 +21,7 @@ c3 = User.create(college_name: "MFR du Ribéracois", zipcode: "24600" ,address: 
 puts "#{User.colleges} / 3 collèges créés"
 
 User.create(email: "jules@gmail.com", address: "Rue Couleau", birthday: Date.new(2000, 01, 14),first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1, college_acceptation: true)
-User.create(email: "company@gmail.com", address: "Rue Couleau", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", description: "Extencia, experts en accompagnement C’est cette idée qui dirige notre cabinet d’experts-comptables : accompagner nos clients au quotidien et réserver notre énergie à votre réussite. Cet état d’esprit se résume ainsi : « c’est en faisant particulièrement bien notre métier que vous pourrez vous consacrer pleinement au vôtre ! »")
+# User.create(email: "company@gmail.com", address: "Rue Couleau", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", description: "Extencia, experts en accompagnement C’est cette idée qui dirige notre cabinet d’experts-comptables : accompagner nos clients au quotidien et réserver notre énergie à votre réussite. Cet état d’esprit se résume ainsi : « c’est en faisant particulièrement bien notre métier que vous pourrez vous consacrer pleinement au vôtre ! »")
 
 puts "#{User.count} users créés"
 
@@ -145,6 +146,34 @@ checkpoints.each_with_index do |title, i|
   Checkpoint.create(title: title, order: i)
 end
 
+require 'csv'
+
+puts "Seeding companies"
+
+csv_options = { col_sep: ';', quote_char: "|", headers: :first_row }
+csv_filepath = File.read(Rails.root.join('db', 'csv', 'list_companies.csv'))
+csv_companies = CSV.parse(csv_filepath, csv_options)
+companies = []
+
+csv_companies.each do |row|
+  skill = Skill.find_by_name(row['skill'])
+  company = User.new(
+      company: row['company'],
+      email: row['email'],
+      password: "123soleil",
+      description: row['description'],
+      address: row['address'],
+      zipcode: row['zipcode'],
+      city: row['city'],
+      phone: row['phone'],
+      role: 'company'
+    )
+  company.skill = skill
+  company.save!
+end
+
+
+puts "The seed is done"
 
 
 
