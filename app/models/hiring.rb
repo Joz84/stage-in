@@ -76,8 +76,8 @@ class Hiring < ApplicationRecord
     includes(:student_hirings)
     .where(student_hirings: {hiring_id: nil})
     .or(self.includes(:student_hirings)
-            .where.not(student_hirings: {state: :denied, student: user})
-        )
+            .where.not(student_hirings: {id: StudentHiring.where(student: user, state: [:required, :denied]) })
+    )
   end
 
   def score(user)

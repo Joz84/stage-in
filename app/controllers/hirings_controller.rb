@@ -22,6 +22,7 @@ class HiringsController < ApplicationController
     #     height: 32,
     #     })
     # end
+    @student_hirings = current_user.student_hirings.order(:state).where.not(state: 0)
     @companies = User.companies
     @hash = current_user.gmap_hash(User.companies.with_lng_lat.limit(10))
   end
