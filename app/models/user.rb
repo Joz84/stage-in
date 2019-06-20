@@ -42,7 +42,7 @@ class User < ApplicationRecord
   after_validation :geocode, if: :zipcode_changed?
 
   def self.college_list_name
-    colleges.map{ |college| [college.college_name, college.id]}
+    colleges.map{ |college| ["#{college.college_name} - #{college.city}", college.id]}
   end
 
   def self.colleges
