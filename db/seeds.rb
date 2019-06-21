@@ -14,17 +14,57 @@ StudentSkill.destroy_all
 Skill.destroy_all
 Checkpoint.destroy_all
 
+puts "Seeding User Colleges"
 
-c1 = User.create(college_name: "Collège Arnault Daniel", zipcode: "24600" ,address: "Rue Couleau", city: "Ribérac", email:"arnault.daniel@averifier.com", password: "123456",latitude:"45.243756", longitude: "0.335228", role: 'college')
-c2 = User.create(college_name: "Collège Michel Debet", zipcode: "24350" ,address: "Route du Treuil", city: "Tocane-Saint-Apre", email: "ce.0240073z@ac-bordeaux.fr", password: "123456", latitude:"45.250822", longitude: "0.496137", role: 'college')
-c3 = User.create(college_name: "MFR du Ribéracois", zipcode: "24600" ,address: "Le Bourg", city: "Vanxains", email: "mfr.vanxains@mfr.asso.fr", password: "123456", latitude:"45.217030", longitude: "0.286809", role: 'college')
+c1 = User.create(
+  college_name: "Collège Arnault Daniel",
+  zipcode: "24600",
+  address: "Rue Couleau",
+  city: "Ribérac",
+  email:"arnault.daniel@averifier.com",
+  password: "123456",
+  role: 'college')
+c2 = User.create(
+  college_name: "Collège Michel Debet",
+  zipcode: "24350",
+  address: "Route du Treuil",
+  city: "Tocane-Saint-Apre",
+  email: "ce.0240073z@ac-bordeaux.fr",
+  password: "123456",
+  role: 'college')
+c3 = User.create(
+  college_name: "MFR du Ribéracois",
+  zipcode: "24600",
+  address: "Le Bourg",
+  city: "Vanxains",
+  email: "mfr.vanxains@mfr.asso.fr",
+  password: "123456",
+  role: 'college')
 
-puts "#{User.colleges} / 3 collèges créés"
+puts "Colleges created"
 
-User.create(email: "jules@gmail.com", address: "Rue Couleau", birthday: Date.new(2000, 01, 14),first_name: 'Jules', last_name: 'Maregiano', role: 'student', password: '123soleil', level: '3ème', phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", college: c1, college_acceptation: true)
-# User.create(email: "company@gmail.com", address: "Rue Couleau", first_name: 'Max', last_name: 'Boue', role: 'company', password: '123456', company: "Super Company of Death", level: nil, phone: '0123456789', latitude: "45.2463940", longitude: "0.3376510", description: "Extencia, experts en accompagnement C’est cette idée qui dirige notre cabinet d’experts-comptables : accompagner nos clients au quotidien et réserver notre énergie à votre réussite. Cet état d’esprit se résume ainsi : « c’est en faisant particulièrement bien notre métier que vous pourrez vous consacrer pleinement au vôtre ! »")
+puts "Seeding User Student"
 
-puts "#{User.count} users créés"
+User.create(
+  email: "jules@gmail.com",
+  num: "30",
+  address: "Rue Couleau",
+  zipcode: "24600",
+  city: "Ribérac",
+  birthday: Date.new(2000, 01, 14),
+  first_name: 'Jules',
+  last_name: 'Maregiano',
+  role: 'student',
+  password: '123soleil',
+  level: '3ème',
+  phone: '0123456789',
+  college: c1,
+  college_acceptation: true)
+
+puts "Student created"
+
+
+puts "Seeding Skills"
 
 # SKILLS = SECTEUR D'ACTIVITE
 
@@ -74,6 +114,11 @@ Skill.last.photo_url = url
 puts "Création de la Skill #{Skill.last.name}"
 puts "Seeding internship..."
 
+puts "Skills created"
+
+
+puts "Seeding Internships"
+
 is = Internship.new(
   starts_at: Date.new(2018, 12, 3),
   ends_at: Date.new(2018, 12, 7),
@@ -95,26 +140,71 @@ is = Internship.new(
   college: c3
   )
 is.save
-towns = [
-  '24600 Allemans',
-  '24600 Celles',
-  '24350 Douchapt',
-  '24600 Segonzac',
-  '24320 Verteillac',
-  '24320 Vendoire',
-  '24350 Lisle',
-  '24350 Tocane Saint Apre',
-  '24320 Gouts-Rossignol',
-  '24600 Ribérac',
-  '24600 Ribérac',
-  '24600 Ribérac',
-  '24600 Ribérac',
+
+puts "Internships created"
+
+# UNCOMMENT WHEN CSV FILE IMPLEMENTED
+
+# puts "Seeding User Companies & Hirings"
+
+# csv_options = { col_sep: ';', quote_char: "|", headers: :first_row }
+# csv_filepath = File.read(Rails.root.join('db', 'csv', 'list_companies.csv'))
+# csv_companies = CSV.parse(csv_filepath, csv_options)
+# companies = []
+
+# csv_companies.each do |row|
+#   skill = Skill.find_by_name(row['skill'])
+#   company = User.new(
+#       company: row['company'],
+#       email: row['email'],
+#       password: "123soleil",
+#       description: row['description'],
+#       address: row['address'],
+#       zipcode: row['zipcode'],
+#       city: row['city'],
+#       phone: row['phone'],
+#       role: 'company'
+#     )
+#   company.skill = skill
+#   company.save!
+#   hiring = Hiring.new(
+#     internship: Internship.all.sample,
+#     company: company,
+#     visible: true
+#   )
+#   hiring.save!
+# end
+
+# puts "Companies & Hirings created"
+
+puts "Seeding objectives"
+
+checkpoints = [ "Je me renseigne sur l'entreprise.",
+                "J'informe l'entreprise que je suis intéressé.",
+                "Je prend rendez-vous avec l'entreprise."
+              ]
+checkpoints.each_with_index do |title, i|
+  Checkpoint.create(title: title, order: i)
+end
+
+puts "Objectives created"
+
+# DELETE BELOW WHEN CSV FILE IMPLEMENTED
+puts "Seeding companies and hirings"
+
+addresses = [
+  ['', 'Le Bourg', '24600', 'Allemans'],
+  ['10', 'Rue Alphonse Daudet', '24600', 'Ribérac'],
+  ['107', 'Rue de la Châtaigneraie', '24600', 'Ribérac'],
+  ['9', 'Quinquies r Couleau', '24600', 'RIBÉRAC'],
+  ['8', 'Place des Tilleuls', '24350', 'Tocane-Saint-Apre'],
+  ['', 'Le Bourg', '24600', 'Celles'],
 ]
 
-puts "Seeding companies and hirings"
 30.times do
   company = Faker::Company.name
   email = company.parameterize + "@gmail.com"
+  address = addresses.sample
   description = Faker::Company.catch_phrase
   c = User.new
   c.role = 0
@@ -123,7 +213,10 @@ puts "Seeding companies and hirings"
   c.skill = Skill.all.sample
   c.email = email
   c.password = "123456"
-  c.address = towns.sample
+  c.num = address[0]
+  c.address = address[1]
+  c.zipcode = address[2]
+  c.city = address[3]
   c.phone = "0" + rand(100_000_000..999_999_999).to_s
   puts c.errors.messages unless c.valid?
   c.save
@@ -136,42 +229,8 @@ puts "Seeding companies and hirings"
   h.save!
 end
 
-puts "#{User.count} users créés"
+puts "Companies & hirings created"
 
-puts "Seeding objectives"
-checkpoints = [ "Je me renseigne sur l'entreprise.",
-                "J'informe l'entreprise que je suis intéressé.",
-                "Je prend rendez-vous avec l'entreprise."
-              ]
-checkpoints.each_with_index do |title, i|
-  Checkpoint.create(title: title, order: i)
-end
-
-require 'csv'
-
-puts "Seeding companies"
-
-csv_options = { col_sep: ';', quote_char: "|", headers: :first_row }
-csv_filepath = File.read(Rails.root.join('db', 'csv', 'list_companies.csv'))
-csv_companies = CSV.parse(csv_filepath, csv_options)
-companies = []
-
-csv_companies.each do |row|
-  skill = Skill.find_by_name(row['skill'])
-  company = User.new(
-      company: row['company'],
-      email: row['email'],
-      password: "123soleil",
-      description: row['description'],
-      address: row['address'],
-      zipcode: row['zipcode'],
-      city: row['city'],
-      phone: row['phone'],
-      role: 'company'
-    )
-  company.skill = skill
-  company.save!
-end
 
 
 puts "The seed is done"
