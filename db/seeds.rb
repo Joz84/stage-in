@@ -1,4 +1,5 @@
 require "faker"
+ActionMailer::Base.perform_deliveries = false
 
 puts "Cleaning DB..."
 
