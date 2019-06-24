@@ -11,10 +11,18 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 38px;
+.navbar-wagon-brand {
+  img {
+    height: 38px;
+  }
+  p  {
+    color: black;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 38px;
+  }
 }
-
 /* Right section */
 .navbar-wagon-right {
   display: flex;
