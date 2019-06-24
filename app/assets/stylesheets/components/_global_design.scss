@@ -1,5 +1,11 @@
+.color-black {
+  color: black;
+}
 .flex-wrap {
   flex-wrap: wrap;
+}
+.font-size-16px {
+  font-size: 16px;
 }
 .hiring_state.state_accepted::after {
   content: "Accepté";
@@ -17,4 +23,24 @@
   padding: 5px 15px;
   border-radius: 5px;
   color: white;
+}
+.margin-bottom-0px {
+  margin-bottom: 0px;
+}
+.margin-bottom-10px {
+  margin-bottom: 10px;
+}
+.fake-btn-slim {
+  color: white;
+  background-color: $pink;
+  border-radius: 40px;
+  height: 40px;
+  border: none;
+  padding: 0px 30px;
+  &:hover {
+    cursor: initial;
+  }
+}
+.fake-btn-slim.btn-gray {
+  background-color: $dark-gray !important;
 }
