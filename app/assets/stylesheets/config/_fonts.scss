@@ -21,52 +21,51 @@ body {
 }
 h1 {
   font-family: $body-font;
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 600;
   line-height: 58px;
   letter-spacing: -2px;
   margin-bottom: 30px;
 }
-h3 {
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
 h2 {
-  font-size: 48px;
+  font-size: 43px;
   font-weight: 700;
   margin-top: 10px;
 }
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
 h4 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 h5 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 h6 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
 }
 p {
-  font-size: 24px;
+  font-size: 16px;
 }
 @media (max-width : 375px){
   h1 {
-    font-size: 38px;
+    font-size: 35px;
     line-height: 45px;
   }
   h2 {
-    font-size: 36px;
+    font-size: 30px;
     line-height: 45px;
   }
-
   h3 {
-    font-size: 30px;
+    font-size: 25px;
   }
   p {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .pink {

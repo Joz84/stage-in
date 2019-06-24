@@ -11,17 +11,18 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 38px;
+.navbar-wagon-brand {
+  img {
+    height: 38px;
+  }
+  p  {
+    color: black;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 38px;
+  }
 }
-
-/* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
 /* Right section */
 .navbar-wagon-right {
   display: flex;
@@ -32,13 +33,13 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
   font-size: 14px;
+  padding-right: 15px;
 }
 .navbar-wagon-link:hover {
   color: #da552f;
@@ -46,6 +47,18 @@
 }
 
 /* Dropdown menu */
+.burger {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 27px;
+  }
+}
+
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
@@ -74,4 +87,14 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+@media (max-width: 768px) {
+  .navbar-wagon {
+    padding: 0 10px;
+  }
+
+  .navbar-wagon-brand img {
+    height: 30px;
+  }
 }

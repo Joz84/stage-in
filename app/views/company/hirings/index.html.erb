@@ -8,7 +8,7 @@
       <%= f.input :internship_id, label: "Etablissement & Période concernés",class: "input-numeric" do %>
           <%= f.select :internship_id, Internship.display_internship, include_blank: true %>
       <% end %>
-      <%= f.input :number, label: "Nombre de place", collection: 1..40, class: "input-numeric" %>
+      <%= f.input :number, label: "Nombre de places", collection: 1..40, class: "input-numeric" %>
       <%= f.button :submit, "Créer", class: "btn btn-slim btn-blue btn-inline-form" %>
     </div>
   <% end %>
@@ -16,7 +16,7 @@
   <h5><%= @hirings.present? ? "Places de stage mises en ligne:" : "" %></h5>
 
   <% @hirings.each do |hiring| %>
-    <div class="list-wrapper flex-horizontal">
+    <div class="list-wrapper flex-wrap flex-horizontal">
       <div class="list-column">
         <h4><%= hiring.internship.comment %></h4>
         <p><%= hiring.internship.full_name %></p>
@@ -30,7 +30,7 @@
             <h4>Nom de l'élève retenu: <%= request.student.full_name %></h4>
             <h6><%= request.student.address %></h6>
           </div>
-            <div class="flexbox btn-slim btn-pink">
+            <div class="flexbox fake-btn-slim btn-pink">
                 Accepté
             </div>
         <% end %>
@@ -45,7 +45,7 @@
         <% end %>
       <% else %>
         <div class="list-column">
-          <div class="flexbox btn btn-slim btn-gray right">
+          <div class="flexbox btn fake-btn-slim btn-gray right">
             Pas de candidat
           </div>
         </div>

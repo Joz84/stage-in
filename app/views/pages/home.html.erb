@@ -1,24 +1,26 @@
 <div class="home container-fluid flex-vertical-center" id="page1">
-    <div class="row center">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
-        <h1>Trouve un stage près de chez toi.</h1>
-        <div class="row">
-          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-0"  >
-            <%= link_to skill_path(Skill.first), class: "btn btn-blue" do %>
-              <p>Je cherche un stage</p>
-            <% end %>
-          </div>
-          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-md-6 col-lg-offset-0">
-            <%= link_to company_hirings_path, class: "btn btn-pink" do %>
-              <p>Je propose un stage</p>
-            <% end %>
-          </div>
+  <div class="row center">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
+      <h1 class="margin-bottom-10px">Trouve un stage près de chez toi.</h1>
+      <h2 class="font-size-16px">STAGE-IN, la plateforme de stage mutualisé en pays ribéracois</h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-0"  >
+          <%= link_to skill_path(Skill.first), class: "btn btn-blue" do %>
+            <p>Je cherche un stage</p>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-md-6 col-lg-offset-0">
+          <%= link_to company_hirings_path, class: "btn btn-pink" do %>
+            <p>Je propose un stage</p>
+          <% end %>
         </div>
       </div>
     </div>
-    <%= render 'shared/next_page', target_page: "#page2", icon: "fa-arrow-circle-down" %>
   </div>
+  <%= render 'shared/next_page', target_page: "#page2", icon: "fa-arrow-circle-down" %>
+</div>
 
+<div class='home'>
   <%= render 'shared/page_cards', page_id: "page2",  signal: "informations élèves", title: t('page_card1.title'), icon1: "building", icon2: "compass",  icon3: "map-marker", card1: t('page_card1.card1'), card2: t('page_card1.card2'), card3: t('page_card1.card3'), target_page: "#page3", image: t('page_card1.image') %>
 
   <%= render 'shared/page_cards', page_id: "page3", signal: "informations entreprises", title: t('page_card2.title'), icon1: "flag", icon2: "calendar",  icon3: "thumbs-up", card1: t('page_card2.card1'), card2: t('page_card2.card2'), card3: t('page_card2.card3'), target_page: "#navbar", image: t('page_card2.image') %>

@@ -1,0 +1,21 @@
+.checklist-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.checklist-container {
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2);
+  background: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  padding: 5% 0;
+  margin: 0;
+  width: 70%;
+}
+
+@media (max-width : 770px) {
+  .checklist-container {
+    width: 95%;
+  }
+}

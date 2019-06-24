@@ -1,0 +1,21 @@
+meta_product_name: "Stage-In"
+meta_title: "STAGE-IN"
+meta_description: "Stage-In permet aux élèves de troisième de trouver un stage en entreprise."
+meta_image: "paysribeccois.png" # should exist in `app/assets/images/`
+twitter_account: ''  # required for Twitter Cards
+meta_keywords: "Stage-In, Stage, Entreprise"
+meta_logo: "stagein_logo.png" # should exist in `app/assets/images/`
+meta-url: "https://stage-in.herokuapp.com/"
+meta-url-fb: ''
+meta-url-instagram: ''
+meta-url-linkedin: ''
+meta-twitter: ''
+meta-fb-app-id: ''
+meta-site: stage-in
+meta-company: TODO Entreprise
+meta-company-status: TODO statut de l'entreprise
+meta-company-registration: TODO dispensée d'immatriculation au Registre du Commerce et des Sociétés
+meta-company-address: TODO au 1 place de la Bourse, 33000 Bordeaux, France
+meta-publisher: TODO Prénom NOM
+meta-email: ''
+meta-phone: ''
