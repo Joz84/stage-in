@@ -19,7 +19,7 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <div class="burger dropdown-toggle" data-toggle='dropdown' id="navbar-wagon-menu">
-            <%= image_tag "", class: "fa fa-bars" %>
+            <i class="fas fa-bars svg"></i>
           </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -46,7 +46,9 @@
       <!-- Links when logged out -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "", class: "fa fa-bars dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <div class="burger dropdown-toggle" data-toggle='dropdown' id="navbar-wagon-menu">
+            <i class="fas fa-bars"></i>
+          </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "Le stage en entreprise", current_page?(root_path) ? "#page2" : root_path, class: "navbar-wagon-item navbar-wagon-link scroll" %>
